@@ -304,6 +304,7 @@ body {
 .social-group {
   display: flex;
   flex-wrap: wrap;
+  padding-left: 0;
   gap: var(--gap-8);
 
   @media (width >= 992px) {
