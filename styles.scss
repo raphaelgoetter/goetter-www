@@ -540,3 +540,39 @@ body {
     background-color: var(--color-pink-60);
   }
 }
+
+// Scroll to top
+
+.to-top {
+  display: none;
+
+  @media (width < 992px) {
+    position: fixed;
+    z-index: 100;
+    display: inline-grid;
+    place-content: center;
+    bottom: var(--size-20);
+    right: var(--size-24);
+    width: var(--size-36);
+    height: var(--size-36);
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: var(--font-extrabold);
+    line-height: 1;
+    background: var(--color-orange-60);
+    color: var(--color-white);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    animation: scroll-top auto linear forwards;
+    animation-timeline: scroll(root);
+    animation-range: 0 100dvh;
+  }
+}
+
+@keyframes scroll-top {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
