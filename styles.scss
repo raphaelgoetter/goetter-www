@@ -564,7 +564,7 @@ a.to-top {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
     animation: scroll-top auto linear forwards;
     animation-timeline: scroll(root);
-    animation-range: 0 100dvh;
+    animation-range: 0 150dvh;
   }
 
   &:focus,
@@ -575,7 +575,8 @@ a.to-top {
 }
 
 @keyframes scroll-top {
-  from {
+  from,
+  90% {
     opacity: 0;
   }
   to {
