@@ -296,8 +296,11 @@ body {
 .social-group {
   display: flex;
   flex-wrap: wrap;
-  justify-content: end;
   gap: var(--gap-8);
+
+  @media (width >= 992px) {
+    justify-content: end;
+  }
 }
 .social-link svg {
   transition: 0.25s scale;
