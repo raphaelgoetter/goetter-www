@@ -65,12 +65,12 @@ h2,
 h3 {
   font-family: calendas, georgia, serif;
   font-feature-settings: "swsh", "liga", "dlig";
-  font-weight: var(--font-light);
 }
 
 h1 {
   margin-top: 0;
   font-size: var(--text-30);
+  font-weight: var(--font-light);
   color: var(--color-orange-60);
 
   @media (width >= 576px) {
