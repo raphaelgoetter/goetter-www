@@ -543,7 +543,7 @@ body {
 
 // Scroll to top
 
-.to-top {
+a.to-top {
   display: none;
 
   @media (width < 992px) {
@@ -559,12 +559,18 @@ body {
     text-decoration: none;
     font-weight: var(--font-extrabold);
     line-height: 1;
-    background: var(--color-orange-60);
+    background: var(--color-orange-50);
     color: var(--color-white);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
     animation: scroll-top auto linear forwards;
     animation-timeline: scroll(root);
     animation-range: 0 100dvh;
+  }
+
+  &:focus,
+  &:focus-visible {
+    color: var(--color-white);
+    background: var(--color-orange-50);
   }
 }
 
