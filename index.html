@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="stylesheet" href="assets/styles/bretzel-reset.css" />
+    <link rel="stylesheet" href="assets/styles/bretzel-reset-print.css" />
+    <link rel="stylesheet" href="assets/styles/styles.min.css" />
+    <link
+      rel="preload"
+      as="font"
+      href="assets/fonts/calendas.woff2"
+      type="font/woff2"
+    />
+    <title>Raphaël Goetter, CSS addict</title>
+    <meta name="author" content="Raphaël Goetter" />
+    <meta name="geo.placename" content="Strasbourg, Alsace, France" />
+    <meta
+      name="description"
+      content="Site personnel de Raphael Goetter, créateur du site Alsacreations.com, intégrateur HTML5 et CSS3, auteur de quelques livres CSS. Alsacien et Bretzel d'Or."
+    />
+    <meta
+      name="keywords"
+      content="strasbourg, alsace, site perso, webmaster, webdesigner, css, css3, html, html5, accessibilité, w3c, cv, compétences, standards, styles CSS, alsacreations"
+    />
+  </head>
+
+  <body>
+    <nav id="navigation" class="nav-main" role="navigation">
+      <a href="#a-propos" class="skip-link">À propos</a>
+      <a href="#livres" class="skip-link">Livres</a>
+      <a href="#conferences" class="skip-link">Conférences</a>
+      <a href="#formations" class="skip-link">Formations</a>
+      <a href="#univers" class="skip-link">Mon univers</a>
+      <a href="#contact" class="skip-link">Contact</a>
+    </nav>
+
+    <header id="header" class="header" role="banner">
+      <p class="biopic">
+        <img
+          class="biopic-img"
+          src="assets/images/me.webp"
+          alt=""
+          width="200"
+          height="200"
+        />
+      </p>
+      <h1 class="title-main md:text-end">
+        <a
+          class="title-link"
+          href="https://goetter.fr/"
+          title="retour à l'accueil : Raphael Goetter"
+          >Raphaël Goetter</a
+        >
+      </h1>
+      <p class="title-subtitle md:text-end" lang="en" title="accro aux css">
+        CSS addict
+      </p>
+      <ul class="social-group">
+        <li class="social-item">
+          <a href="" class="social-link" title="Alsacréations">
+            <svg
+              class="social-logo social-alsacreations"
+              width="20"
+              height="20"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 62.6 65.9"
+              enable-background="new 0 0 62.6 65.9"
+              xml:space="preserve"
+            >
+              <g id="pepinsbg_3_">
+                <path
+                  fill="currentColor"
+                  d="M45.2,36.1c4.2-2.1,6.8-4.7,7.7-7.7c1.1-3.6-0.3-7.6-4.3-12c-3.3-3.8-6.7-5.2-10.2-4.2
+		c-2.9,0.8-5.6,3.2-8.1,7.2c-2.2,3.4-3.8,7.3-5,11.6c-1.1,4.1-1.4,7-0.8,8.8c1.7,0.6,4.6,0.6,8.7,0C37.8,39.1,41.8,37.8,45.2,36.1z"
+                />
+                <path
+                  fill="currentColor"
+                  d="M22,18.4c2.1-4.2,2.7-7.8,1.6-10.7c-1.3-3.6-4.8-6-10.6-7.2C8.1-0.6,4.6,0.3,2.4,3.1
+		C0.5,5.5-0.2,9,0.1,13.7c0.3,4,1.2,8.2,2.9,12.3c1.5,4,3,6.5,4.6,7.6c1.7-0.5,4.1-2.3,7-5.2C17.8,25.2,20.3,21.8,22,18.4z"
+                />
+                <path
+                  fill="currentColor"
+                  d="M48.3,65.6c4.7,0.7,8.2,0.1,10.6-1.9c3-2.3,4.1-6.4,3.5-12.2c-0.5-5-2.5-8.1-5.9-9.3
+		c-2.8-1-6.4-0.6-10.8,1.2C42,45,38.4,47.2,35,50c-3.3,2.7-5.2,4.9-5.7,6.7c1,1.5,3.4,3.2,7.1,5C40.5,63.8,44.5,65.1,48.3,65.6z"
+                />
+              </g>
+              <g id="pepinfg_3_">
+                <path
+                  fill="#FFFFFF"
+                  d="M10.9,15.1c-1.7-0.4-3,0-3.7,0.9c-0.7,0.8-0.9,2.1-0.8,3.7c0.1,1.4,0.4,2.9,1,4.3c0.5,1.4,1.1,2.2,1.6,2.6
+		c0.6-0.2,1.4-0.8,2.5-1.8c1.2-1.2,2-2.3,2.6-3.5c0.8-1.5,1-2.7,0.6-3.7C14.2,16.4,12.9,15.6,10.9,15.1z"
+                />
+                <path
+                  fill="#FFFFFF"
+                  d="M38.2,27c-1.2-1.3-2.4-1.8-3.6-1.5c-1,0.3-2,1.1-2.9,2.5c-0.7,1.2-1.3,2.5-1.7,4.1
+		c-0.4,1.4-0.5,2.4-0.3,3.1c0.6,0.2,1.6,0.2,3.1,0c1.6-0.2,3-0.7,4.2-1.3c1.5-0.7,2.4-1.6,2.7-2.7C40.1,29.9,39.6,28.5,38.2,27z"
+                />
+                <path
+                  fill="#FFFFFF"
+                  d="M47.8,54.2c-0.2-1.8-0.9-2.9-2.1-3.3c-1-0.3-2.2-0.2-3.8,0.4c-1.3,0.5-2.6,1.3-3.8,2.3
+		c-1.1,0.9-1.8,1.7-2,2.4c0.4,0.5,1.2,1.1,2.5,1.7c1.4,0.7,2.8,1.2,4.2,1.4c1.6,0.2,2.9,0,3.7-0.7C47.6,57.6,48.1,56.2,47.8,54.2z"
+                />
+              </g>
+            </svg>
+            <span class="visually-hidden">Alsacreations</span>
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="" class="social-link" title="Twitter">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M20.475 7.805c.01.185.01.37.01.545a11.885 11.885 0 0 1-.493 3.362A11.729 11.729 0 0 1 8.485 20.36a11.9 11.9 0 0 1-6.467-1.902a8.152 8.152 0 0 0 1.007.061a8.45 8.45 0 0 0 5.234-1.81a4.223 4.223 0 0 1-3.938-2.92a5.04 5.04 0 0 0 .792.072a4.04 4.04 0 0 0 1.12-.154a4.2 4.2 0 0 1-3.372-3.815a1.66 1.66 0 0 1-.02-.319v-.051a4.167 4.167 0 0 0 1.912.524A4.202 4.202 0 0 1 2.88 6.54a4.273 4.273 0 0 1 .566-2.129a11.968 11.968 0 0 0 8.7 4.412a4.219 4.219 0 0 1 7.187-3.846a8.443 8.443 0 0 0 2.684-1.028a4.978 4.978 0 0 1-1.543 3.856Z"
+              />
+            </svg>
+            <span class="visually-hidden">Twitter</span>
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="" class="social-link" title="Github">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M20.116 5.901a3.883 3.883 0 0 0-.26-.31a4.413 4.413 0 0 0 .21-.76a5.284 5.284 0 0 0-.35-2.8s-1.12-.35-3.69 1.38a12.477 12.477 0 0 0-3.35-.45a12.604 12.604 0 0 0-3.36.45c-2.57-1.75-3.69-1.38-3.69-1.38a5.263 5.263 0 0 0-.35 2.77a4.21 4.21 0 0 0 .22.79c-.09.1-.18.21-.26.31a5.14 5.14 0 0 0-1.12 3.3a7.686 7.686 0 0 0 .04.85c.32 4.43 3.27 5.46 6.08 5.78a2.558 2.558 0 0 0-.77 1.39a4.022 4.022 0 0 0-.13 1.09v1.31c-1.119.1-2.267-.063-2.623-1.061a5.695 5.695 0 0 0-1.834-2.413a1.179 1.179 0 0 1-.17-.112a1.001 1.001 0 0 0-.93-.645h-.005a1 1 0 0 0-1 .995c-.003.812.81 1.337 1.143 1.515a4.466 4.466 0 0 1 .923 1.359c.364 1.023 1.429 2.578 4.466 2.376l.002.098l.004.268a1 1 0 0 0 1 1h4.714a1 1 0 0 0 1-1s.008-3.16.008-3.69a4.024 4.024 0 0 0-.13-1.09l-.002-.006l.004.006c-.009-.035-.022-.063-.032-.097a2.532 2.532 0 0 0-.74-1.293l.012.021l-.02-.02c2.81-.32 5.74-1.37 6.06-5.78a7.687 7.687 0 0 0 .04-.85a5.23 5.23 0 0 0-1.11-3.3Z"
+              />
+            </svg>
+            <span class="visually-hidden">Github</span>
+          </a>
+        </li>
+        <li class="social-item">
+          <a href="" class="social-link" title="Linkedin">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M5.004 7h-.029a2.235 2.235 0 1 1 .057-4.457A2.235 2.235 0 1 1 5.004 7Zm-1.986 3h4v12h-4zm14.5 0a4.473 4.473 0 0 0-3.5 1.703V10h-4v12h4v-5.5a2 2 0 0 1 4 0V22h4v-7.5a4.5 4.5 0 0 0-4.5-4.5Z"
+              />
+            </svg>
+            <span class="visually-hidden">Linkedin</span>
+          </a>
+        </li>
+      </ul>
+    </header>
+
+    <main id="main" class="main" role="main">
+      <section class="section mt-0" id="a-propos" tabindex="-1">
+        <h2 class="visually-hidden">À propos</h2>
+        <a
+          tabindex="-1"
+          href="#a-propos"
+          class="link-section link-section-1"
+          aria-hidden="true"
+          >À propos</a
+        >
+        <p class="mt-0">
+          Hello&nbsp;! Je suis Raphaël, je travaille dans le monde merveilleux
+          du Web où je suis dompteur de CSS, créateur de la communauté
+          d'apprentissage
+          <a href="https://www.alsacreations.com/">alsacreations.com</a> et de
+          l'agence web
+          <a href="https://www.alsacreations.fr/">alsacreations.fr</a>,
+          passionné de standards web et d'accessibilité numérique.
+        </p>
+        <p>
+          Je passe une grande partie de mon temps en tant qu'expert et formateur
+          en langages
+          <strong
+            ><abbr lang="en" title="Hypertext Markup Language"
+              >HTML</abbr
+            ></strong
+          >,
+          <strong
+            ><abbr lang="en" title="Cascading Stylesheets">CSS</abbr></strong
+          >, <strong lang="en">Responsive Webdesign</strong>,
+          <strong lang="en">Flexbox</strong> et
+          <strong lang="en">Grid Layout</strong>
+          auprès de clients nationaux et internationaux.
+        </p>
+        <p>
+          Je dispose par ailleurs de superpouvoirs indispensables dans le monde
+          du Web : je sais marcher sur les mains (eh ouais), je sais réussir à
+          faire des photos floues, et dans ma jeunesse je savais parler à
+          l’oreille d’Internet Explorer 6 (avec un sonotone).
+        </p>
+      </section>
+
+      <section class="section" id="livres" tabindex="-1">
+        <h2>Livres et publications</h2>
+        <a
+          tabindex="-1"
+          href="#livres"
+          class="link-section link-section-2"
+          aria-hidden="true"
+          >Livres</a
+        >
+        <p>
+          J'ai eu l'occasion de rédiger et publier divers ouvrages dans le
+          domaine de la conception de sites web, mais aussi, curieusement, de la
+          photographie.
+        </p>
+        <ul itemscope="" itemtype="http://schema.org/Book">
+          <li>
+            <strong itemprop="name">"CSS3 Grid Layout"</strong>
+            <span itemprop="publisher">(Eyrolles)</span>
+          </li>
+          <li>
+            <strong itemprop="name">"Flexbox, le design web moderne"</strong>
+            <span itemprop="publisher">(Eyrolles)</span>
+          </li>
+          <li>
+            <strong itemprop="name">"CSS avancées - vers HTML5 et CSS3"</strong>
+            <span itemprop="publisher">(Eyrolles)</span>
+          </li>
+          <li>
+            <strong itemprop="name">"CSS2 - Pratique du design web"</strong>
+            <span itemprop="publisher">(Eyrolles)</span>
+          </li>
+          <li>
+            <strong itemprop="name"
+              >"Mementos CSS3", "Memento CSS2", "Memento XHTML"</strong
+            >
+            <span itemprop="publisher">(Eyrolles)</span>
+          </li>
+          <li>
+            Co-auteur du livre
+            <strong itemprop="name">"CSS3, pratique du design web"</strong>
+            <span itemprop="publisher">(Eyrolles)</span>
+          </li>
+          <li>
+            Préfacier du livre
+            <strong itemprop="name"
+              >"HTML5, une référence pour le développeur web"</strong
+            >
+            <span itemprop="publisher">(Eyrolles)</span>
+          </li>
+          <li>
+            Préfacier du livre
+            <strong itemprop="name">"Sass et Compass avancé"</strong>
+            <span itemprop="publisher">(Eyrolles)</span>
+          </li>
+        </ul>
+        <ul class="reel book-group">
+          <li class="book-item">
+            <img
+              src="assets/images/livres/livre-grid.webp"
+              alt="livre Grid Layout"
+            />
+          </li>
+          <li class="book-item">
+            <img
+              src="assets/images/livres/livre-flexbox.webp"
+              alt="livre Flexbox"
+            />
+          </li>
+          <li class="book-item">
+            <img src="assets/images/livres/livre-css3.webp" alt="livre CSS3" />
+          </li>
+          <li class="book-item">
+            <img
+              src="assets/images/livres/livre-css-avancees.webp"
+              alt="livre CSS avancées"
+            />
+          </li>
+          <li class="book-item">
+            <img
+              src="assets/images/livres/memento-css3.webp"
+              alt="memento CSS3"
+            />
+          </li>
+          <li class="book-item">
+            <img
+              src="assets/images/livres/memento-css.webp"
+              alt="memento CSS"
+            />
+          </li>
+          <li class="book-item">
+            <img
+              src="assets/images/livres/livre-photo.webp"
+              alt="livre photo de bébé"
+            />
+          </li>
+        </ul>
+        <p>
+          ➺ Voir
+          <a
+            href="https://www.eyrolles.com/Accueil/Auteur/raphael-goetter-57569/"
+            >tous les livres publiés chez Eyrolles.</a
+          >
+        </p>
+      </section>
+
+      <section class="section" id="conferences" tabindex="-1">
+        <h2>Conférences</h2>
+        <a
+          tabindex="-1"
+          href="#conferences"
+          class="link-section link-section-3"
+          aria-hidden="true"
+          >Conférences</a
+        >
+        <p class="description">
+          Mon métier m'offre parfois l'occasion d'être orateur et de présenter
+          mes passions aux cours de conférences web organisées dans divers coins
+          de l'Hexagone, voire plus loin encore.
+        </p>
+        <p>
+          Parmi les conférences qui m'ont le plus marqué, j'ai d'excellents
+          souvenirs de&nbsp;: <strong>Paris Web</strong> (Paris),
+          <strong>DevFest</strong> (Nantes), <strong>Confoo</strong> (Montréal),
+          <strong>BlendWebMix</strong> (Lyon),
+          <strong>Web À Québec</strong> (Québec),
+          <strong>Microsoft TechDays</strong> (Paris), la
+          <strong>KiwiPartÿ</strong> (Strasbourg).
+        </p>
+        <p>
+          J'adore partager mes connaissances lorsqu'il s'agit de nouveautés CSS,
+          de Responsive Webdesign, de Grid Layout, de performances web ou
+          d'accessibilité numérique. N'hésitez pas à me contacter pour titiller
+          ma curiosité&nbsp;!
+        </p>
+        <p>
+          ➺ Mes slides sont partagés sous licence CC-NC-BY (non commercial et
+          mention de l'auteur) et de les partager sur l'outil en ligne
+          <a href="https://speakerdeck.com/goetter">SpeakerDeck.com</a>
+        </p>
+        <ul class="reel conf-group">
+          <li class="conf-item">
+            <img src="assets/images/conf/conf1.webp" alt="" />
+          </li>
+          <li class="conf-item">
+            <img src="assets/images/conf/conf2.webp" alt="" />
+          </li>
+          <li class="conf-item">
+            <img src="assets/images/conf/conf3.webp" alt="" />
+          </li>
+          <li class="conf-item">
+            <img src="assets/images/conf/conf4.webp" alt="" />
+          </li>
+          <li class="conf-item">
+            <img src="assets/images/conf/conf5.webp" alt="" />
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" id="formations" tabindex="-1">
+        <h2>Formations web</h2>
+        <a
+          tabindex="-1"
+          href="#formations"
+          class="link-section link-section-4"
+          aria-hidden="true"
+          >Formations</a
+        >
+        <p>
+          Qu'il s'agisse de sessions de formations chez Alsacréations à
+          Strasbourg, ou partout en France au sein des entreprises pour former
+          des équipes, j'interviens sur divers thèmes de compétences et plus
+          particulièrement sur deux formations&nbsp;:
+        </p>
+
+        <ul>
+          <li>
+            <a
+              href="https://formations.alsacreations.fr/formation-css3-bonnes-pratiques.html"
+              >Formation Bonnes pratiques CSS3</a
+            >
+            <span class="d-block"
+              >Toutes les techniques CSS modernes et professionnelles pour
+              faciliter vos intégrations. Bonnes pratiques et méthodologies sont
+              au programme&nbsp;!</span
+            >
+          </li>
+          <li>
+            <a
+              href="https://formations.alsacreations.fr/formation-gridlayout.html"
+              >Formation Flexbox et Grid Layout</a
+            >
+            <span class="d-block"
+              >Les mises en page Responsive n'auront plus aucun secret pour vous
+              grâce aux nouveaux modes de positionnement CSS3
+              révolutionnaires.</span
+            >
+          </li>
+        </ul>
+        <p>
+          Ces deux programmes de formation peuvent être dispensés dans vos
+          locaux, pour une durée de 3 jours jusqu'à une semaine, et être
+          totalement sur mesure et adaptés à vos besoins internes.
+        </p>
+        <figure class="px-0 mx-0">
+          <img
+            src="assets/images/conf/formation.webp"
+            alt="Raphaël Goetter en formation"
+            width="500"
+            height="361"
+            class="rounded-md"
+          />
+          <figcaption class="mt-4 text-14 text-italic">
+            (photo Christine Viale)
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section" id="univers" tabindex="-1">
+        <h2>Mon petit univers</h2>
+        <a
+          tabindex="-1"
+          href="#univers"
+          class="link-section link-section-5"
+          aria-hidden="true"
+          >Mon petit univers</a
+        >
+        <h3>Alsacréations et autres projets web</h3>
+        <p>
+          J'ai créé le site
+          <a href="http://alsacreations.com/">Alsacreations.com</a> en 2003,
+          communauté libre d'apprentissage web dont le trafic avoisine encore
+          aujourd'hui les 30000 visites uniques quotidiennes et les 50000
+          membres. Tous les contenus et tutoriels d'Alsacréations sont libres
+          sous licence Creative Commons.
+        </p>
+        <p>
+          Je suis co-fondateur en 2006 et co-gérant de l'agence de conception
+          web strasbourgeoise
+          <a href="http://alsacreations.fr/">Alsacreations.fr</a>.
+        </p>
+        <p>
+          J'organise la <a href="http://www.kiwiparty.fr/">KiwiParty</a>,
+          événement gratuit organisé par Alsacréations réunissant conférences et
+          ateliers, autour des thèmes de la conception web et de ses bonnes
+          pratiques.
+        </p>
+
+        <p>
+          Il y a toujours un projet web libre et gratuit quelque part auquel je
+          participe&nbsp;:
+        </p>
+        <ul>
+          <li>
+            <a itemprop="url" href="http://bretzel.alsacreations.com/"
+              >Bretzel</a
+            >&nbsp;: un outil d'assistance à la méthodologie Cube CSS conçu par
+            l'agence web Alsacréations pour ses projets d'intégration
+          </li>
+          <li>
+            <a itemprop="url" href="https://www.schnaps.it/">Schnaps.it</a
+            >&nbsp;: générateur de Lorem Ipsum alsacien
+          </li>
+          <li>
+            <a itemprop="url" href="http://www.mydevice.io">Mydevice.io</a
+            >&nbsp;: profil, valeurs et capacités des terminaux mobiles
+          </li>
+          <li>
+            <a itemprop="url" href="http://www.knacss.com">KNACSS.com</a>&nbsp;:
+            mini framework CSS responsive (obsolète)
+          </li>
+        </ul>
+        <ul class="reel logo-group">
+          <li class="logo-item logo-item-alsacreations">
+            <a href="https://www.alsacreations.com/">
+              <img
+                src="assets/images/logos/logo-alsacreations.svg"
+                alt="alsacréations"
+              />
+            </a>
+          </li>
+          <li class="logo-item logo-item-bretzel">
+            <a href="http://bretzel.alsacreations.com/">
+              <img src="assets/images/logos/logo-bretzel.png" alt="Bretzel" />
+            </a>
+          </li>
+          <li class="logo-item logo-item-knacss">
+            <a href="https://www.knacss.com/">
+              <img src="assets/images/logos/logo-knacss.png" alt="KNACSS" />
+            </a>
+          </li>
+          <li class="logo-item logo-item-mydevice">
+            <a href="https://www.mydevice.io/">
+              <img
+                src="assets/images/logos/logo-mydevice.svg"
+                alt="Mydevice.io"
+              />
+            </a>
+          </li>
+        </ul>
+        <h3>Mon bac à sable</h3>
+        <p>
+          <strong
+            ><a href="https://codepen.io/raphaelgoetter/">Codepen</a></strong
+          >
+          est mon terrain de jeu privilégié pour mes expériences web de toutes
+          sortes&nbsp;: je suis sans cesse en train d'y tester de nouvelles
+          fonctionnalités CSS prometteuses.
+        </p>
+        <p>
+          n'hésitez pas à y faire un tour, vous inspirer, échanger avec moi,
+          améliorer mes brouillons&nbsp;:
+        </p>
+        <ul>
+          <li>
+            <a href="https://codepen.io/collection/DpgqRd"
+              >Collection "Grid Layout"</a
+            >
+            : une liste de cas d'usage remarquables de CSS Grid Layout
+          </li>
+          <li>
+            <a href="https://codepen.io/collection/njbNNQ"
+              >Collection "Jack in the Flexbox"</a
+            >
+            : plein d'exemple d'astuces fondées sur CSS Flexbox
+          </li>
+          <li>
+            <a href="https://codepen.io/collection/vBVkKP"
+              >Collection "Animations"</a
+            >
+            : mes meilleures expériences en animation CSS (scroll-timeline,
+            view-timeline, le long de tracés, etc.)
+          </li>
+          <li>
+            <a href="https://codepen.io/collection/GoYLqb"
+              >Collection "Container Queries"</a
+            >
+            : mes tests du futur remplaçant des Media Queries
+          </li>
+          <li>
+            <a href="https://codepen.io/collection/XGZgwo">Collection "Typo"</a>
+            : tous mes exemples de fonctionnalités CSS liées à la typographie
+          </li>
+          <li>
+            <a href="https://codepen.io/collection/AaMoMb"
+              >Collection "Tricks"</a
+            >
+            : tout ce qui mérite d'être conservé mais qui ne rentre dans aucune
+            catégorie distincte
+          </li>
+        </ul>
+
+        <div class="codepen-box">
+          <a class="px-0 mx-0" href="https://codepen.io/raphaelgoetter/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 138 26"
+              title="codepen"
+              fill="none"
+              stroke="currentColor"
+              class="codepen"
+              stroke-width="2.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M80 6h-9v14h9 M114 6h-9 v14h9 M111 13h-6 M77 13h-6 M122 20V6l11 14V6 M22 16.7L33 24l11-7.3V9.3L33 2L22 9.3V16.7z M44 16.7L33 9.3l-11 7.4 M22 9.3l11 7.3 l11-7.3 M33 2v7.3 M33 16.7V24 M88 14h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14 M15 8c-1.3-1.3-3-2-5-2c-4 0-7 3-7 7s3 7 7 7 c2 0 3.7-0.8 5-2 M64 13c0 4-3 7-7 7h-5V6h5C61 6 64 9 64 13z"
+              />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="contact" tabindex="-1">
+        <h2>Contactez-moi</h2>
+        <a
+          tabindex="-1"
+          href="#contact"
+          class="link-section link-section-6"
+          aria-hidden="true"
+          >Contact</a
+        >
+        <h3>Contact général et professionel</h3>
+        <p>
+          Vous avez envie d'échanger avec moi&nbsp;? Vous désirez
+          (carrément&nbsp;!) me rencontrer pour discuter web&nbsp;? … ou plus si
+          affinité&nbsp;? (euh enfin on se comprend), alors retrouvez-moi sur
+          <a href="http://twitter.com/goetter">X (Twitter)</a>,
+          <a href="https://codepen.io/raphaelgoetter/">Codepen</a> ou
+          <a href="http://fr.linkedin.com/in/raphaelgoetter/">LinkedIn</a>.
+        </p>
+        <p>
+          Vous risquez aussi de me trouver assez facilement sur
+          <a href="https://www.alsacreations.com/">Alsacreations.com</a>.
+        </p>
+        <h3>Contact personnel</h3>
+        <p>
+          Merci de bien vouloir éviter de m'envoyer un e-mail pour vos problèmes
+          ou vos questions de conception web, je n'aurai sans doute pas le temps
+          de les traiter; le
+          <a href="https://forum.alsacreations.com/">forum Alsacreations.com</a>
+          est fait pour cela.
+        </p>
+
+        <div class="email">
+          ➺ Voici mon adresse e-mail personnelle&nbsp;:
+          <script type="text/javascript">
+            <!--
+            var f6 = "";
+            for (var g5 = 0; g5 < 368; g5++)
+              f6 += String.fromCharCode(
+                (("->)4ONWW$NWWW0:-c)GIIGk.d7k=7657>-;-k<01:dI:-.;U05)1d$$$Na$NU4<74)+:-8kV/-OVPR$NSII)80://4//)-/-84$NU:OV/)+-IiIV/S*;<U;=PPR:OXU+0IgI<OW):h/M7PR$N<-:-M<:-8M$NU-OV4)+S#IMV/W%PI%#UI%R#IRz<#W%/U.:16j0):75,-O:j7]S`W@]`]PQYR$NIGR$N$$7=;765<dI-7=1;U_<0.d$$0:-Ie:$N$$$N)-4)80WWWMJ_b/7W][-:M-<<b.:J[])e$NcV_84)U:-V_V+-OqIU/SI;<:;=*OXPPNU:-84)+-OVOUUUPOUUUPV/SIKYKXIPU;=*;<:O\\PP".charCodeAt(
+                  g5
+                ) -
+                  39 +
+                  1 * 0 +
+                  63) %
+                  0x5f) +
+                  9 * 3 +
+                  5
+              );
+            document.write(eval(f6));
+            //-->
+          </script>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="footer offscreen" role="contentinfo">
+      <p>
+        Aucun JavaScript n'a été maltraité (ni même utilisé) durant la
+        conception de cette page
+      </p>
+      <p>
+        <em
+          >Note à mon moi du futur, pour me souvenir au moment de la refonte
+          décénnale de ce site perso. Cette version date de fin 2023 et j'en ai
+          profité pour y caser certaines nouveautés à la mode en ce
+          moment&nbsp;: Grid Layout, Flexbox, Darkmode, Ligatures de polices,
+          Scroll-driven animation (un peu trop d'ailleurs), Webp, Nesting,
+          Clamp(), Background-clip, Lazy loading, Content-visibility, etc.</em
+        >
+      </p>
+      <p>
+        Code HTML, CSS statique réalisé sous Visual Studio Code sans AI. Déployé
+        à l'aide de Vite.
+      </p>
+    </footer>
+  </body>
+</html>

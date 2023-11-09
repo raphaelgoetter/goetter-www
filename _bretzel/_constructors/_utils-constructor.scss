@@ -1,0 +1,112 @@
+// Ce document importe :
+// - la liste des classes utilitaires Tokens (dont les valeurs proviennent du fichier de _config.scss)
+// - la liste des classes utilitaires Core (.visually-hidden par exemple)
+
+@import "utils-files/utils-tokens";
+@import "utils-files/utils-core";
+
+/* Classes utilitaires (utility classes) */
+/* (Fichier généré à partir d'un document de configuration) */
+
+// Constructeur de classes utilitaires de base
+@each $utility, $utility-value in $utils {
+  $source: map-get($utility-value, "source");
+  $name: map-get($utility-value, "name");
+  $property: map-get($utility-value, "property");
+  $blacklistValue: map-get($utility-value, "blacklistValue");
+  $shortcut: map-get($utility-value, "shortcut");
+  $responsive: map-get($utility-value, "is-responsive");
+
+  @each $key, $value in $source {
+    .#{$shortcut}#{$key} {
+      @if ($value != $blacklistValue) {
+        #{$property}: var(--#{$name}-#{$key}) !important;
+      }
+    }
+  }
+  // Boucle pour chaque Breakpoint
+  @each $bp-key, $bp-value in $breakpoints {
+    @media (width >= #{$bp-value}) {
+      @if $responsive == true {
+        @each $key, $value in $source {
+          .#{$bp-key}\:#{$shortcut}#{$key} {
+            @if ($value != $blacklistValue) {
+              #{$property}: var(--#{$name}-#{$key}) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Light & Dark modes
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+  @each $utility, $utility-value in $utils {
+    $source: map-get($utility-value, "source");
+    $name: map-get($utility-value, "name");
+    $property: map-get($utility-value, "property");
+    $blacklistValue: map-get($utility-value, "blacklistValue");
+    $shortcut: map-get($utility-value, "shortcut");
+    $responsive: map-get($utility-value, "is-responsive");
+
+    @if ($name == "color") {
+      @each $key, $value in $source {
+        .dark\:#{$shortcut}#{$key} {
+          @if ($value != $blacklistValue) {
+            #{$property}: var(--#{$name}-#{$key});
+          }
+        }
+      }
+    }
+  }
+}
+
+// États :hover & :focus
+@each $utility, $utility-value in $utils {
+  $source: map-get($utility-value, "source");
+  $name: map-get($utility-value, "name");
+  $property: map-get($utility-value, "property");
+  $blacklistValue: map-get($utility-value, "blacklistValue");
+  $shortcut: map-get($utility-value, "shortcut");
+  $responsive: map-get($utility-value, "is-responsive");
+
+  @if ($name == "color") {
+    @each $key, $value in $source {
+      .hover\:#{$shortcut}#{$key}:hover,
+      .focus\:#{$shortcut}#{$key}:focus {
+        @if ($value != $blacklistValue) {
+          #{$property}: var(--#{$name}-#{$key});
+        }
+      }
+    }
+  }
+}
+
+// Constructeur de classes utilitaires complexes
+.visually-hidden {
+  @include visually-hidden();
+}
+.place-content {
+  @include place-content();
+}
+
+// Boucle pour chaque Breakpoint
+@each $bp-key, $bp-value in $breakpoints {
+  @media (width >= #{$bp-value}) {
+    .#{$bp-key}\:visually-hidden {
+      @include visually-hidden();
+    }
+    .#{$bp-key}\:place-content {
+      @include place-content();
+    }
+  }
+}

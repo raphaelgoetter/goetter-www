@@ -1,0 +1,157 @@
+// ----------------------------------
+// Ce document contient toutes les valeurs de
+// configuration du projet.
+// Ces valeurs génèrent des classes utilitaires,
+// à placer dans le HTML.
+// (ex. class="bg-pink md:bg-hotpink")
+// ... Mais aussi les variables CSS associées
+// (ex. "--color-secondary: pink;")
+// ----------------------------------
+
+// Breakpoints
+$breakpoints: (
+  sm: 576px,
+  md: 992px,
+  lg: 1400px,
+) !default;
+
+// Couleurs
+$color-palette: (
+  "black": #000000,
+  "white": #ffffff,
+  "gray-05": #f5f5f5,
+  "gray-10": #e6e7e8,
+  "gray-20": #d1d3d4,
+  "gray-30": #bcbec0,
+  "gray-40": #a7a9ac,
+  "gray-50": #939598,
+  "gray-60": #808285,
+  "gray-70": #6d6f71,
+  "gray-80": #58595b,
+  "gray-90": #414042,
+  "gray-95": #262527,
+  "green-05": #eff7ec,
+  "green-10": #dcf0cc,
+  "green-20": #b5d39f,
+  "green-50": #3c763d,
+  "green-60": #275c28,
+  "red-05": #fff6f6,
+  "red-10": #fae3e7,
+  "red-50": #cf1a45,
+  "red-60": #a00d10,
+  "orange-05": #fdfbee,
+  "orange-10": #faebcc,
+  "orange-20": #ecc984,
+  "orange-30": #dcaa44,
+  "orange-50": #c4851c,
+  "orange-60": #8a6d3b,
+  "blue-05": #ecf6fb,
+  "blue-10": #c4ecf5,
+  "blue-50": #0d7192,
+  "blue-60": #005e7d,
+  "pink-05": #f4cee1,
+  "pink-10": #eca0c6,
+  "hotpink": #ff69b4,
+  "pink-60": #bb3c7c,
+) !default;
+
+// Largeurs / Espacements
+$sizes: (
+  "0": 0,
+  "1": 1px,
+  "2": 0.125rem,
+  "4": 0.25rem,
+  "6": 0.375rem,
+  "8": 0.5rem,
+  "10": 0.625rem,
+  "12": 0.75rem,
+  "14": 0.875rem,
+  "16": 1rem,
+  "20": 1.25rem,
+  "24": 1.5rem,
+  "36": 2.25rem,
+  "40": 2.5rem,
+  "48": 3rem,
+  "56": 3.5rem,
+  "64": 4rem,
+  "25p": 25%,
+  "50p": 50%,
+  "75p": 75%,
+  "100p": 100%,
+  "auto": auto,
+) !default;
+
+// Tailles de polices
+$font-sizes: (
+  "10": 0.625rem,
+  "11": 0.6875rem,
+  "12": 0.75rem,
+  "14": 0.875rem,
+  "16": 1rem,
+  "18": 1.125rem,
+  "20": 1.25rem,
+  "24": 1.5rem,
+  "30": 1.875rem,
+  "36": 2.25rem,
+  "40": 2.5rem,
+  "48": 3rem,
+  "base": 1rem,
+  "small": 0.875rem,
+  "smaller": 0.875em,
+  "big": 1.125rem,
+  "bigger": 1.125em,
+  "inherit": inherit,
+) !default;
+
+// Graisses de polices
+$font-weights: (
+  "thin": 100,
+  "extralight": 200,
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
+  "black": 900,
+) !default;
+
+// Valeurs de border-radius
+$radius: (
+  "none": 0,
+  "sm": 0.25rem,
+  "md": 0.5rem,
+  "lg": 1rem,
+  "full": 999px,
+) !default;
+
+// Valeurs de display
+$displays: (
+  "none": none,
+  "show": revert,
+  "block": block,
+  "inline": inline,
+  "inline-block": inline-block,
+  "flex": flex,
+  "inline-flex": inline-flex,
+  "grid": grid,
+  "inline-grid": inline-grid,
+) !default;
+
+// Valeurs d'alignement (texte)
+$text-alignments: (
+  "start": start,
+  "end": end,
+  "center": center,
+  "justify": justify,
+) !default;
+
+// Valeurs d'alignement (flex et grid items)
+$box-alignments: (
+  "start": start,
+  "end": end,
+  "center": center,
+  "between": space-between,
+  "stretch": stretch,
+  "auto": auto,
+) !default;
