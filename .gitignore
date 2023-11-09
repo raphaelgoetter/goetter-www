@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# S3
+aws-credentials.json
+upload-s3.js
