@@ -100,6 +100,14 @@ h3 {
   }
 }
 
+ul {
+  padding-left: var(--size-12);
+
+  @media (width >= 992px) {
+    padding-left: var(--size-16);
+  }
+}
+
 a {
   color: var(--color-green-50);
 
@@ -391,11 +399,19 @@ body {
 }
 
 .book-item img {
-  height: 200px;
+  height: 150px;
+
+  @media (width >= 992px) {
+    height: 200px;
+  }
 }
 
 .conf-item img {
-  height: 250px;
+  height: 150px;
+
+  @media (width >= 992px) {
+    height: 250px;
+  }
 }
 
 .logo-item {
