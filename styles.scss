@@ -164,7 +164,7 @@ a {
 
 body {
   display: grid;
-  padding: var(--size-24) var(--size-16);
+  padding: var(--size-24) var(--size-10);
   grid-template-areas:
     "header"
     "navigation"
@@ -312,9 +312,16 @@ body {
 // ----
 
 .section {
-  padding: var(--size-36);
-  margin-bottom: var(--size-36);
   border-radius: var(--radius-md);
+
+  padding: var(--size-16);
+  margin-bottom: var(--size-16);
+
+  @media (width >= 992px) {
+    padding: var(--size-36);
+    margin-bottom: var(--size-36);
+  }
+
   background-color: rgba(0, 0, 0, 0.05);
 
   @media (prefers-color-scheme: dark) {
