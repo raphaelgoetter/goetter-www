@@ -349,7 +349,7 @@ body {
 .reel {
   display: flex;
   gap: var(--gap-16);
-  scroll-snap-type: x mandatory;
+  // scroll-snap-type: x mandatory;
   margin-block: var(--size-36);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -357,7 +357,7 @@ body {
 
 .reel > * {
   flex-shrink: 0;
-  scroll-snap-align: start;
+  // scroll-snap-align: start;
 }
 
 // Indicateurs de scroll sur mobile
