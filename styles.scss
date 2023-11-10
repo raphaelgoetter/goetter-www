@@ -38,25 +38,12 @@ html {
 }
 
 body {
-  color: var(--color-gray-95);
   font-weight: var(--font-extralight);
   font-size: var(--text-18);
-  background-size: 100% 6px;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-image: linear-gradient(
-    to right,
-    var(--color-orange-50),
-    var(--color-hotpink)
-  );
+  color: var(--color-gray-95);
 
   @media (prefers-color-scheme: dark) {
     color: var(--color-gray-10);
-    background-image: linear-gradient(
-      to right,
-      var(--color-orange-30),
-      var(--color-hotpink)
-    );
   }
 }
 
@@ -136,6 +123,36 @@ a {
 
 // -------------
 // Skip link
+// -------------
+
+.body-deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 6px;
+  background-image: linear-gradient(
+    to right,
+    var(--color-orange-50),
+    var(--color-hotpink)
+  );
+
+  @media (prefers-color-scheme: dark) {
+    background-image: linear-gradient(
+      to right,
+      var(--color-orange-30),
+      var(--color-hotpink)
+    );
+  }
+
+  @media (width >= 992px) {
+    position: fixed;
+  }
+}
+
+// -------------
+// Skip links
 // -------------
 
 .skip-link {
