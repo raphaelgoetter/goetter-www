@@ -7,8 +7,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        index: resolve(__dirname, 'index.html'),
-        index404: resolve(__dirname, '404.html')
+        main: resolve(__dirname, 'index.html'),
+        error: resolve(__dirname, '404.html')
       },
     },
   },
