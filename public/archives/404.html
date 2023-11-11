@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<title>Raphaël Goetter, site web personnel</title>
+<meta name="description" content="Site personnel de Raphael Goetter (Alsacréations), concepteur de sites web, amoureux de HTML et CSS, photographe amateur et jeune papa comblé">
+<meta name="keywords" content="strasbourg, alsace, site perso,  webmaster, webdesigner, css, , css3, html, html5, xhtml, w3c, cv, compétences, standards, styles CSS, alsacreations">
+<meta name="author" content="Raphaël Goetter">
+<meta name="geo.placename" content="Strasbourg, Alsace, France">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
+<link rel="stylesheet" href="assets/css/styles.min.css" media="all">
+
+</head>
+
+<body id="body">
+
+<header id="header">
+
+  <nav id="navigation">
+    <h1>
+      <a href="http://www.goetter.fr" data-abbr="RG">
+        <span>Raphaël Goetter</span>
+      </a>
+    </h1>
+    <a href="/apropos.html">à propos</a>
+    <a href="https://raphaelgoetter.wordpress.com/">blog</a>
+    <a href="http://lab.goetter.fr/">labo</a>
+    <a href="/contact.html">contact</a>
+  </nav>
+
+</header>
+<!-- header -->
+
+
+  <div id="main" role="main" class="page404">
+    
+    <button class="nav-button" role="button" type="button" aria-label="navigation"></button>
+    
+    <section>
+      <h1 class="title">Page non trouvée</h1>
+      <p class="txtcenter">
+        <img src="assets/img/404.jpg" alt="404, page not found" width="500" height="500">
+      </p>
+      <p>La page demandée n'existe pas ou a été perdue en cours de route.
+        <br>Je vais activer tous mes réseaux possibles pour tenter de la retrouver.</p>
+      <p>En attendant cette heureuse conclusion, je vous invite à <a href="http://www.goetter.fr">retourner à l'accueil du site</a> et cheminer vers d'autres voies moins audacieuses...</p>
+      <p><i>Photo : <a href="https://www.flickr.com/photos/goetter/14528815697/">"404"</a>, tous droits réservés Raphaël Goetter</i>
+      </p>
+    </section>
+  </div>
+  <!-- main -->
+
+<footer id="footer" role="contentinfo">
+  <h2>Catch me if you can !</h2>
+  <ul class="unstyled">
+    <li>
+      <a href="http://twitter.com/goetter" title="Twitter">
+        <span>Twitter</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/raphaelgoetter" title="Github">
+        <span>Github</span>
+      </a>
+    </li>
+    <li>
+      <a href="http://codepen.io/raphaelgoetter/public/" title="Codepen">
+        <span>Codepen</span>
+      </a>
+    </li>
+    <li>
+      <a href="http://fr.linkedin.com/in/raphaelgoetter/" title="LinkedIn">
+        <span>LinkedIn</span>
+      </a>
+    </li>
+  </ul>
+</footer>
+<!-- footer -->
+
+<script>
+(function() {
+
+// old browser or not ?
+if ( !('querySelector' in document && 'addEventListener' in window) ) {
+return;
+}
+window.document.documentElement.className += ' js-enabled';
+
+function toggleNav() {
+
+// Define targets
+var target = document.querySelector('#main');
+var button = document.querySelector('.nav-button');
+
+// click-touch event
+if ( button ) {
+  button.addEventListener('click', 
+  function (e) { 
+    target.classList.toggle('is-opened'); 
+    e.preventDefault();
+  }, false );
+}
+} // end toggleNav()
+
+toggleNav();
+}());
+</script>
+
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-9345479-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+
+</html>

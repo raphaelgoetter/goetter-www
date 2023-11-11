@@ -1,0 +1,55 @@
+.grid-container {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-flow: dense;
+}
+
+.grid-container img {
+  max-width: 100%;
+  align-self: stretch;
+  justify-self: stretch;
+  object-fit: cover;
+}
+
+.portrait {
+  grid-row: auto / span 2;
+}
+
+.fit-left {
+  object-position: left;
+}
+
+.fit-right {
+  object-position: right;
+}
+
+
+
+
+
+/* Reset */
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 1rem;
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+.grid-container>img {
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 4px #ddd;
+}

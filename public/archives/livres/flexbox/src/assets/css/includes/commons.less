@@ -1,0 +1,103 @@
+/* Commons */
+
+section {
+  margin-bottom: 6rem;
+}
+
+h2,
+h3 {
+  font-weight: normal;
+  color: @headings-2-color;
+  text-align: center;
+}
+
+h2 {
+  text-shadow: 1px 1px @invert-color;
+}
+
+.box-invert {
+  background: @primary-background;
+  color: #fff;
+  & * {
+    color: #fff;
+  }
+  & h2 {
+    text-shadow: none;
+  }
+}
+
+.radius {
+  border-radius: 5px;
+}
+
+.tiretto {
+  display: flex;
+}
+
+.tiretto::before,
+.tiretto::after {
+  display: block; /* IE fix */
+  content: "";
+  flex: 1;
+  align-self: center;
+  border-bottom: 1px solid @headings-2-color;
+}
+
+.tiretto::before {
+  margin-right: .3em
+}
+
+.tiretto::after {
+  margin-left: .3em
+}
+
+.discrete {
+  color: #789;
+}
+
+.bullets li {
+  list-style: none;
+  margin-bottom: @tiny-value;
+  &::before {
+    content: "";
+    background: url(../img/quill.svg);
+    background-size: cover;
+    display: inline-block;
+    margin-right: .4em;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.bullets p {
+  margin-left: 2.5rem;
+}
+
+.excerpts img {
+  border: 1px solid rgba(0,0,0,.1);
+  padding: 4px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+.icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  fill: @headings-2-color;
+}
+
+.icon-box {
+  text-align: center;
+  & .icon {
+    width: 7rem;
+    height: 7rem;
+  }
+}
+
+@media (max-width: @small-screen) {
+  .icon-box .icon {
+    width: 4rem;
+    height: 4rem;
+  }
+}

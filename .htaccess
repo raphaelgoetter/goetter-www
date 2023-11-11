@@ -4,6 +4,7 @@ Options -Indexes
 
 # Erreur 404 -------------------------------------------------------------------
 
+# TODO: page d'erreur 404
 ErrorDocument 404 http://www.goetter.fr/404.html
 
 # Compression ------------------------------------------------------------------

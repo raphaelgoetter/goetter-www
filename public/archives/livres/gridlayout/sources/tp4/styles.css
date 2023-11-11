@@ -1,0 +1,80 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: .5rem 2rem;
+  grid-auto-flow: dense;
+}
+
+[href$=".doc"] {
+  grid-column: 1;
+  background: orange;
+}
+
+[href$=".xls"] {
+  grid-column: 2;
+  background: olivedrab;
+}
+
+[href$=".pdf"] {
+  grid-column: 3;
+  background: hotpink;
+}
+
+
+/* BONUS étiquettes */
+
+
+a::before {
+  font-size: .7em;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 6px;
+  background: #333;
+  transform: translate(-1.5em, -1em);
+}
+
+[href$=".doc"]::before {
+  content: ".doc";
+}
+
+[href$=".xls"]::before {
+  content: ".xls";
+}
+
+[href$=".pdf"]::before {
+  content: ".pdf";
+}
+
+[href$=".doc"]~[href$=".doc"]::before,
+[href$=".xls"]~[href$=".xls"]::before,
+[href$=".pdf"]~[href$=".pdf"]::before {
+  visibility: hidden;
+}
+
+
+/* Reset */
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 2rem;
+  background: #fff;
+  font-family: system-ui;
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+a {
+  display: block;
+  padding: 6px 12px;
+  color: #fff;
+  text-decoration: none;
+  background: #999;
+}

@@ -1,0 +1,6 @@
+{
+    "name": "bretzel",
+    "dependencies": {
+        "knacss": "^4.4.0"
+    }
+}

@@ -1,0 +1,78 @@
+.autogrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+/* Variante */
+
+/*
+.autogrid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+*/
+
+/* Counter */
+div {
+  counter-increment: number;
+}
+
+div::before {
+  content: counter(number);
+}
+
+
+/* Reset */
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 2rem;
+  background: #fff;
+  font-family: system-ui;
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+div {
+  padding: 1rem;
+  color: #fff;
+}
+
+div:nth-child(1) {
+  background: orange;
+}
+div:nth-child(2) {
+  background: olivedrab;
+}
+div:nth-child(3) {
+  background: cadetblue;
+}
+div:nth-child(4) {
+  background: slategray;
+}
+div:nth-child(5) {
+  background: chocolate;
+}
+div:nth-child(6) {
+  background: darkmagenta;
+}
+div:nth-child(7) {
+  background: tomato;
+}
+div:nth-child(8) {
+  background: teal;
+}
+div:nth-child(9) {
+  background: yellowgreen;
+}
+
+/* orange, hotpink, olivedrab, cadetblue, slategray, chocolate, darkmagenta, tomato, teal, yellowgreen */

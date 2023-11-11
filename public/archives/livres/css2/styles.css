@@ -1,0 +1,263 @@
+/* ----------------------------- */
+/*  =     BASE STYLES            */
+/* ----------------------------- */
+
+/* Page */
+html {
+    font-size: 100%; /* Avoid  IE 6-7 bug */
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", Verdana, Helvetica, FreeSans, sans-serif;
+    font-size: .8em; /* to adapt */
+    line-height: 1.4; /* to adapt */
+    color: black;
+    background: white;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+    margin: 1em 0 .5em 0; /* Rapproach title with text */
+    line-height: 1.2;
+    font-weight: bold; /* default value. */
+    font-style: normal;
+}
+h1 {
+    font-size: 1.75em;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+h2 {
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.25em;
+}
+h4 {
+    font-size: 1em;
+}
+
+/* Lists */
+ul, ol {
+    margin: .75em 0 .75em 0;
+    padding: 0;
+}
+ul {
+  list-style-type: square;
+  color: #555;
+}
+li {margin-bottom: 8px;}
+
+/* Paragraphs */
+p {
+    margin: .75em 0; /* Less than default. */
+}
+address {
+    margin: .75em 0;
+    font-style: normal;
+}
+
+/* Links */
+a {
+    text-decoration: underline;
+}
+a:link {
+    color: #222;
+}
+a:visited {
+    color: #777;
+}
+a:hover, a:focus, a:active {
+    color: #000;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+
+/* Miscelleanous inline default */
+em {
+    font-style: italic;
+}
+strong {
+    font-weight: bold;
+}
+
+/* Forms */
+form, fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+input, button, select {
+    vertical-align: middle;
+}
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.textleft {
+  text-align: left;
+}
+.textright {
+  text-align: right;
+}
+.textcenter {
+  text-align: center;
+}
+
+/* ----------------------------- */
+/*  =     MISCELLEANOUS          */
+/* ----------------------------- */
+
+/* abbreviations */
+abbr, acronym {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+/* Quotations */
+blockquote {
+    margin: 1em 0 1.5em 15px;
+    padding: 0 0 0 10px;
+    border-left: solid 4px #FF7800;
+    font-style: italic;
+}
+q {
+    font-style: italic;
+    quotes: none; /* Avoid automatic quotes */
+}
+cite {
+    font-style: italic;
+}
+q cite, q q {
+    font-style: normal
+}
+
+/* Rapproaching paragraphs in lists and quotations */
+blockquote p, li p {
+    margin: .5em 0;
+}
+
+/* Definition lists */
+dl {
+    margin: .75em 0;
+}
+dt {
+    margin: .75em 0 0 0;
+    font-weight: bold;
+}
+dd {
+    margin: .25em 0 .25em 32px;
+}
+
+/* Tables  */
+table {
+    margin: 0;
+    border: 1px solid gray; /* Pas de bordure = "none". */
+    border-collapse: collapse; /* Valeur par défaut: "separate". */
+    border-spacing: 0;
+}
+table td, table th {
+    padding: 4px; /* Pas de retrait autour du texte = "0". */
+    border: 1px solid #ccc; /* Pas de bordure = "none". */
+    vertical-align: top; /* Valeur par défaut: "middle" */
+    text-align: left;
+}
+
+/* ----------------------------- */
+/*  =     BLOCS                  */
+/* ----------------------------- */
+
+#wrapper {
+  width: 990px;
+  margin: 0 auto;
+}
+
+/* Header */
+#header {
+  position: relative;
+  border-bottom: 40px solid #ccc;
+}
+#header p {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #FF7800;
+  font-style: italic;
+}
+
+p#author {
+  color: #999;
+  text-align: right;
+}
+p#author a {
+  color: #999;
+}
+
+#content #livre-display {
+  float: left;
+  width: 450px;
+}
+#content #presentation-display {
+  float: right;
+  width: 500px;
+}
+#content #presentation-display p {
+  color: #777;
+  text-align: justify;
+}
+#content #presentation-display a {
+  color: #777;
+}
+#content #presentation-display .accroche {
+  font-size: 2.5em;
+  font-variant: small-caps;
+  color: #777;
+  text-align: left;
+  font-weight: bold;
+}
+
+#menu-contextuel, #avis-lecteurs {
+  clear: both;
+  color: #555;
+  padding-top: 10px;
+}
+#menu-contextuel ul li {
+  padding-left: 10px;
+  margin-left: 0;
+  background: url(puce-mini.png) left 5px no-repeat;
+}
+#menu-contextuel ul, #avis-lecteurs ul {
+  list-style-type: none;
+}
+#presentation-auteur {
+  padding-bottom: 30px;
+}
+
+#avis-lecteurs h2, #presentation-auteur h2 {
+  padding: 4px 15px;
+  background: #97BB2F;
+  color: #fff;
+  font-weight: normal;
+  font-variant: small-caps;
+}
+#bloc1, #bloc2, #bloc3 {
+  float: left;
+  width: 285px;
+  padding-left: 20px;
+  padding-right: 15px;
+  margin-right: 5px;
+}
+#menu-contextuel h2 {
+  padding: 0 0 5px 28px;
+  margin: 5px 0;
+  background: url(puce.png) left top no-repeat;
+  font-variant: small-caps;
+  color: #222;
+}
