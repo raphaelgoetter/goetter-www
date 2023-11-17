@@ -382,8 +382,8 @@ h2::after {
   @media (width >= 992px) {
     animation-timeline: --anchor;
     animation-name: underlining;
-    animation-range: entry 0% entry 100%;
-    animation-timing-function: linear;
+    animation-range: entry 30% entry 70%;
+    animation-timing-function: cubic-bezier(0.56, 0.8, 0, 2.07);
     animation-duration: auto;
     animation-fill-mode: both;
   }
