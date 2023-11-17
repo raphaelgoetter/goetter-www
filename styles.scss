@@ -70,6 +70,7 @@ h1 {
 }
 
 h2 {
+  width: fit-content;
   margin-top: 0;
   font-size: var(--text-24);
 
@@ -79,6 +80,7 @@ h2 {
 }
 
 h3 {
+  width: fit-content;
   margin-top: 0;
   font-size: var(--text-20);
 
@@ -317,7 +319,6 @@ body {
 }
 
 // Liens sociaux
-
 .social-group {
   display: flex;
   flex-wrap: wrap;
@@ -363,6 +364,40 @@ body {
   }
 }
 
+// Soulignement des titres h2
+h2::after {
+  content: "";
+  display: block;
+  width: calc(100% + 100px);
+  height: 2px;
+  translate: 0 var(--size-12);
+  background-image: linear-gradient(
+    to right,
+    var(--color-orange-50),
+    var(--color-hotpink)
+  );
+  background-position: left bottom;
+  background-repeat: no-repeat;
+
+  @media (width >= 992px) {
+    animation-timeline: --anchor;
+    animation-name: underlining;
+    animation-range: entry 0% entry 100%;
+    animation-timing-function: linear;
+    animation-duration: auto;
+    animation-fill-mode: both;
+  }
+}
+
+@keyframes underlining {
+  from {
+    background-position: -500px bottom;
+  }
+  to {
+    background-position: left bottom;
+  }
+}
+
 .reel {
   display: flex;
   gap: var(--gap-16);
@@ -380,9 +415,9 @@ body {
 // Indicateurs de scroll sur mobile
 @supports (animation-timeline: scroll()) {
   .reel {
-    /* largeur des zones estompées */
+    // largeur des zones estompées
     --mask-width: 80px;
-    /* on dessine un masque dégradé au-dessus des tabs */
+    // on dessine un masque dégradé au-dessus des tabs
     -webkit-mask-image: linear-gradient(
       to right,
       transparent,
@@ -399,11 +434,11 @@ body {
     );
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
-    /* le masque doit être plus large que son parent */
+    // le masque doit être plus large que son parent
     -webkit-mask-size: calc(100% + var(--mask-width)) 100%;
     mask-size: calc(100% + var(--mask-width)) 100%;
 
-    /* animation lors du scroll dans les tabs */
+    // animation lors du scroll dans les tabs
     animation: fade-mask linear auto both;
     animation-timeline: scroll(self x);
     -webkit-mask-position: -80px center;
@@ -453,12 +488,12 @@ body {
 // Navigation
 // ----------
 
-/* Source de l'animation */
+// Source de l'animation
 .section {
   view-timeline: --anchor block;
 }
 
-/* Cibles de l'animation (masquées sur mobile) */
+// Cibles de l'animation (masquées sur mobile)
 .link-section {
   display: none;
 }
@@ -476,7 +511,7 @@ body {
     }
   }
 
-  /* Positionnement individuel des ancres */
+  // Positionnement individuel des ancres
   .link-section-1 {
     top: 2rem;
 
@@ -520,7 +555,7 @@ body {
     }
   }
 
-  /* Animation des cibles */
+  // Animation des cibles
   .link-section {
     animation-timeline: --anchor;
     animation-name: reveal, exit;
@@ -531,7 +566,7 @@ body {
     border-right: 8px solid rgba(0, 0, 0, 0.2); // styles de départ
   }
 
-  /* Les scénarios de l'animation */
+  // Les scénarios de l'animation
   @keyframes reveal {
     to {
       border-right: 8px solid; // je suis entièrement visible
