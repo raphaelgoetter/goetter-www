@@ -382,19 +382,22 @@ h2::after {
   @media (width >= 992px) {
     animation-timeline: --anchor;
     animation-name: underlining;
-    animation-range: entry 30% entry 70%;
+    animation-range: entry 30% entry 60%;
     animation-timing-function: cubic-bezier(0.56, 0.8, 0, 2.07);
     animation-duration: auto;
     animation-fill-mode: both;
+    transform-origin: left center;
   }
 }
 
 @keyframes underlining {
   from {
-    background-position: -500px bottom;
+    // background-position: -500px bottom;
+    scale: 0 1;
   }
   to {
-    background-position: left bottom;
+    // background-position: left bottom;
+    scale: 1 1;
   }
 }
 
