@@ -1,8 +1,8 @@
 // On ajoute les variables CSS
-@import "_bretzel/bretzel-variables";
+@use "_bretzel/bretzel-variables";
 
 // On ajoute les classes utilitaires
-@import "_bretzel/bretzel-utilities";
+@use "_bretzel/bretzel-utilities";
 
 // Polices
 @font-face {
