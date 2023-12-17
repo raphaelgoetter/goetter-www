@@ -1,10 +1,14 @@
-// On ajoute les variables CSS
-@use "_bretzel/bretzel-variables";
+/* On importe les variables CSS */
+@import url("/assets/styles/bretzel-variables.css");
 
-// On ajoute les classes utilitaires
-@use "_bretzel/bretzel-utilities";
+/* On importe les reset */
+@import url("/assets/styles/bretzel-reset.css");
+@import url("/assets/styles/bretzel-reset-print.css");
 
-// Polices
+/* On importe les classes Bretzel */
+@import url("/assets/styles/bretzel-utilities.css");
+
+/* Tous les styles perso */
 @font-face {
   font-family: "calendas";
   src: url("/fonts/calendas.woff2") format("woff2");
@@ -12,10 +16,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
-// --------------
-// Styles communs
-// --------------
 
 :target {
   scroll-margin-block: 3rem;
@@ -123,10 +123,6 @@ a {
   }
 }
 
-// -------------
-// Bandeau déco
-// -------------
-
 .body-deco {
   position: absolute;
   top: 0;
@@ -152,10 +148,6 @@ a {
     position: fixed;
   }
 }
-
-// -------------
-// Skip links
-// -------------
 
 .skip-link {
   background-color: var(--color-orange-30) !important;
@@ -184,10 +176,6 @@ a {
   outline: dashed var(--size-4) var(--color-orange-30) !important;
   outline-offset: var(--size-4);
 }
-
-// -------------
-// Layout global
-// -------------
 
 body {
   display: grid;
@@ -229,10 +217,6 @@ body {
   grid-area: footer;
 }
 
-// ------
-// Header
-// ------
-
 .header {
   @media (width >= 992px) {
     max-width: 12rem;
@@ -245,7 +229,6 @@ body {
   }
 }
 
-// Image perso (animation "blob" au scroll)
 .biopic-img {
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
@@ -266,7 +249,6 @@ body {
   }
 }
 
-// Décoration du titre principal et transition au survol
 .title-main {
   width: fit-content;
   margin: 0;
@@ -318,7 +300,6 @@ body {
   }
 }
 
-// Liens sociaux
 .social-group {
   display: flex;
   flex-wrap: wrap;
@@ -336,10 +317,6 @@ body {
 .social-link:focus svg {
   scale: 1.2;
 }
-
-// ----
-// Main
-// ----
 
 .section {
   border-radius: var(--radius-md);
@@ -364,7 +341,6 @@ body {
   }
 }
 
-// Soulignement des titres h2
 h2::after {
   content: "";
   display: block;
@@ -392,11 +368,9 @@ h2::after {
 
 @keyframes underlining {
   from {
-    // background-position: -500px bottom;
     scale: 0 1;
   }
   to {
-    // background-position: left bottom;
     scale: 1 1;
   }
 }
@@ -404,7 +378,6 @@ h2::after {
 .reel {
   display: flex;
   gap: var(--gap-16);
-  // scroll-snap-type: x mandatory;
   margin-block: var(--size-36);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -412,15 +385,11 @@ h2::after {
 
 .reel > * {
   flex-shrink: 0;
-  // scroll-snap-align: start;
 }
 
-// Indicateurs de scroll sur mobile
 @supports (animation-timeline: scroll()) {
   .reel {
-    // largeur des zones estompées
     --mask-width: 80px;
-    // on dessine un masque dégradé au-dessus des tabs
     -webkit-mask-image: linear-gradient(
       to right,
       transparent,
@@ -437,11 +406,9 @@ h2::after {
     );
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
-    // le masque doit être plus large que son parent
     -webkit-mask-size: calc(100% + var(--mask-width)) 100%;
     mask-size: calc(100% + var(--mask-width)) 100%;
 
-    // animation lors du scroll dans les tabs
     animation: fade-mask linear auto both;
     animation-timeline: scroll(self x);
     -webkit-mask-position: -80px center;
@@ -487,16 +454,10 @@ h2::after {
   width: 300px;
 }
 
-// ----------
-// Navigation
-// ----------
-
-// Source de l'animation
 .section {
   view-timeline: --anchor block;
 }
 
-// Cibles de l'animation (masquées sur mobile)
 .link-section {
   display: none;
 }
@@ -514,7 +475,6 @@ h2::after {
     }
   }
 
-  // Positionnement individuel des ancres
   .link-section-1 {
     top: 2rem;
 
@@ -558,7 +518,6 @@ h2::after {
     }
   }
 
-  // Animation des cibles
   .link-section {
     animation-timeline: --anchor;
     animation-name: reveal, exit;
@@ -566,25 +525,20 @@ h2::after {
     animation-timing-function: linear;
     animation-duration: auto;
     animation-fill-mode: both;
-    border-right: 8px solid rgba(0, 0, 0, 0.2); // styles de départ
+    border-right: 8px solid rgba(0, 0, 0, 0.2);
   }
 
-  // Les scénarios de l'animation
   @keyframes reveal {
     to {
-      border-right: 8px solid; // je suis entièrement visible
+      border-right: 8px solid;
     }
   }
   @keyframes exit {
     to {
-      border-right: 8px solid rgba(0, 0, 0, 0.2); // je ne suis pas/plus visible
+      border-right: 8px solid rgba(0, 0, 0, 0.2);
     }
   }
 }
-
-// ------
-// Footer
-// ------
 
 .footer {
   padding: var(--size-16);
@@ -595,8 +549,6 @@ h2::after {
     background-color: var(--color-pink-60);
   }
 }
-
-// Scroll to top
 
 a.to-top {
   display: none;

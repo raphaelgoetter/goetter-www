@@ -9,40 +9,12 @@
   color: var(--color-white) !important;
 }
 
-.text-gray-05 {
-  color: var(--color-gray-05) !important;
-}
-
 .text-gray-10 {
   color: var(--color-gray-10) !important;
 }
 
-.text-gray-20 {
-  color: var(--color-gray-20) !important;
-}
-
-.text-gray-30 {
-  color: var(--color-gray-30) !important;
-}
-
-.text-gray-40 {
-  color: var(--color-gray-40) !important;
-}
-
 .text-gray-50 {
   color: var(--color-gray-50) !important;
-}
-
-.text-gray-60 {
-  color: var(--color-gray-60) !important;
-}
-
-.text-gray-70 {
-  color: var(--color-gray-70) !important;
-}
-
-.text-gray-80 {
-  color: var(--color-gray-80) !important;
 }
 
 .text-gray-90 {
@@ -53,48 +25,12 @@
   color: var(--color-gray-95) !important;
 }
 
-.text-green-05 {
-  color: var(--color-green-05) !important;
-}
-
-.text-green-10 {
-  color: var(--color-green-10) !important;
-}
-
-.text-green-20 {
-  color: var(--color-green-20) !important;
-}
-
 .text-green-50 {
   color: var(--color-green-50) !important;
 }
 
 .text-green-60 {
   color: var(--color-green-60) !important;
-}
-
-.text-red-05 {
-  color: var(--color-red-05) !important;
-}
-
-.text-red-10 {
-  color: var(--color-red-10) !important;
-}
-
-.text-red-50 {
-  color: var(--color-red-50) !important;
-}
-
-.text-red-60 {
-  color: var(--color-red-60) !important;
-}
-
-.text-orange-05 {
-  color: var(--color-orange-05) !important;
-}
-
-.text-orange-10 {
-  color: var(--color-orange-10) !important;
 }
 
 .text-orange-20 {
@@ -113,28 +49,8 @@
   color: var(--color-orange-60) !important;
 }
 
-.text-blue-05 {
-  color: var(--color-blue-05) !important;
-}
-
-.text-blue-10 {
-  color: var(--color-blue-10) !important;
-}
-
-.text-blue-50 {
-  color: var(--color-blue-50) !important;
-}
-
-.text-blue-60 {
-  color: var(--color-blue-60) !important;
-}
-
 .text-pink-05 {
   color: var(--color-pink-05) !important;
-}
-
-.text-pink-10 {
-  color: var(--color-pink-10) !important;
 }
 
 .text-hotpink {
@@ -153,40 +69,12 @@
   background-color: var(--color-white) !important;
 }
 
-.bg-gray-05 {
-  background-color: var(--color-gray-05) !important;
-}
-
 .bg-gray-10 {
   background-color: var(--color-gray-10) !important;
 }
 
-.bg-gray-20 {
-  background-color: var(--color-gray-20) !important;
-}
-
-.bg-gray-30 {
-  background-color: var(--color-gray-30) !important;
-}
-
-.bg-gray-40 {
-  background-color: var(--color-gray-40) !important;
-}
-
 .bg-gray-50 {
   background-color: var(--color-gray-50) !important;
-}
-
-.bg-gray-60 {
-  background-color: var(--color-gray-60) !important;
-}
-
-.bg-gray-70 {
-  background-color: var(--color-gray-70) !important;
-}
-
-.bg-gray-80 {
-  background-color: var(--color-gray-80) !important;
 }
 
 .bg-gray-90 {
@@ -197,48 +85,12 @@
   background-color: var(--color-gray-95) !important;
 }
 
-.bg-green-05 {
-  background-color: var(--color-green-05) !important;
-}
-
-.bg-green-10 {
-  background-color: var(--color-green-10) !important;
-}
-
-.bg-green-20 {
-  background-color: var(--color-green-20) !important;
-}
-
 .bg-green-50 {
   background-color: var(--color-green-50) !important;
 }
 
 .bg-green-60 {
   background-color: var(--color-green-60) !important;
-}
-
-.bg-red-05 {
-  background-color: var(--color-red-05) !important;
-}
-
-.bg-red-10 {
-  background-color: var(--color-red-10) !important;
-}
-
-.bg-red-50 {
-  background-color: var(--color-red-50) !important;
-}
-
-.bg-red-60 {
-  background-color: var(--color-red-60) !important;
-}
-
-.bg-orange-05 {
-  background-color: var(--color-orange-05) !important;
-}
-
-.bg-orange-10 {
-  background-color: var(--color-orange-10) !important;
 }
 
 .bg-orange-20 {
@@ -257,28 +109,8 @@
   background-color: var(--color-orange-60) !important;
 }
 
-.bg-blue-05 {
-  background-color: var(--color-blue-05) !important;
-}
-
-.bg-blue-10 {
-  background-color: var(--color-blue-10) !important;
-}
-
-.bg-blue-50 {
-  background-color: var(--color-blue-50) !important;
-}
-
-.bg-blue-60 {
-  background-color: var(--color-blue-60) !important;
-}
-
 .bg-pink-05 {
   background-color: var(--color-pink-05) !important;
-}
-
-.bg-pink-10 {
-  background-color: var(--color-pink-10) !important;
 }
 
 .bg-hotpink {
@@ -5384,32 +5216,11 @@
   .dark\:text-white {
     color: var(--color-white);
   }
-  .dark\:text-gray-05 {
-    color: var(--color-gray-05);
-  }
   .dark\:text-gray-10 {
     color: var(--color-gray-10);
   }
-  .dark\:text-gray-20 {
-    color: var(--color-gray-20);
-  }
-  .dark\:text-gray-30 {
-    color: var(--color-gray-30);
-  }
-  .dark\:text-gray-40 {
-    color: var(--color-gray-40);
-  }
   .dark\:text-gray-50 {
     color: var(--color-gray-50);
-  }
-  .dark\:text-gray-60 {
-    color: var(--color-gray-60);
-  }
-  .dark\:text-gray-70 {
-    color: var(--color-gray-70);
-  }
-  .dark\:text-gray-80 {
-    color: var(--color-gray-80);
   }
   .dark\:text-gray-90 {
     color: var(--color-gray-90);
@@ -5417,38 +5228,11 @@
   .dark\:text-gray-95 {
     color: var(--color-gray-95);
   }
-  .dark\:text-green-05 {
-    color: var(--color-green-05);
-  }
-  .dark\:text-green-10 {
-    color: var(--color-green-10);
-  }
-  .dark\:text-green-20 {
-    color: var(--color-green-20);
-  }
   .dark\:text-green-50 {
     color: var(--color-green-50);
   }
   .dark\:text-green-60 {
     color: var(--color-green-60);
-  }
-  .dark\:text-red-05 {
-    color: var(--color-red-05);
-  }
-  .dark\:text-red-10 {
-    color: var(--color-red-10);
-  }
-  .dark\:text-red-50 {
-    color: var(--color-red-50);
-  }
-  .dark\:text-red-60 {
-    color: var(--color-red-60);
-  }
-  .dark\:text-orange-05 {
-    color: var(--color-orange-05);
-  }
-  .dark\:text-orange-10 {
-    color: var(--color-orange-10);
   }
   .dark\:text-orange-20 {
     color: var(--color-orange-20);
@@ -5462,23 +5246,8 @@
   .dark\:text-orange-60 {
     color: var(--color-orange-60);
   }
-  .dark\:text-blue-05 {
-    color: var(--color-blue-05);
-  }
-  .dark\:text-blue-10 {
-    color: var(--color-blue-10);
-  }
-  .dark\:text-blue-50 {
-    color: var(--color-blue-50);
-  }
-  .dark\:text-blue-60 {
-    color: var(--color-blue-60);
-  }
   .dark\:text-pink-05 {
     color: var(--color-pink-05);
-  }
-  .dark\:text-pink-10 {
-    color: var(--color-pink-10);
   }
   .dark\:text-hotpink {
     color: var(--color-hotpink);
@@ -5492,32 +5261,11 @@
   .dark\:bg-white {
     background-color: var(--color-white);
   }
-  .dark\:bg-gray-05 {
-    background-color: var(--color-gray-05);
-  }
   .dark\:bg-gray-10 {
     background-color: var(--color-gray-10);
   }
-  .dark\:bg-gray-20 {
-    background-color: var(--color-gray-20);
-  }
-  .dark\:bg-gray-30 {
-    background-color: var(--color-gray-30);
-  }
-  .dark\:bg-gray-40 {
-    background-color: var(--color-gray-40);
-  }
   .dark\:bg-gray-50 {
     background-color: var(--color-gray-50);
-  }
-  .dark\:bg-gray-60 {
-    background-color: var(--color-gray-60);
-  }
-  .dark\:bg-gray-70 {
-    background-color: var(--color-gray-70);
-  }
-  .dark\:bg-gray-80 {
-    background-color: var(--color-gray-80);
   }
   .dark\:bg-gray-90 {
     background-color: var(--color-gray-90);
@@ -5525,38 +5273,11 @@
   .dark\:bg-gray-95 {
     background-color: var(--color-gray-95);
   }
-  .dark\:bg-green-05 {
-    background-color: var(--color-green-05);
-  }
-  .dark\:bg-green-10 {
-    background-color: var(--color-green-10);
-  }
-  .dark\:bg-green-20 {
-    background-color: var(--color-green-20);
-  }
   .dark\:bg-green-50 {
     background-color: var(--color-green-50);
   }
   .dark\:bg-green-60 {
     background-color: var(--color-green-60);
-  }
-  .dark\:bg-red-05 {
-    background-color: var(--color-red-05);
-  }
-  .dark\:bg-red-10 {
-    background-color: var(--color-red-10);
-  }
-  .dark\:bg-red-50 {
-    background-color: var(--color-red-50);
-  }
-  .dark\:bg-red-60 {
-    background-color: var(--color-red-60);
-  }
-  .dark\:bg-orange-05 {
-    background-color: var(--color-orange-05);
-  }
-  .dark\:bg-orange-10 {
-    background-color: var(--color-orange-10);
   }
   .dark\:bg-orange-20 {
     background-color: var(--color-orange-20);
@@ -5570,23 +5291,8 @@
   .dark\:bg-orange-60 {
     background-color: var(--color-orange-60);
   }
-  .dark\:bg-blue-05 {
-    background-color: var(--color-blue-05);
-  }
-  .dark\:bg-blue-10 {
-    background-color: var(--color-blue-10);
-  }
-  .dark\:bg-blue-50 {
-    background-color: var(--color-blue-50);
-  }
-  .dark\:bg-blue-60 {
-    background-color: var(--color-blue-60);
-  }
   .dark\:bg-pink-05 {
     background-color: var(--color-pink-05);
-  }
-  .dark\:bg-pink-10 {
-    background-color: var(--color-pink-10);
   }
   .dark\:bg-hotpink {
     background-color: var(--color-hotpink);
@@ -5605,49 +5311,14 @@
   color: var(--color-white);
 }
 
-.hover\:text-gray-05:hover,
-.focus\:text-gray-05:focus {
-  color: var(--color-gray-05);
-}
-
 .hover\:text-gray-10:hover,
 .focus\:text-gray-10:focus {
   color: var(--color-gray-10);
 }
 
-.hover\:text-gray-20:hover,
-.focus\:text-gray-20:focus {
-  color: var(--color-gray-20);
-}
-
-.hover\:text-gray-30:hover,
-.focus\:text-gray-30:focus {
-  color: var(--color-gray-30);
-}
-
-.hover\:text-gray-40:hover,
-.focus\:text-gray-40:focus {
-  color: var(--color-gray-40);
-}
-
 .hover\:text-gray-50:hover,
 .focus\:text-gray-50:focus {
   color: var(--color-gray-50);
-}
-
-.hover\:text-gray-60:hover,
-.focus\:text-gray-60:focus {
-  color: var(--color-gray-60);
-}
-
-.hover\:text-gray-70:hover,
-.focus\:text-gray-70:focus {
-  color: var(--color-gray-70);
-}
-
-.hover\:text-gray-80:hover,
-.focus\:text-gray-80:focus {
-  color: var(--color-gray-80);
 }
 
 .hover\:text-gray-90:hover,
@@ -5660,21 +5331,6 @@
   color: var(--color-gray-95);
 }
 
-.hover\:text-green-05:hover,
-.focus\:text-green-05:focus {
-  color: var(--color-green-05);
-}
-
-.hover\:text-green-10:hover,
-.focus\:text-green-10:focus {
-  color: var(--color-green-10);
-}
-
-.hover\:text-green-20:hover,
-.focus\:text-green-20:focus {
-  color: var(--color-green-20);
-}
-
 .hover\:text-green-50:hover,
 .focus\:text-green-50:focus {
   color: var(--color-green-50);
@@ -5683,36 +5339,6 @@
 .hover\:text-green-60:hover,
 .focus\:text-green-60:focus {
   color: var(--color-green-60);
-}
-
-.hover\:text-red-05:hover,
-.focus\:text-red-05:focus {
-  color: var(--color-red-05);
-}
-
-.hover\:text-red-10:hover,
-.focus\:text-red-10:focus {
-  color: var(--color-red-10);
-}
-
-.hover\:text-red-50:hover,
-.focus\:text-red-50:focus {
-  color: var(--color-red-50);
-}
-
-.hover\:text-red-60:hover,
-.focus\:text-red-60:focus {
-  color: var(--color-red-60);
-}
-
-.hover\:text-orange-05:hover,
-.focus\:text-orange-05:focus {
-  color: var(--color-orange-05);
-}
-
-.hover\:text-orange-10:hover,
-.focus\:text-orange-10:focus {
-  color: var(--color-orange-10);
 }
 
 .hover\:text-orange-20:hover,
@@ -5735,34 +5361,9 @@
   color: var(--color-orange-60);
 }
 
-.hover\:text-blue-05:hover,
-.focus\:text-blue-05:focus {
-  color: var(--color-blue-05);
-}
-
-.hover\:text-blue-10:hover,
-.focus\:text-blue-10:focus {
-  color: var(--color-blue-10);
-}
-
-.hover\:text-blue-50:hover,
-.focus\:text-blue-50:focus {
-  color: var(--color-blue-50);
-}
-
-.hover\:text-blue-60:hover,
-.focus\:text-blue-60:focus {
-  color: var(--color-blue-60);
-}
-
 .hover\:text-pink-05:hover,
 .focus\:text-pink-05:focus {
   color: var(--color-pink-05);
-}
-
-.hover\:text-pink-10:hover,
-.focus\:text-pink-10:focus {
-  color: var(--color-pink-10);
 }
 
 .hover\:text-hotpink:hover,
@@ -5785,49 +5386,14 @@
   background-color: var(--color-white);
 }
 
-.hover\:bg-gray-05:hover,
-.focus\:bg-gray-05:focus {
-  background-color: var(--color-gray-05);
-}
-
 .hover\:bg-gray-10:hover,
 .focus\:bg-gray-10:focus {
   background-color: var(--color-gray-10);
 }
 
-.hover\:bg-gray-20:hover,
-.focus\:bg-gray-20:focus {
-  background-color: var(--color-gray-20);
-}
-
-.hover\:bg-gray-30:hover,
-.focus\:bg-gray-30:focus {
-  background-color: var(--color-gray-30);
-}
-
-.hover\:bg-gray-40:hover,
-.focus\:bg-gray-40:focus {
-  background-color: var(--color-gray-40);
-}
-
 .hover\:bg-gray-50:hover,
 .focus\:bg-gray-50:focus {
   background-color: var(--color-gray-50);
-}
-
-.hover\:bg-gray-60:hover,
-.focus\:bg-gray-60:focus {
-  background-color: var(--color-gray-60);
-}
-
-.hover\:bg-gray-70:hover,
-.focus\:bg-gray-70:focus {
-  background-color: var(--color-gray-70);
-}
-
-.hover\:bg-gray-80:hover,
-.focus\:bg-gray-80:focus {
-  background-color: var(--color-gray-80);
 }
 
 .hover\:bg-gray-90:hover,
@@ -5840,21 +5406,6 @@
   background-color: var(--color-gray-95);
 }
 
-.hover\:bg-green-05:hover,
-.focus\:bg-green-05:focus {
-  background-color: var(--color-green-05);
-}
-
-.hover\:bg-green-10:hover,
-.focus\:bg-green-10:focus {
-  background-color: var(--color-green-10);
-}
-
-.hover\:bg-green-20:hover,
-.focus\:bg-green-20:focus {
-  background-color: var(--color-green-20);
-}
-
 .hover\:bg-green-50:hover,
 .focus\:bg-green-50:focus {
   background-color: var(--color-green-50);
@@ -5863,36 +5414,6 @@
 .hover\:bg-green-60:hover,
 .focus\:bg-green-60:focus {
   background-color: var(--color-green-60);
-}
-
-.hover\:bg-red-05:hover,
-.focus\:bg-red-05:focus {
-  background-color: var(--color-red-05);
-}
-
-.hover\:bg-red-10:hover,
-.focus\:bg-red-10:focus {
-  background-color: var(--color-red-10);
-}
-
-.hover\:bg-red-50:hover,
-.focus\:bg-red-50:focus {
-  background-color: var(--color-red-50);
-}
-
-.hover\:bg-red-60:hover,
-.focus\:bg-red-60:focus {
-  background-color: var(--color-red-60);
-}
-
-.hover\:bg-orange-05:hover,
-.focus\:bg-orange-05:focus {
-  background-color: var(--color-orange-05);
-}
-
-.hover\:bg-orange-10:hover,
-.focus\:bg-orange-10:focus {
-  background-color: var(--color-orange-10);
 }
 
 .hover\:bg-orange-20:hover,
@@ -5915,34 +5436,9 @@
   background-color: var(--color-orange-60);
 }
 
-.hover\:bg-blue-05:hover,
-.focus\:bg-blue-05:focus {
-  background-color: var(--color-blue-05);
-}
-
-.hover\:bg-blue-10:hover,
-.focus\:bg-blue-10:focus {
-  background-color: var(--color-blue-10);
-}
-
-.hover\:bg-blue-50:hover,
-.focus\:bg-blue-50:focus {
-  background-color: var(--color-blue-50);
-}
-
-.hover\:bg-blue-60:hover,
-.focus\:bg-blue-60:focus {
-  background-color: var(--color-blue-60);
-}
-
 .hover\:bg-pink-05:hover,
 .focus\:bg-pink-05:focus {
   background-color: var(--color-pink-05);
-}
-
-.hover\:bg-pink-10:hover,
-.focus\:bg-pink-10:focus {
-  background-color: var(--color-pink-10);
 }
 
 .hover\:bg-hotpink:hover,
