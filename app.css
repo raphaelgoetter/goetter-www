@@ -50,7 +50,7 @@ h1 {
   font-weight: var(--font-light);
   color: var(--color-orange-60);
 
-  @media (width >= 576px) {
+  @media (width >= 36rem) {
     font-size: var(--text-48);
   }
 
@@ -64,7 +64,7 @@ h2 {
   margin-top: 0;
   font-size: var(--text-24);
 
-  @media (width >= 576px) {
+  @media (width >= 36rem) {
     font-size: var(--text-36);
   }
 }
@@ -74,7 +74,7 @@ h3 {
   margin-top: 0;
   font-size: var(--text-20);
 
-  @media (width >= 576px) {
+  @media (width >= 36rem) {
     font-size: var(--text-30);
   }
 }
@@ -82,7 +82,7 @@ h3 {
 ul {
   padding-left: var(--size-12);
 
-  @media (width >= 992px) {
+  @media (width >= 62rem) {
     padding-left: var(--size-16);
   }
 }
@@ -134,7 +134,7 @@ a {
     );
   }
 
-  @media (width >= 992px) {
+  @media (width >= 62rem) {
     position: fixed;
   }
 }
@@ -149,7 +149,7 @@ body {
     "footer";
   gap: var(--gap-16);
 
-  @media (width >= 992px) {
+  @media (width >= 62rem) {
     margin-inline: auto;
     padding: var(--size-36);
     grid-template-columns: 12rem 1fr 10rem;
@@ -160,7 +160,7 @@ body {
     gap: var(--gap-24);
   }
 
-  @media (width >= 1400px) {
+  @media (width >= 87.5rem) {
     padding: var(--size-48) var(--size-36);
     gap: var(--gap-48);
   }
@@ -180,13 +180,13 @@ body {
 }
 
 .header {
-  @media (width >= 992px) {
+  @media (width >= 62rem) {
     max-width: 12rem;
     position: fixed;
     left: var(--size-24);
   }
 
-  @media (width >= 1400px) {
+  @media (width >= 87.5rem) {
     left: var(--size-36);
   }
 }
@@ -257,7 +257,7 @@ body {
     color: var(--color-gray-50);
   }
 
-  @media (width >= 576px) {
+  @media (width >= 36rem) {
     font-size: var(--text-24);
   }
 }
@@ -268,7 +268,7 @@ body {
   padding-left: 0;
   gap: var(--gap-8);
 
-  @media (width >= 992px) {
+  @media (width >= 62rem) {
     justify-content: end;
   }
 }
@@ -286,7 +286,7 @@ body {
   padding: var(--size-16);
   margin-bottom: var(--size-16);
 
-  @media (width >= 992px) {
+  @media (width >= 62rem) {
     padding: var(--size-36);
     margin-bottom: var(--size-36);
   }
@@ -372,7 +372,7 @@ h2::after {
 .book-item img {
   height: 150px;
 
-  @media (width >= 992px) {
+  @media (width >= 62rem) {
     height: 200px;
   }
 }
@@ -380,7 +380,7 @@ h2::after {
 .conf-item img {
   height: 150px;
 
-  @media (width >= 992px) {
+  @media (width >= 62rem) {
     height: 250px;
   }
 }
@@ -402,7 +402,7 @@ h2::after {
 .nav-main {
   display: none;
 }
-@media (width >= 992px) {
+@media (width >= 62rem) {
   .nav-main {
     display: block;
     position: fixed;
@@ -410,7 +410,7 @@ h2::after {
     gap: var(--size-12);
     right: var(--size-24);
 
-    @media (width >= 1400px) {
+    @media (width >= 87.5rem) {
       right: var(--size-36);
     }
   }
@@ -499,7 +499,7 @@ h2::after {
 a.to-top {
   display: none;
 
-  @media (width < 992px) {
+  @media (width < 62rem) {
     position: fixed;
     z-index: 100;
     display: inline-grid;
