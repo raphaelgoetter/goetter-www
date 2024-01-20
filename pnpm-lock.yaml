@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@unocss/preset-attributify':
+    specifier: ^0.58.3
+    version: 0.58.3
   s3-folder-upload:
     specifier: ^2.3.5
     version: 2.3.5
