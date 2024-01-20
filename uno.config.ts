@@ -1,8 +1,7 @@
 import { defineConfig } from 'unocss'
-import { presetAttributify } from "unocss";
 
 export default defineConfig({
-  presets: [presetAttributify()],
+  presets: [],
   theme: {
     colors: {
       black: '#000000',
