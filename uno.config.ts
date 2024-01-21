@@ -1,16 +1,16 @@
 import { defineConfig } from 'unocss'
+import { presetMini } from 'unocss'
 
 export default defineConfig({
-  presets: [],
+  // presets: [
+  //   presetMini(),
+  // ],
   theme: {
     colors: {
-      black: '#000000',
-      white: '#FFFFFF',
+      violet: '#000000',
+      tomato: '#FFFFFF',
       hotpink: '#FF69B4',
       kiwigreen: '#7A960F',
     },
   },
-  rules: [
-    ['kiwigreen', { fontWeight: 'bold' }],
-  ],
 }) as unknown
