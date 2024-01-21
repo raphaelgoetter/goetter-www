@@ -520,7 +520,7 @@ h2::after {
 .footer {
   padding: var(--size-16);
   border-radius: var(--radius-md);
-  background-color: var(--color-pink-05);
+  background-color: var(--color-pink-10);
 
   @media (prefers-color-scheme: dark) {
     background-color: var(--color-pink-60);

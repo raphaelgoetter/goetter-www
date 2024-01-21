@@ -50,7 +50,7 @@
 }
 
 .text-pink-05 {
-  color: var(--color-pink-05);
+  color: var(--color-pink-10);
 }
 
 .text-hotpink {
@@ -110,7 +110,7 @@
 }
 
 .bg-pink-05 {
-  background-color: var(--color-pink-05);
+  background-color: var(--color-pink-10);
 }
 
 .bg-hotpink {
@@ -5247,7 +5247,7 @@
     color: var(--color-orange-60);
   }
   .dark\:text-pink-05 {
-    color: var(--color-pink-05);
+    color: var(--color-pink-10);
   }
   .dark\:text-hotpink {
     color: var(--color-hotpink);
@@ -5292,7 +5292,7 @@
     background-color: var(--color-orange-60);
   }
   .dark\:bg-pink-05 {
-    background-color: var(--color-pink-05);
+    background-color: var(--color-pink-10);
   }
   .dark\:bg-hotpink {
     background-color: var(--color-hotpink);
@@ -5363,7 +5363,7 @@
 
 .hover\:text-pink-05:hover,
 .focus\:text-pink-05:focus {
-  color: var(--color-pink-05);
+  color: var(--color-pink-10);
 }
 
 .hover\:text-hotpink:hover,
@@ -5438,7 +5438,7 @@
 
 .hover\:bg-pink-05:hover,
 .focus\:bg-pink-05:focus {
-  background-color: var(--color-pink-05);
+  background-color: var(--color-pink-10);
 }
 
 .hover\:bg-hotpink:hover,
