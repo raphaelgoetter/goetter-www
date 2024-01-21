@@ -16,6 +16,10 @@
   contain-intrinsic-size: auto 500px;
 }
 
+.d-block {
+  display: block;
+}
+
 html {
   scroll-behavior: smooth;
   background-color: var(--color-white);
@@ -214,6 +218,10 @@ body {
 .title-main {
   width: fit-content;
   margin: 0;
+
+  @media (width >= 36rem) {
+    text-align: end;
+  }
 }
 @supports (-webkit-background-clip: text) or (background-clip: text) {
   .title-link {
@@ -259,6 +267,7 @@ body {
 
   @media (width >= 36rem) {
     font-size: var(--text-24);
+    text-align: end;
   }
 }
 
@@ -295,6 +304,11 @@ body {
 
   @media (prefers-color-scheme: dark) {
     background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &:nth-of-type(1),
+  & p:nth-of-type(1) {
+    margin-top: 0;
   }
 
   &:focus,
@@ -369,6 +383,21 @@ h2::after {
   }
 }
 
+.formation-figure {
+  margin-inline: 0;
+  padding-inline: 0;
+
+  & img {
+    border-radius: var(--radius-md);
+  }
+
+  & figcaption {
+    margin-top: var(--size-4);
+    font-size: var(--text-14);
+    font-style: italic;
+  }
+}
+
 .book-item img {
   height: 150px;
 
@@ -395,6 +424,10 @@ h2::after {
 }
 .codepen {
   width: 300px;
+}
+.codepen-box-link {
+  margin-inline: 0;
+  padding-inline: 0;
 }
 
 /* Navigation principale */
