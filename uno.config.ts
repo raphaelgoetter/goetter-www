@@ -108,15 +108,4 @@ export default defineConfig({
       'full': '9999px',
     },
   },
-  // rules: [
-  //   ['text-small', {'font-size': '0.875rem'}],
-  //   ['text-smaller', {'font-size': '0.875em'}],
-  //   ['text-big', {'font-size': '1.125rem'}],
-  //   ['text-bigger', {'font-size': '1.125em'}],
-  //   ['text-inherit', {'font-size': 'inherit'}],
-  //   ['text-start', {'text-align': 'start'}],
-  //   ['text-end', {'text-align': 'end'}],
-  //   ['text-center', {'text-align': 'center'}],
-  //   ['text-justify', {'text-align': 'justify'}],
-  // ],
 })
