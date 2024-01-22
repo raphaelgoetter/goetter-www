@@ -26,3 +26,4 @@ dist-ssr
 # S3
 aws-credentials.json
 upload-s3.js
+vars.css

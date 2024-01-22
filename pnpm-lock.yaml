@@ -11,6 +11,9 @@ devDependencies:
   unocss:
     specifier: ^0.58.3
     version: 0.58.3(postcss@8.4.33)(vite@4.5.2)
+  unocss-custom-properties:
+    specifier: ^0.0.2
+    version: 0.0.2(unocss@0.58.3)
   vite:
     specifier: ^4.5.2
     version: 4.5.2
@@ -1739,6 +1742,14 @@ packages:
 
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+    dev: true
+
+  /unocss-custom-properties@0.0.2(unocss@0.58.3):
+    resolution: {integrity: sha512-QVp+BNy94p96CFrIvvbE3KSaVC+kIzyHxC4VgKN2hRhJFVi/JmnKaR0oXW6ZvkjNf3Ozu2cKTJSGlR1ifP2Muw==}
+    peerDependencies:
+      unocss: '*'
+    dependencies:
+      unocss: 0.58.3(postcss@8.4.33)(vite@4.5.2)
     dev: true
 
   /unocss@0.58.3(postcss@8.4.33)(vite@4.5.2):

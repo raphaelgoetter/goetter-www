@@ -1,7 +1,15 @@
 import { defineConfig } from 'unocss'
+import customProperties from 'unocss-custom-properties'
+import { resolve } from 'node:path'
 
 export default defineConfig({
-  presets: [], // disable default preset
+  presets: [
+    customProperties({
+      writeFile: true,
+      filePath: resolve(__dirname, 'vars.css')
+    }
+    ),
+  ],
   theme: {
     colors: {
       black: '#000000',
@@ -99,27 +107,16 @@ export default defineConfig({
       'lg': '1rem',
       'full': '9999px',
     },
-    display: {
-      'none': 'none',
-      'show': 'revert',
-      'block': 'block',
-      'inline': 'inline',
-      'inline-block': 'inline-block',
-      'flex:': 'flex',
-      'inline-flex': 'inline-flex',
-      'grid': 'grid',
-      'inline-grid': 'inline-grid',
-    },
   },
   // rules: [
-  //   ['text-small', {font-size: '0.875rem'}],
-  //   ['text-smaller', {font-size: '0.875em'}],
-  //   ['text-big', {font-size: '1.125rem'}],
-  //   ['text-bigger', {font-size: '1.125em'}],
-  //   ['text-inherit', {font-size: 'inherit'}],
-  //   ['text-start', {text-align: 'start'}],
-  //   ['text-end', {text-align: 'end'}],
-  //   ['text-center', {text-align: 'center'}],
-  //   ['text-justify', {text-align: 'justify'}],
+  //   ['text-small', {'font-size': '0.875rem'}],
+  //   ['text-smaller', {'font-size': '0.875em'}],
+  //   ['text-big', {'font-size': '1.125rem'}],
+  //   ['text-bigger', {'font-size': '1.125em'}],
+  //   ['text-inherit', {'font-size': 'inherit'}],
+  //   ['text-start', {'text-align': 'start'}],
+  //   ['text-end', {'text-align': 'end'}],
+  //   ['text-center', {'text-align': 'center'}],
+  //   ['text-justify', {'text-align': 'justify'}],
   // ],
 })
