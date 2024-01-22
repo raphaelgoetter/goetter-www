@@ -1,15 +1,9 @@
 /* Ordre des cascade layers */
-@layer variables, reset, app, bretzel;
-
-/* On importe les variables CSS */
-@import url("/assets/styles/bretzel-variables.css") layer(variables);
+@layer reset, app;
 
 /* On importe les reset */
 @import url("/assets/styles/bretzel-reset.css") layer(reset);
 @import url("/assets/styles/bretzel-reset-print.css") layer(reset);
-
-/* On importe les classes Bretzel */
-@import url("/assets/styles/bretzel-utilities.css") layer(bretzel);
 
 /* On importe les styles perso */
 @import url("app.css") layer(app);

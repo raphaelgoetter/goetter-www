@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@types/node':
+    specifier: ^20.11.5
+    version: 20.11.5
   s3-folder-upload:
     specifier: ^2.3.5
     version: 2.3.5
@@ -16,7 +19,7 @@ devDependencies:
     version: 0.0.2(unocss@0.58.3)
   vite:
     specifier: ^4.5.2
-    version: 4.5.2
+    version: 4.5.2(@types/node@20.11.5)
 
 packages:
 
@@ -668,7 +671,7 @@ packages:
       '@unocss/core': 0.58.3
       '@unocss/reset': 0.58.3
       '@unocss/vite': 0.58.3(vite@4.5.2)
-      vite: 4.5.2
+      vite: 4.5.2(@types/node@20.11.5)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -866,7 +869,7 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.3.2
       magic-string: 0.30.5
-      vite: 4.5.2
+      vite: 4.5.2(@types/node@20.11.5)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -1784,7 +1787,7 @@ packages:
       '@unocss/transformer-directives': 0.58.3
       '@unocss/transformer-variant-group': 0.58.3
       '@unocss/vite': 0.58.3(vite@4.5.2)
-      vite: 4.5.2
+      vite: 4.5.2(@types/node@20.11.5)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -1815,7 +1818,7 @@ packages:
     hasBin: true
     dev: true
 
-  /vite@4.5.2:
+  /vite@4.5.2(@types/node@20.11.5):
     resolution: {integrity: sha512-tBCZBNSBbHQkaGyhGCDUGqeo2ph8Fstyp6FMSvTtsXeZSPpSMGlviAOav2hxVTqFcx8Hj/twtWKsMJXNY0xI8w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1843,6 +1846,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.11.5
       esbuild: 0.18.20
       postcss: 8.4.33
       rollup: 3.29.4
