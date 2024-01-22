@@ -29,7 +29,7 @@ export default defineConfig({
       hotpink: '#FF69B4',
       kiwigreen: '#7A960F',
     },
-    text: {
+    fontSize: {
       10: '0.625rem',
       11: '0.6875rem',
       12: '0.75rem',
@@ -57,7 +57,7 @@ export default defineConfig({
       40: '2.5rem',
       48: '3rem',
     },
-    font: {
+    fontWeight: {
       'thin': 100,
       'extralight': 200,
       'light': 300,
@@ -68,7 +68,7 @@ export default defineConfig({
       'extrabold': 800,
       'black': 900,
     },
-    size: {
+    spacing: {
       0: '0',
       1: '1px',
       2: '0.125rem',
@@ -92,17 +92,7 @@ export default defineConfig({
       '100p': '100%',
       'auto': 'auto',
     },
-    gap: {
-      0: '0',
-      6: '0.375rem',
-      8: '0.5rem',
-      12: '0.75rem',
-      16: '1rem',
-      24: '1.5rem',
-      40: '2.5rem',
-      48: '3rem',
-    },
-    radius: {
+    borderRadius: {
       'none': '0',
       'sm': '0.25rem',
       'md': '0.5rem',
