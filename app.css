@@ -64,7 +64,6 @@ h1 {
 }
 
 h2 {
-  width: fit-content;
   margin-top: 0;
   font-size: var(--font-size-24);
 
@@ -327,7 +326,7 @@ body {
 h2::after {
   content: "";
   display: block;
-  width: calc(100% + 100px);
+  width: 66%;
   height: 2px;
   translate: 0 var(--spacing-12);
   background-image: linear-gradient(
