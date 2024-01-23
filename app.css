@@ -265,7 +265,7 @@ body {
     color: var(--colors-gray-50);
   }
 
-  @media (width >= 36rem) {
+  @media (width >= 62rem) {
     font-size: var(--font-size-24);
     text-align: end;
   }
@@ -279,6 +279,13 @@ body {
 
   @media (width >= 62rem) {
     justify-content: end;
+  }
+}
+.social-link {
+  padding: var(--spacing-10);
+
+  @media (width >= 62rem) {
+    padding: var(--spacing-4);
   }
 }
 .social-link svg {

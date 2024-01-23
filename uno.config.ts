@@ -103,7 +103,6 @@ export default defineConfig({
       40: '2.5rem',
       48: '3rem',
     },
-
     borderRadius: {
       'none': '0',
       'sm': '0.25rem',
