@@ -15,8 +15,8 @@ devDependencies:
     specifier: ^0.58.3
     version: 0.58.3(postcss@8.4.33)(vite@4.5.2)
   unocss-custom-properties:
-    specifier: ^0.0.2
-    version: 0.0.2(unocss@0.58.3)
+    specifier: ^0.0.4
+    version: 0.0.4(unocss@0.58.3)
   vite:
     specifier: ^4.5.2
     version: 4.5.2(@types/node@20.11.5)
@@ -1747,8 +1747,8 @@ packages:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
     dev: true
 
-  /unocss-custom-properties@0.0.2(unocss@0.58.3):
-    resolution: {integrity: sha512-QVp+BNy94p96CFrIvvbE3KSaVC+kIzyHxC4VgKN2hRhJFVi/JmnKaR0oXW6ZvkjNf3Ozu2cKTJSGlR1ifP2Muw==}
+  /unocss-custom-properties@0.0.4(unocss@0.58.3):
+    resolution: {integrity: sha512-h0cV6t3lc7YDeUULI+waMcHYBKnc760ia6BxNkDv2LdFq0T8MBLu6KodPRruWDFPt5zedZxeztKhaVwyI8Lcdg==}
     peerDependencies:
       unocss: '*'
     dependencies:

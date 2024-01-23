@@ -1,13 +1,3 @@
-/* Variables manquantes à unoCSS */
-
-:root {
-  --radius-none: 0;
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
-  --radius-full: 999px;
-}
-
 /* Styles perso */
 @font-face {
   font-family: "calendas";
@@ -54,7 +44,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: calendas, georgia, serif;
+  font-family: var(--font-family-calendas);
   font-feature-settings: "swsh", "liga", "dlig";
 }
 
@@ -265,7 +255,7 @@ body {
 .title-subtitle {
   margin-block: var(--spacing-10);
   font-size: var(--font-size-20);
-  font-family: calendas, georgia, serif;
+  font-family: var(--font-family-calendas);
   font-feature-settings: "swsh", "liga", "dlig";
   font-weight: var(--font-weight-light);
 
@@ -300,7 +290,7 @@ body {
 }
 
 .section {
-  border-radius: var(--radius-md);
+  border-radius: var(--rounded-md);
 
   padding: var(--spacing-16);
   margin-bottom: var(--spacing-16);
@@ -398,7 +388,7 @@ h2::after {
   padding-inline: 0;
 
   & img {
-    border-radius: var(--radius-md);
+    border-radius: var(--rounded-md);
   }
 
   & figcaption {
@@ -427,7 +417,7 @@ h2::after {
 .logo-item {
   padding: var(--spacing-16);
   background-color: rgba(255, 255, 255, 0.8);
-  border-radius: var(--radius-md);
+  border-radius: var(--rounded-md);
 }
 .logo-item img {
   height: 50px;
@@ -529,7 +519,7 @@ h2::after {
 
 .footer {
   padding: var(--spacing-16);
-  border-radius: var(--radius-md);
+  border-radius: var(--rounded-md);
   background-color: var(--colors-pink-10);
 
   @media (prefers-color-scheme: dark) {
