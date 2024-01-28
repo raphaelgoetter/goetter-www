@@ -13,7 +13,7 @@
     "@types/node": "^20.11.5",
     "s3-folder-upload": "^2.3.5",
     "unocss": "^0.58.3",
-    "unocss-custom-properties": "^0.0.4",
+    "unocss-custom-properties": "^0.1.0",
     "vite": "^4.5.2"
   }
 }
