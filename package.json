@@ -15,5 +15,9 @@
     "unocss": "^0.58.3",
     "unocss-custom-properties": "^0.1.2",
     "vite": "^4.5.2"
+  },
+  "dependencies": {
+    "prettier": "^3.2.4",
+    "prettier-plugin-css-order": "^2.0.1"
   }
 }

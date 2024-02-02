@@ -1,10 +1,10 @@
 /* Styles perso */
 @font-face {
-  font-family: "calendas";
-  src: url("/fonts/calendas.woff2") format("woff2");
-  font-display: swap;
-  font-weight: normal;
   font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/calendas.woff2") format("woff2");
+  font-family: "calendas";
+  font-display: swap;
 }
 
 :target {
@@ -21,20 +21,20 @@
 }
 
 html {
-  scroll-behavior: smooth;
-  background-color: var(--colors-white);
   background-image: url(../images/bg-light.png);
+  background-color: var(--colors-white);
+  scroll-behavior: smooth;
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--colors-black);
     background-image: url(../images/bg-dark.png);
+    background-color: var(--colors-black);
   }
 }
 
 body {
+  color: var(--colors-gray-95);
   font-weight: var(--font-weight-extralight);
   font-size: var(--font-size-18);
-  color: var(--colors-gray-95);
 
   @media (prefers-color-scheme: dark) {
     color: var(--colors-gray-10);
@@ -50,9 +50,9 @@ h3 {
 
 h1 {
   margin-top: 0;
-  font-size: var(--font-size-30);
-  font-weight: var(--font-weight-light);
   color: var(--colors-orange-60);
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-30);
 
   @media (width >= 36rem) {
     font-size: var(--font-size-48);
@@ -101,9 +101,9 @@ a {
 
   &:focus-visible {
     outline: 0;
-    box-shadow: none;
     outline: dashed var(--spacing-2) currentColor;
     outline-offset: var(--spacing-2);
+    box-shadow: none;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -117,11 +117,11 @@ a {
 }
 
 .body-deco {
+  z-index: 1000;
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
-  z-index: 1000;
+  left: 0;
   height: 6px;
   background-image: linear-gradient(
     to right,
@@ -144,22 +144,22 @@ a {
 
 body {
   display: grid;
-  padding: var(--spacing-24) var(--spacing-10);
   grid-template-areas:
     "header"
     "navigation"
     "main"
     "footer";
+  padding: var(--spacing-24) var(--spacing-10);
   gap: var(--spacing-16);
 
   @media (width >= 62rem) {
-    margin-inline: auto;
-    padding: var(--spacing-36);
     grid-template-columns: 12rem 1fr 10rem;
     grid-template-areas:
       "header     main   ."
       "navigation main   ."
       "footer     footer footer";
+    margin-inline: auto;
+    padding: var(--spacing-36);
     gap: var(--spacing-24);
   }
 
@@ -184,9 +184,9 @@ body {
 
 .header {
   @media (width >= 62rem) {
-    max-width: 12rem;
     position: fixed;
     left: var(--spacing-24);
+    max-width: 12rem;
   }
 
   @media (width >= 87.5rem) {
@@ -225,9 +225,9 @@ body {
 @supports (-webkit-background-clip: text) or (background-clip: text) {
   .title-link {
     display: inline-block;
-    text-decoration: none;
     -webkit-background-clip: text;
     background-clip: text;
+    text-decoration: none;
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
     background-image: linear-gradient(
@@ -253,12 +253,12 @@ body {
 
 .title-subtitle {
   margin-block: var(--spacing-10);
+
+  color: var(--colors-gray-90);
+  font-weight: var(--font-weight-light);
   font-size: var(--font-size-20);
   font-family: var(--font-family-calendas);
   font-feature-settings: "swsh", "liga", "dlig";
-  font-weight: var(--font-weight-light);
-
-  color: var(--colors-gray-90);
 
   @media (prefers-color-scheme: dark) {
     color: var(--colors-gray-50);
@@ -296,14 +296,14 @@ body {
 }
 
 .section {
-  border-radius: var(--border-radius-md);
-
-  padding: var(--spacing-16);
   margin-bottom: var(--spacing-16);
 
+  padding: var(--spacing-16);
+  border-radius: var(--border-radius-md);
+
   @media (width >= 62rem) {
-    padding: var(--spacing-36);
     margin-bottom: var(--spacing-36);
+    padding: var(--spacing-36);
   }
 
   background-color: rgba(0, 0, 0, 0.05);
@@ -324,7 +324,6 @@ body {
 }
 
 h2::after {
-  content: "";
   display: block;
   width: 66%;
   height: 2px;
@@ -336,13 +335,14 @@ h2::after {
   );
   background-position: left bottom;
   background-repeat: no-repeat;
+  content: "";
 }
 
 .reel {
   display: flex;
-  gap: var(--spacing-16);
   margin-block: var(--spacing-36);
   overflow-x: auto;
+  gap: var(--spacing-16);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -353,6 +353,8 @@ h2::after {
 @supports (animation-timeline: scroll()) {
   .reel {
     --mask-width: 80px;
+
+    animation: fade-mask linear auto both;
     -webkit-mask-image: linear-gradient(
       to right,
       transparent,
@@ -371,8 +373,6 @@ h2::after {
     mask-repeat: no-repeat;
     -webkit-mask-size: calc(100% + var(--mask-width)) 100%;
     mask-size: calc(100% + var(--mask-width)) 100%;
-
-    animation: fade-mask linear auto both;
     animation-timeline: scroll(self x);
     -webkit-mask-position: -80px center;
     mask-position: -80px center;
@@ -399,8 +399,8 @@ h2::after {
 
   & figcaption {
     margin-top: var(--spacing-4);
-    font-size: var(--font-size-14);
     font-style: italic;
+    font-size: var(--font-size-14);
   }
 }
 
@@ -422,8 +422,8 @@ h2::after {
 
 .logo-item {
   padding: var(--spacing-16);
-  background-color: rgba(255, 255, 255, 0.8);
   border-radius: var(--border-radius-md);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .logo-item img {
   height: 50px;
@@ -444,10 +444,10 @@ h2::after {
 @media (width >= 62rem) {
   .nav-main {
     display: block;
-    position: fixed;
     display: grid;
-    gap: var(--spacing-12);
+    position: fixed;
     right: var(--spacing-24);
+    gap: var(--spacing-12);
 
     @media (width >= 87.5rem) {
       right: var(--spacing-36);
@@ -484,14 +484,16 @@ h2::after {
 
 .nav-link {
   animation-name: reveal, exit;
-  animation-range: entry 0% entry 100%, exit 0% exit 100%;
-  animation-timing-function: linear;
-  animation-duration: auto;
-  animation-fill-mode: both;
+  animation-range:
+    entry 0% entry 100%,
+    exit 0% exit 100%;
   padding: var(--spacing-4) var(--spacing-12);
   border-right: 8px solid rgba(0, 0, 0, 0.2);
-  text-decoration: none;
   text-align: end;
+  text-decoration: none;
+  animation-duration: auto;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
 }
 .nav-link:nth-of-type(1) {
   animation-timeline: --section-1;
@@ -539,21 +541,21 @@ a.to-top {
   display: none;
 
   @media (width < 62rem) {
-    position: fixed;
-    z-index: 100;
     display: inline-grid;
-    place-content: center;
-    bottom: var(--spacing-20);
+    z-index: 100;
+    position: fixed;
     right: var(--spacing-24);
+    bottom: var(--spacing-20);
+    place-content: center;
     width: var(--spacing-36);
     height: var(--spacing-36);
     border-radius: 50%;
-    text-decoration: none;
+    background: var(--colors-orange-50);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    color: var(--colors-white);
     font-weight: var(--font-weight-extrabold);
     line-height: 1;
-    background: var(--colors-orange-50);
-    color: var(--colors-white);
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
     animation: scroll-top auto linear forwards;
     animation-timeline: scroll(root);
     animation-range: 0 150dvh;
@@ -561,8 +563,8 @@ a.to-top {
 
   &:focus,
   &:focus-visible {
-    color: var(--colors-white);
     background: var(--colors-orange-50);
+    color: var(--colors-white);
   }
 }
 
