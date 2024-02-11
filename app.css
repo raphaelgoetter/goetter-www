@@ -533,6 +533,15 @@ h2::after {
   @media (prefers-color-scheme: dark) {
     background-color: var(--colors-pink-60);
   }
+
+  & a {
+    color: var(--colors-gray-95);
+  }
+  @media (prefers-color-scheme: dark) {
+    & a {
+      color: var(--colors-white);
+    }
+  }
 }
 
 /* Scroll to top */
