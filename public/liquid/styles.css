@@ -1,18 +1,18 @@
-.surface {
-  --surface-spacer: 2rem;
-  --surface-content: 840px;
+.liquid {
+  --liquid-spacer: 2rem;
+  --liquid-content: 1024px;
 
   display: grid;
   grid-template-columns:
-    [surface-start] minmax(var(--surface-spacer), 1fr)
-    [content-start] minmax(auto, calc(var(--surface-content) / 2))
-    [half] minmax(auto, calc(var(--surface-content) / 2))
-    [content-end] minmax(var(--surface-spacer), 1fr)
-    [surface-end];
+    [liquid-start] minmax(var(--liquid-spacer), 1fr)
+    [content-start] minmax(auto, calc(var(--liquid-content) / 2))
+    [half] minmax(auto, calc(var(--liquid-content) / 2))
+    [content-end] minmax(var(--liquid-spacer), 1fr)
+    [liquid-end];
 }
 
 /* Place all children */
-.surface > * {
+.liquid > * {
   grid-column: content;
 }
 
@@ -20,7 +20,7 @@
 .splash {
   display: grid;
   grid-template-columns: inherit;
-  grid-column: surface-start / surface-end;
+  grid-column: liquid-start / liquid-end;
 }
 .splash > * {
   grid-column: content-start / content-end;
@@ -28,22 +28,22 @@
 
 /* Spread start */
 .splash-start {
-  grid-column: surface-start / content-end;
+  grid-column: liquid-start / content-end;
 }
 
 /* Spread end */
 .splash-end {
-  grid-column: content-start / surface-end;
+  grid-column: content-start / liquid-end;
 }
 
 /* Spread half start */
 .splash-half-start {
-  grid-column: surface-start / half;
+  grid-column: liquid-start / half;
 }
 
 /* Spread half end */
 .splash-half-end {
-  grid-column: half / surface-end;
+  grid-column: half / liquid-end;
 }
 
 /* Hero image */
