@@ -23,7 +23,7 @@
   grid-column: liquid-start / liquid-end;
 }
 .splash > * {
-  grid-column: content-start / content-end;
+  grid-column: content;
 }
 
 /* Spread start */
@@ -263,7 +263,7 @@
 }
 
 .debug > *:nth-child(1) {
-  --column: "Surface";
+  --column: "Liquid";
   background: rgb(139 69 19 / 20%);
 }
 
