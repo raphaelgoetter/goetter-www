@@ -1,9 +1,10 @@
 /* Ordre des cascade layers */
-@layer reset, app;
+/* @layer reset, app; */
 
 /* On importe les reset */
-@import url("/assets/styles/bretzel-reset.css") layer(reset);
-@import url("/assets/styles/bretzel-reset-print.css") layer(reset);
+/* @import url("/assets/styles/bretzel-reset.css") layer(reset);
+@import url("/assets/styles/bretzel-reset-print.css") layer(reset); */
+@import "@unocss/reset/tailwind.css";
 
 /* On importe les styles perso */
-@import url("app.css") layer(app);
+@import url("app.css");

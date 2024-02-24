@@ -65,6 +65,7 @@ h1 {
 
 h2 {
   margin-top: 0;
+  margin-bottom: var(--spacing-24);
   font-size: var(--font-size-24);
 
   @media (width >= 36rem) {
@@ -75,6 +76,7 @@ h2 {
 h3 {
   width: fit-content;
   margin-top: 0;
+  margin-bottom: var(--spacing-20);
   font-size: var(--font-size-20);
 
   @media (width >= 36rem) {
@@ -88,6 +90,17 @@ ul {
   @media (width >= 62rem) {
     padding-left: var(--spacing-16);
   }
+}
+ul.list {
+  list-style-type: square;
+}
+
+li {
+  margin-bottom: var(--spacing-8);
+}
+
+p {
+  margin-block: var(--spacing-16);
 }
 
 a {
@@ -430,6 +443,9 @@ h2::after {
 }
 .codepen {
   width: 300px;
+}
+.codepen-box {
+  margin-top: var(--spacing-24);
 }
 .codepen-box-link {
   margin-inline: 0;
