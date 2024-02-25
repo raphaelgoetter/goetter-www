@@ -4,6 +4,9 @@ import { resolve } from "node:path"
 
 export default defineConfig({
   presets: [
+    /**
+     * Export des custom properties dans un fichier `vars.css`
+     */
     customProperties({
       writeFile: true,
       filePath: resolve(__dirname, "vars.css"),

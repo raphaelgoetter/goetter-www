@@ -21,12 +21,36 @@
 - `pnpm build` pour compiler vers `dist/`
 - `pnpm s3` : mise en prod automatique du répertoire `dist/` sur le bucket S3
 
-## Styles CSS
+## Configuration UnoCSS
 
-- `uno.config.ts` : Contient toutes les valeurs employées dans le projet sous forme de "design tokens". _Note : nous n'utilisons pas de classes utilitaires._
+[UnoCSS](https://unocss.dev/) est notre générateur principal de classes utilitaires et de custom properties CSS.
 
-Des variables CSS sont automatiquement générées dans `vars.css` à partir du fichier de config grâce à Uno CSS via le plugin `unocss-custom-properties`.
+### Dans un projet Vite
 
-Ces variables sont ajoutées à `:root` et sont donc globales au document HTML.
+- Dans `vite.config.js` : `import UnoCSS from 'unocss/vite'`
+- Dans `vite.config.js` : `plugins: [ UnoCSS(), ],`
 
-**Ne jamais inventer / ajouter des variables qui ne figurent pas dans le fichier de config `uno.config.ts`.**
+### Reset CSS
+
+Le Reset CSS employé dans nos projet est celui de Tailwind ([Preflight](https://tailwindcss.com/docs/preflight)) auquel nous ajoutons à la main quelques règles spécifiques à Alsacréations : `min-width: 0`, `prefers-reduced-motion`, `visually-hidden` et `Liquid/Splash`.
+
+- Installer `pnpm add @unocss/reset`
+- Dans la feuille de style globale : `import '@unocss/reset/tailwind.css'`
+- Dans `uno.config.ts` : `preflights: [ ** ici les règles Reset à ajouter à la main ** ]`
+
+### Si intégration en "CSS natif"
+
+En CSS natif (ou vanilla), nous écrivons les règles CSS dans les feuilles de styles et nous n'utilisons pas de classes utilitaires, sauf exceptions.
+
+Toutes les valeurs des propriétés CSS sont renseignées au sein d'un fichier de configuration (via le plugin `unocss-custom-properties`) et appliquées sous forme de custom properties (ex. `font-weight: var(--font-weight-400)`).
+
+- Dans `uno.config.ts` : `import customProperties from 'unocss-custom-properties'`
+- Dans `uno.config.ts` : `import { resolve } from "node:path"`
+- Dans `uno.config.ts` : `presets: [ customProperties({ writeFile: true, filePath: resolve(__dirname, "vars.css"), }), ],`
+
+### Si intégration en "CSS utilitaire"
+
+En CSS utilitaire, nous écrivons les styles CSS dans le fichier HTML de chaque composant, sous forme de classes utilitaires. Nous n'écrivons pas de règles au sein d'un fichier CSS, sauf exceptions.
+
+- Dans `uno.config.ts` : `import { presetMini } from 'unocss'`
+- Dans `uno.config.ts` : `presets: [ presetMini() ]`
