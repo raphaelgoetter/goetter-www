@@ -6,7 +6,7 @@ import { presetMini } from "unocss"
 export default defineConfig({
   presets: [
     presetMini({
-      dark: { dark: "[data-theme='dark']" },
+      // dark: { dark: "[data-theme='dark']" },
     }),
     /**
      * Export des custom properties dans un fichier `vars.css`
