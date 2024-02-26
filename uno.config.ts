@@ -1,9 +1,11 @@
 import { defineConfig } from "unocss"
 import customProperties from "unocss-custom-properties"
 import { resolve } from "node:path"
+import { presetMini } from "unocss"
 
 export default defineConfig({
   presets: [
+    presetMini(),
     /**
      * Export des custom properties dans un fichier `vars.css`
      */

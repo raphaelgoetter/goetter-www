@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.5",
+    "@unocss/preset-mini": "^0.58.5",
     "@unocss/reset": "^0.58.5",
     "s3-folder-upload": "^2.3.5",
     "unocss": "^0.58.3",
