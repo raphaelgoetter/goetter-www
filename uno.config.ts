@@ -1,10 +1,14 @@
 import { defineConfig } from "unocss"
+import { presetMini } from "unocss"
 import customProperties from "unocss-custom-properties"
 import { resolve } from "node:path"
-import { presetMini } from "unocss"
 
 export default defineConfig({
   presets: [
+    /**
+     * presetMini : pour générer des classes utilitaires sur demande
+     * dark : darkmode activé si un ancêtre dispose de l'attribut `data-theme`
+     */
     presetMini({
       // dark: { dark: "[data-theme='dark']" },
     }),
@@ -17,6 +21,10 @@ export default defineConfig({
     }),
   ],
   theme: {
+    /**
+     * Configuration des valeurs du projet, utilisables en custom properties
+     * ou classes utilitaires
+     */
     colors: {
       black: "#000000",
       white: "#FFFFFF",
@@ -120,7 +128,7 @@ export default defineConfig({
   },
   preflights: [
     /**
-     * Génération d'un reset de styles injecté dans UNOCSS
+     * Ajout de Reset CSS complémentaire à unoCSS
      */
     {
       getCSS: () => {
@@ -143,7 +151,7 @@ export default defineConfig({
             line-height: 1.5;
           }
 
-          /* Suppression des animations selon préférences utilisateurice */
+          /* Suppression des animations si choix utilisateurice */
           @media (prefers-reduced-motion: reduce) {
             *,
             ::before,
@@ -162,6 +170,9 @@ export default defineConfig({
     },
   ],
   rules: [
+    /**
+     * Ajout de classes utilitaires CSS complémentaires à unoCSS
+     */
     [
       /^visually-hidden$/,
       (_, { rawSelector }) => /* css */ `
@@ -182,9 +193,15 @@ export default defineConfig({
         :where(.${rawSelector}) {
           display: grid;
           grid-template-columns:
-            [layout-start] minmax(var(--spacing-16), 1fr)
-            [content-start] minmax(auto, var(--spacing-max)) [content-end]
-            minmax(var(--spacing-16), 1fr) [layout-end];
+            [layout-start]
+            minmax(var(--spacing-16, 1rem), 1fr)
+            [content-start]
+            minmax(auto, calc(var(--spacing-max, 1440px) / 2))
+            [half]
+            minmax(auto, calc(var(--spacing-max, 1440px) / 2))
+            [content-end]
+            minmax(var(--spacing-16, 1rem), 1fr)
+            [layout-end];
           > * {
             grid-column: content;
           }
@@ -201,14 +218,6 @@ export default defineConfig({
           & > * {
             grid-column: content;
           }
-        }
-      `,
-    ],
-    [
-      /^has-gradient$/,
-      (_, { rawSelector }) => /* css */ `
-        :where(.${rawSelector}) {
-          background: linear-gradient(242.68deg, #0d1a2a -0.25%, #1f0921 100.37%);
         }
       `,
     ],
