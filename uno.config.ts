@@ -25,6 +25,7 @@ export default defineConfig({
      * Configuration des valeurs du projet, utilisables en custom properties
      * ou classes utilitaires
      */
+    generateOnly: ["colors"],
     breakpoints: {
       sm: "40rem", // 640px
       md: "48rem", // 768px
