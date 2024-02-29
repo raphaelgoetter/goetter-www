@@ -9,15 +9,16 @@ export default defineConfig({
      * presetMini : pour générer des classes utilitaires sur demande
      * dark : darkmode activé si un ancêtre dispose de l'attribut `data-theme`
      */
-    presetMini({
-      // dark: { dark: "[data-theme='dark']" },
-    }),
+    // presetMini({
+    // dark: { dark: "[data-theme='dark']" },
+    // }),
     /**
      * Export des custom properties dans un fichier `vars.css`
      */
     customProperties({
       writeFile: true,
       filePath: resolve(__dirname, "vars.css"),
+      // generateOnly: ["colors", "spacing", "fontFamily", "fontSize", "fontWeight", "lineHeight", "borderRadius"],
     }),
   ],
   theme: {
@@ -25,7 +26,6 @@ export default defineConfig({
      * Configuration des valeurs du projet, utilisables en custom properties
      * ou classes utilitaires
      */
-    generateOnly: ["colors"],
     breakpoints: {
       sm: "40rem", // 640px
       md: "48rem", // 768px
@@ -57,7 +57,6 @@ export default defineConfig({
         60: "#8E1D56",
       },
       hotpink: "#FF69B4",
-      kiwigreen: "#7A960F",
     },
     spacing: {
       0: "0",
