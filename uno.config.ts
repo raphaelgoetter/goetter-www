@@ -10,7 +10,7 @@ export default defineConfig({
      * dark : darkmode activé si un ancêtre dispose de l'attribut `data-theme`
      */
     // presetMini({
-    // dark: { dark: "[data-theme='dark']" },
+    //   dark: { dark: "[data-theme='dark']" },
     // }),
     /**
      * Export des custom properties dans un fichier `vars.css`
@@ -18,7 +18,7 @@ export default defineConfig({
     customProperties({
       writeFile: true,
       filePath: resolve(__dirname, "vars.css"),
-      // generateOnly: ["colors", "spacing", "fontFamily", "fontSize", "fontWeight", "lineHeight", "borderRadius"],
+      // generateOnly: ["colors"],
     }),
   ],
   theme: {
