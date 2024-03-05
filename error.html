@@ -1,9 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/images/favicon.svg"
+    />
     <link
       rel="preload"
       as="font"
@@ -12,12 +19,31 @@
       crossorigin
     />
     <title>Erreur 404. Raphaël Goetter</title>
+    <style>
+      html {
+        background-image: url(images/bg-light.webp);
+        background-color: var(--colors-white);
+        scroll-behavior: smooth;
+
+        @media (prefers-color-scheme: dark) {
+          background-image: url(images/bg-dark.webp);
+          background-color: var(--colors-black);
+        }
+      }
+    </style>
   </head>
 
   <body id="body">
-    <div class="body-deco" role="presentation"></div>
+    <div
+      class="body-deco"
+      role="presentation"
+    ></div>
 
-    <header id="header" class="header" role="banner">
+    <header
+      id="header"
+      class="header"
+      role="banner"
+    >
       <p class="biopic">
         <img
           class="biopic-img"
@@ -36,7 +62,11 @@
           Raphaël Goetter
         </a>
       </h1>
-      <p class="title-subtitle md:text-end" lang="en" title="accro aux css">
+      <p
+        class="title-subtitle md:text-end"
+        lang="en"
+        title="accro aux css"
+      >
         CSS addict
       </p>
       <ul class="social-group">
@@ -168,8 +198,15 @@
       </ul>
     </header>
 
-    <main id="main" class="main" role="main">
-      <section class="section" id="a-propos">
+    <main
+      id="main"
+      class="main"
+      role="main"
+    >
+      <section
+        class="section"
+        id="a-propos"
+      >
         <h2>Oups !</h2>
         <h3>Erreur 404 : la page demandée n'existe pas (ou plus)</h3>
         <p>
@@ -200,7 +237,11 @@
       </section>
     </main>
 
-    <footer id="footer" class="footer offscreen" role="contentinfo">
+    <footer
+      id="footer"
+      class="footer offscreen"
+      role="contentinfo"
+    >
       <p>
         Aucun JavaScript n'a été maltraité (ni même utilisé) durant la
         conception de cette page
@@ -228,7 +269,15 @@
         pour la génération automatique des variables CSS.
       </p>
     </footer>
-    <a href="#body" class="to-top" title="retourner en haut de page">↑</a>
-    <script type="module" src="/main.ts"></script>
+    <a
+      href="#body"
+      class="to-top"
+      title="retourner en haut de page"
+      >↑</a
+    >
+    <script
+      type="module"
+      src="/main.ts"
+    ></script>
   </body>
 </html>
