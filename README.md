@@ -32,17 +32,17 @@
 
 ### Reset CSS
 
-Le fichier `uno-alsa-preset.ts` contient le Reset CSS Alsacréations ainsi que diverses classes "layouts" spécifiques à nos projets (`visually-hidden`, `liquid/splash`, `l-autogrid`, `l-repel`, `l-media`, etc.)
+Le fichier `uno-bretzel.ts` contient le Reset CSS Alsacréations ainsi que diverses classes "layouts" spécifiques à nos projets (`visually-hidden`, `liquid/splash`, `l-autogrid`, `l-repel`, `l-media`, etc.)
 
-- Placer le fichier `uno-alsa-preset.ts` à la racine du projet
-- Dans `uno.config.css` ajouter la ligne `import alsaPreset from "./uno-alsa-preset"`
+- Placer le fichier `uno-bretzel.ts` à la racine du projet
+- Dans `uno.config.css` ajouter la ligne `import bretzelPreset from "./uno-bretzel"`
 - C'est tout. Les styles seront automatiquement appliquées. Il n'est pas nécessaire d'ajouter un fichier reset complémentaire.
 
 ### Si intégration en "CSS natif"
 
 En CSS natif (ou vanilla), nous écrivons les règles CSS dans les feuilles de styles et nous n'utilisons pas de classes utilitaires, sauf exceptions.
 
-Toutes les valeurs des propriétés CSS sont renseignées au sein d'un fichier de configuration (via le plugin `unocss-custom-properties`) et appliquées sous forme de custom properties (ex. `font-weight: var(--font-weight-400)`).
+Le plugin `unocss-custom-properties` transforme toutes les valeurs de thème du fichier `uno.config.ts` en custom properties (ex. `font-weight: var(--font-weight-400)`) et génère un fichier `vars.css` qui les contient :
 
 - Dans `uno.config.ts` : `import customProperties from 'unocss-custom-properties'`
 - Dans `uno.config.ts` : `import { resolve } from "node:path"`
@@ -50,7 +50,7 @@ Toutes les valeurs des propriétés CSS sont renseignées au sein d'un fichier d
 
 ### Si intégration en "CSS utilitaire"
 
-En CSS utilitaire, nous écrivons les styles CSS dans le fichier HTML de chaque composant, sous forme de classes utilitaires. Nous n'écrivons pas de règles au sein d'un fichier CSS, sauf exceptions.
+En CSS utilitaire, nous écrivons les styles CSS **dans le fichier HTML** de chaque composant, sous forme de classes utilitaires. Nous n'écrivons pas de règles au sein d'un fichier CSS, _sauf exceptions_.
 
 - Dans `uno.config.ts` : `import { presetMini } from 'unocss'`
 - Dans `uno.config.ts` : `presets: [ presetMini() ]`
