@@ -1,5 +1,5 @@
 /**
- * bretzel.ts, un preset de UnoCSS
+ * uno-bretzel.ts, un preset de UnoCSS
  * Ajoute les règles spécifiques Alsacréations :
  * - reset CSS (avec media prefers-reduced-motion, etc.)
  * - classes utilitaires (.visually-hidden)

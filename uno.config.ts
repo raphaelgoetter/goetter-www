@@ -1,5 +1,5 @@
 import { defineConfig } from "unocss"
-import bretzelPreset from "./bretzel"
+import bretzelPreset from "./uno-bretzel"
 import { presetMini } from "unocss"
 import customProperties from "unocss-custom-properties"
 import { resolve } from "node:path"
