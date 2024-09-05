@@ -1,4 +1,5 @@
 import { defineConfig } from "unocss"
+import bretzelPreset from "./bretzel"
 import { presetMini } from "unocss"
 import customProperties from "unocss-custom-properties"
 import { resolve } from "node:path"
@@ -6,14 +7,25 @@ import { resolve } from "node:path"
 export default defineConfig({
   presets: [
     /**
-     * presetMini : pour générer des classes utilitaires sur demande
-     * dark : darkmode activé si un ancêtre dispose de l'attribut `data-theme`
+     * bretzelPreset : ajoute les règles spécifiques Alsacréations :
+     * - reset CSS (avec media prefers-reduced-motion, etc.)
+     * - classes utilitaires (.visually-hidden)
+     * - classes Layouts (liquid/splash, autogrid, switcher, cluster, repel, reel, etc.)
+     */
+    bretzelPreset(),
+
+    /**
+     * presetMini : si activé, génère des classes utilitaires sur demande
+     * dark : paramètre optionnel de presetMini, déclenche le darkmode si un ancêtre dispose
+     * de l'attribut HTML `data-theme`
      */
     // presetMini({
     //   dark: { dark: "[data-theme='dark']" },
     // }),
+
     /**
-     * Export des custom properties dans un fichier `vars.css`
+     * Export des custom properties dans le fichier `vars.css`,
+     * nécessite le plugin `unocss-custom-properties`
      */
     customProperties({
       writeFile: true,
@@ -24,7 +36,7 @@ export default defineConfig({
   theme: {
     /**
      * Configuration des valeurs du projet, utilisables en custom properties
-     * ou classes utilitaires
+     * ou en classes utilitaires selon les besoins
      */
     breakpoints: {
       sm: "40rem", // 640px
@@ -133,100 +145,4 @@ export default defineConfig({
       full: "9999px",
     },
   },
-  preflights: [
-    /**
-     * Ajout de Reset CSS complémentaire à unoCSS
-     */
-    {
-      getCSS: () => {
-        return /* css */ `
-          :where(*,
-          *::before,
-          *::after) {
-            box-sizing: border-box;
-            min-width: 0;
-          }
-          :where(html) {
-            overflow-wrap: break-word;
-          }
-          :where(body) {
-            min-height: 100vh;
-            min-height: 100dvh;
-            margin: 0;
-            font-family: system-ui, sans-serif;
-            text-rendering: optimizeSpeed;
-            line-height: 1.5;
-          }
-
-          /* Suppression des animations si choix utilisateurice */
-          @media (prefers-reduced-motion: reduce) {
-            *,
-            ::before,
-            ::after {
-              animation-delay: -1ms !important;
-              animation-duration: 1ms !important;
-              animation-iteration-count: 1 !important;
-              background-attachment: initial !important;
-              scroll-behavior: auto !important;
-              transition-duration: 0s !important;
-              transition-delay: 0s !important;
-            }
-          }
-        `
-      },
-    },
-  ],
-  rules: [
-    /**
-     * Ajout de classes utilitaires CSS complémentaires à unoCSS
-     */
-    [
-      /^visually-hidden$/,
-      (_, { rawSelector }) => /* css */ `
-      .${rawSelector}:not(:focus):not(:active) {
-        position: absolute !important;
-        clip-path: inset(50%) !important;
-        width: 1px !important;
-        height: 1px !important;
-        margin: -1px !important;
-        overflow: hidden !important;
-        white-space: nowrap !important;
-      }
-      `,
-    ],
-    [
-      /^liquid$/,
-      (_, { rawSelector }) => /* css */ `
-        :where(.${rawSelector}) {
-          display: grid;
-          grid-template-columns:
-            [layout-start]
-            minmax(var(--spacing-16, 1rem), 1fr)
-            [content-start]
-            minmax(auto, calc(var(--spacing-max, 1440px) / 2))
-            [half]
-            minmax(auto, calc(var(--spacing-max, 1440px) / 2))
-            [content-end]
-            minmax(var(--spacing-16, 1rem), 1fr)
-            [layout-end];
-          > * {
-            grid-column: content;
-          }
-        }
-      `,
-    ],
-    [
-      /^splash$/,
-      (_, { rawSelector }) => /* css */ `
-        :where(.${rawSelector}) {
-          display: grid;
-          grid-template-columns: inherit;
-          grid-column: layout;
-          & > * {
-            grid-column: content;
-          }
-        }
-      `,
-    ],
-  ],
 })
