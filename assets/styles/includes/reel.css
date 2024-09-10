@@ -1,0 +1,50 @@
+.reel {
+  display: flex;
+  margin-block: var(--spacing-36);
+  overflow-x: auto;
+  gap: var(--spacing-16);
+  -webkit-overflow-scrolling: touch;
+}
+
+.reel > * {
+  flex-shrink: 0;
+}
+
+@supports (animation-timeline: scroll()) {
+  .reel {
+    --mask-width: 80px;
+
+    animation: fade-mask linear auto both;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 var(--mask-width),
+      #000 calc(100% - var(--mask-width)),
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 var(--mask-width),
+      #000 calc(100% - var(--mask-width)),
+      transparent
+    );
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: calc(100% + var(--mask-width)) 100%;
+    mask-size: calc(100% + var(--mask-width)) 100%;
+    animation-timeline: scroll(self x);
+    -webkit-mask-position: -80px center;
+    mask-position: -80px center;
+  }
+}
+@keyframes fade-mask {
+  from {
+    -webkit-mask-position: -80px center;
+    mask-position: -80px center;
+  }
+  to {
+    -webkit-mask-position: 0 center;
+    mask-position: 0 center;
+  }
+}

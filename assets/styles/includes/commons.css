@@ -1,0 +1,148 @@
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/calendas.woff2") format("woff2");
+  font-family: "calendas";
+  font-display: swap;
+}
+
+:target {
+  scroll-margin-block: 3rem;
+}
+
+.offscreen {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+.d-block {
+  display: block;
+}
+
+html {
+  background-image: url(/images/bg-light.webp);
+  background-color: var(--colors-white);
+  scroll-behavior: smooth;
+
+  &[data-theme-preference="dark"] {
+    background-image: url(/images/bg-dark.webp);
+    background-color: var(--colors-black);
+  }
+}
+
+body {
+  color: var(--colors-gray-95);
+  font-weight: var(--font-weight-extralight);
+  font-size: var(--font-size-18);
+
+  [data-theme-preference="dark"] & {
+    color: var(--colors-gray-10);
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-calendas);
+  font-feature-settings: "swsh", "liga", "dlig";
+}
+
+h1 {
+  margin-top: 0;
+  color: var(--colors-orange-60);
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-30);
+
+  @media (width >= 36rem) {
+    font-size: var(--font-size-48);
+  }
+
+  [data-theme-preference="dark"] & {
+    color: var(--colors-orange-30);
+  }
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-24);
+  font-size: var(--font-size-24);
+
+  @media (width >= 36rem) {
+    font-size: var(--font-size-36);
+  }
+}
+
+h3 {
+  width: fit-content;
+  margin-top: 0;
+  margin-bottom: var(--spacing-20);
+  font-size: var(--font-size-20);
+
+  @media (width >= 36rem) {
+    font-size: var(--font-size-30);
+  }
+}
+
+ul {
+  padding-left: var(--spacing-12);
+
+  @media (width >= 62rem) {
+    padding-left: var(--spacing-16);
+  }
+}
+ul.list {
+  list-style-type: square;
+
+  & > li::marker {
+    content: normal;
+  }
+}
+
+li {
+  margin-bottom: var(--spacing-8);
+}
+
+p {
+  margin-block: var(--spacing-16);
+}
+
+a {
+  color: var(--colors-green-50);
+
+  &:hover,
+  &:focus {
+    color: var(--colors-green-60);
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 0;
+    outline: dashed var(--spacing-2) currentColor;
+    outline-offset: var(--spacing-2);
+    box-shadow: none;
+  }
+
+  [data-theme-preference="dark"] & {
+    color: var(--colors-orange-20);
+
+    &:hover,
+    &:focus {
+      color: var(--colors-orange-30);
+    }
+  }
+}
+
+h2::after {
+  display: block;
+  width: 66%;
+  height: 2px;
+  translate: 0 var(--spacing-12);
+  background-image: linear-gradient(
+    to right,
+    var(--colors-orange-50),
+    var(--colors-hotpink)
+  );
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  content: "";
+}

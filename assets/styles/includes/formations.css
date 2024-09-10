@@ -1,0 +1,30 @@
+.formation-figure {
+  margin-inline: 0;
+  padding-inline: 0;
+
+  & img {
+    border-radius: var(--border-radius-md);
+  }
+
+  & figcaption {
+    margin-top: var(--spacing-4);
+    font-style: italic;
+    font-size: var(--font-size-14);
+  }
+}
+
+.book-item img {
+  height: 150px;
+
+  @media (width >= 62rem) {
+    height: 200px;
+  }
+}
+
+.conf-item img {
+  height: 150px;
+
+  @media (width >= 62rem) {
+    height: 250px;
+  }
+}

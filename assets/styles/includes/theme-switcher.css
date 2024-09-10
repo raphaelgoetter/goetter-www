@@ -1,0 +1,80 @@
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @media (width >= 62rem) {
+    justify-content: flex-end;
+  }
+}
+.theme-switcher {
+  --theme-switcher-radius: 40px;
+  --theme-switcher-border: #ccc;
+  --theme-switcher-border-size: 2px;
+  --theme-switcher-background: #ccc;
+  --theme-switcher-icon-size: 18px;
+  --theme-switcher-icon-padding: 3px;
+  --theme-switcher-icon-color: #fff;
+  --theme-switcher-icon-background: #555;
+
+  display: inline-grid;
+  justify-content: start;
+  width: calc(var(--theme-switcher-icon-size) * 2);
+  padding: 0;
+  border: 0;
+  border-radius: var(--theme-switcher-radius);
+  outline-color: currentColor;
+  outline-offset: 0.5em;
+  background-color: var(--theme-switcher-background);
+  box-shadow: 0 0 0 var(--theme-switcher-border-size)
+    var(--theme-switcher-border);
+  line-height: 0;
+  cursor: pointer;
+
+  /* styles en activant le bouton */
+  &[aria-pressed="true"] {
+    --theme-switcher-border: #555;
+    --theme-switcher-background: #555;
+    --theme-switcher-icon-background: #222;
+
+    /* on cache l'icône light en activant le bouton */
+    & .theme-icon-light {
+      display: none;
+    }
+
+    /* on déplace l'icône en activant le bouton */
+    & > .theme-icon {
+      translate: calc(
+        var(--theme-switcher-icon-size) -
+          (var(--theme-switcher-icon-padding) * 2)
+      );
+    }
+  }
+
+  /* on cache l'icône dark en désactivant le bouton */
+  &[aria-pressed="false"] {
+    & .theme-icon-dark {
+      display: none;
+    }
+  }
+
+  /* seul le bouton doit être interactif */
+  & * {
+    pointer-events: none;
+  }
+
+  /* conteneur des icônes */
+  & > .theme-icon {
+    padding: var(--theme-switcher-icon-padding);
+    border-radius: 50%;
+    background-color: var(--theme-switcher-icon-background);
+    color: var(--theme-switcher-icon-color);
+    transition: 0.3s;
+  }
+
+  /* taille des icônes */
+  & [class^="theme-icon-"] {
+    width: var(--theme-switcher-icon-size);
+    height: var(--theme-switcher-icon-size);
+  }
+}

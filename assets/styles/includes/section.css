@@ -1,0 +1,27 @@
+.section {
+  margin-bottom: var(--spacing-16);
+
+  padding: var(--spacing-16);
+  border-radius: var(--border-radius-md);
+
+  @media (width >= 62rem) {
+    margin-bottom: var(--spacing-36);
+    padding: var(--spacing-36);
+  }
+
+  background-color: rgba(0, 0, 0, 0.05);
+
+  [data-theme-preference="dark"] & {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &:nth-of-type(1),
+  & p:nth-of-type(1) {
+    margin-top: 0;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+}

@@ -1,0 +1,18 @@
+.logo-item {
+  padding: var(--spacing-16);
+  border-radius: var(--border-radius-md);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.logo-item img {
+  height: 50px;
+}
+.codepen {
+  width: 300px;
+}
+.codepen-box {
+  margin-top: var(--spacing-24);
+}
+.codepen-box-link {
+  margin-inline: 0;
+  padding-inline: 0;
+}
