@@ -1,0 +1,25 @@
+.social-group {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  gap: var(--spacing-8);
+
+  @media (width >= 62rem) {
+    justify-content: end;
+  }
+}
+.social-link {
+  display: inline-block;
+  padding: var(--spacing-10);
+
+  @media (width >= 62rem) {
+    padding: var(--spacing-4);
+  }
+}
+.social-link svg {
+  transition: 0.25s scale;
+}
+.social-link:hover svg,
+.social-link:focus svg {
+  scale: 1.2;
+}

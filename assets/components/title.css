@@ -1,43 +1,20 @@
-.header {
-  @media (width >= 62rem) {
-    position: fixed;
-    left: var(--spacing-24);
-    max-width: 12rem;
-  }
-
-  @media (width >= 87.5rem) {
-    left: var(--spacing-36);
-  }
-}
-
-.biopic-img {
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
-
-  animation: blob auto linear both;
-  animation-timeline: scroll(root);
-}
-
-@keyframes blob {
-  0% {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  }
-  50% {
-    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-  }
-  100% {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  }
-}
-
 .title-main {
   width: fit-content;
   margin: 0;
+  color: var(--colors-orange-60);
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-30);
 
   @media (width >= 36rem) {
+    font-size: var(--font-size-48);
     text-align: end;
   }
+
+  [data-theme-preference="dark"] & {
+    color: var(--colors-orange-30);
+  }
 }
+
 @supports (-webkit-background-clip: text) or (background-clip: text) {
   .title-link {
     display: inline-block;
@@ -84,29 +61,4 @@
     font-size: var(--font-size-24);
     text-align: end;
   }
-}
-
-.social-group {
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0;
-  gap: var(--spacing-8);
-
-  @media (width >= 62rem) {
-    justify-content: end;
-  }
-}
-.social-link {
-  padding: var(--spacing-10);
-
-  @media (width >= 62rem) {
-    padding: var(--spacing-4);
-  }
-}
-.social-link svg {
-  transition: 0.25s scale;
-}
-.social-link:hover svg,
-.social-link:focus svg {
-  scale: 1.2;
 }

@@ -1,5 +1,5 @@
 // import "./styles.css"
-import "./assets/styles/styles.css"
+import "./assets/styles.css"
 import "virtual:uno.css"
 
 // Light Dark mode switcher
