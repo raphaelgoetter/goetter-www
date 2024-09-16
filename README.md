@@ -31,3 +31,13 @@ Annexes :
 - **Base et Reset :** Le fichier `uno-bretzel.ts` contient le Reset CSS Alsacréations ainsi que diverses classes "layouts" spécifiques à nos projets (`visually-hidden`, `liquid/splash`, `l-autogrid`, `l-repel`, `l-media`, etc.)
 - **Variables CSS :** Le plugin `unocss-custom-properties` transforme toutes les valeurs de thème du fichier `uno.config.ts` en custom properties (ex. `font-weight: var(--font-weight-400)`) et génère un fichier `vars.css` qui les contient.
 - **Qualité du code :** Prettier formatte le CSS, `prettier-plugin-css-order` réordonner les propriétés CSS.
+
+## EDIT Github pages
+
+- Settings > Pages : <https://github.com/raphaelgoetter/goetter-www/settings/pages>
+  - "Build and deployment" > "Source" > "GitHub Actions"
+- Github Actions : <https://github.com/raphaelgoetter/goetter-www/actions>
+  - Configurer `static.yml"
+  - Ajouter workflow `pnpm` dans Github Actions <https://pnpm.io/fr/continuous-integration#github-actions>
+  - Modifier `path: "."` ver `path: "dist"`
+- Custom Domain : `https://raphaelgoetter.github.io/goetter-www/` --> `goetter.fr` TODO:
