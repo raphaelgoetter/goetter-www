@@ -25,6 +25,7 @@ export default defineConfig({
       },
     }),
   ],
+  base: "/goetter-www/",
   build: {
     rollupOptions: {
       input: {
