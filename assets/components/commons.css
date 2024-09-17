@@ -80,6 +80,7 @@ ul.list {
 
   & > li::marker {
     content: normal;
+    color: currentColor;
   }
 }
 
