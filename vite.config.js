@@ -25,7 +25,8 @@ export default defineConfig({
       },
     }),
   ],
-  base: "/goetter-www/",
+  // Uniquement si build *avant* de push sur GH
+  // base: "/goetter-www/",
   build: {
     rollupOptions: {
       input: {
