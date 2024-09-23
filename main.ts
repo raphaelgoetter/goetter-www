@@ -1,40 +1,39 @@
-// import "./styles.css"
 import "./assets/styles.css"
 import "virtual:uno.css"
 
-// Light Dark mode switcher
-// JS Source : https://hidde.blog/dark-light/
-var button = document.querySelector(".theme-switcher")
-var prefersDark = window.matchMedia("(prefers-color-scheme: dark)")
-var currentTheme
+let currentTheme = "light"
 
-if (localStorage.getItem("theme-preference")) {
-  currentTheme = localStorage.getItem("theme-preference")
+const button = document.querySelector(".theme-switcher") // Use the correct selector
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)")
+const storedTheme = localStorage.getItem("theme-preference")
+if (storedTheme) {
+  currentTheme = storedTheme
 } else if (prefersDark.matches) {
   currentTheme = "dark"
-} else {
-  // default
-  currentTheme = "light"
 }
 
-button.addEventListener("click", function (event) {
-  currentTheme =
-    document.documentElement.getAttribute("data-theme-preference") === "dark"
-      ? "light"
-      : "dark"
-  setTheme(currentTheme)
-})
+if (button) {
+  button.addEventListener("click", function (event) {
+    currentTheme =
+      document.documentElement.getAttribute("data-theme-preference") === "dark"
+        ? "light"
+        : "dark"
+    setTheme(currentTheme)
+  })
+} else {
+  console.warn("Theme toggle button not found")
+}
 
 prefersDark.addEventListener("change", function (event) {
   currentTheme = event.matches ? "dark" : "light"
   setTheme(currentTheme)
 })
-
-function setTheme(currentTheme) {
-  var pressed = currentTheme === "dark" ? "true" : "false"
-  document.documentElement.setAttribute("data-theme-preference", currentTheme)
-  localStorage.setItem("theme-preference", currentTheme)
-  button.setAttribute("aria-pressed", pressed)
+function setTheme(theme: string) {
+  document.documentElement.setAttribute("data-theme-preference", theme)
+  localStorage.setItem("theme-preference", theme)
+  if (button) {
+    button.setAttribute("aria-pressed", theme === "dark" ? "true" : "false")
+  }
 }
 
 setTheme(currentTheme)
