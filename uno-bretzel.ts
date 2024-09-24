@@ -448,7 +448,6 @@ export default definePreset(() => {
           }
         }
       `,
-      ],
     ],
   }
 })
