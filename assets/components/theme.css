@@ -9,9 +9,9 @@
 }
 .theme-switcher {
   --theme-switcher-radius: 40px;
-  --theme-switcher-border: var(--colors-black);
+  --theme-switcher-border: var(--colors-gray-95);
   --theme-switcher-border-size: 3px;
-  --theme-switcher-background: var(--colors-black);
+  --theme-switcher-background: var(--colors-gray-95);
   --theme-switcher-icon-size: 18px;
   --theme-switcher-icon-color: var(--colors-white);
   --theme-switcher-icon-background: #777777;
@@ -50,7 +50,7 @@
   &[aria-pressed="true"] {
     --theme-switcher-border: #777777;
     --theme-switcher-background: #777777;
-    --theme-switcher-icon-background: var(--colors-black);
+    --theme-switcher-icon-background: var(--colors-gray-95);
 
     & .theme-icon-light {
       display: none;
