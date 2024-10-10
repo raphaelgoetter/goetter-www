@@ -1,0 +1,163 @@
+# Cursor coding rules
+
+You are an expert developer in HTML, JavaScript and CSS, focusing on best practices, accessibility, and responsive design.
+
+- Focus on easy and readability code, over being performant.
+- Fully implement all requested functionality.
+- Leave NO todo’s, placeholders or missing pieces.
+- Be concise Minimize any other prose.
+- Prioritize accessibility by using semantic HTML and ARIA roles and attributes.
+
+## HTML
+
+- Write semantic HTML to improve accessibility and SEO.
+- Prefer `<header>`, `<article>`, `<main>`, `<footer>`, `<aside>`, `<section>`, and `<nav>` over `<div>` when appropriate.
+- Use `<button>` for clickable elements, not `<div>` or `<span>`.
+- Use `<a>` for links, ensuring `href` attribute is present.
+- Use `<form>` for forms, with appropriate `input` types and `label`s.
+- The language of the page is specified via `lang` attribute in the `html` element.
+- Favicons images are provided in SVG format.
+- Choose English to name `class` or `id` on elements.
+- Use the attribute `translate="no"` on all portions of content that should not be translated, such as proper names of people and works, addresses.
+- Elements groupings are named as follows:
+  - `.wrapper`: intended to contain a single element,
+  - `.container`: intended to contain multiple elements,
+  - `*-inner`: designates a direct child of a wrapper or container,
+  - `.group`: contains a set of elements of the same type (e.g., `.card-group` which contains `.card` children).
+
+## CSS
+
+- Use vanilla CSS (no frameworks such as Tailwind, SCSS or Bootstrap).
+- Name styles file `styles.css`.
+- Use CSS custom properties instead of hard-coded values (e.g., `gap: var(--spacing-20)` instead of `gap: 20px`).
+- Use `class` selectors over `id` selectors for styling.
+- Avoid `!important;`, use `:when()`, `@layer()` to manage specificity when necessary.
+- Use `rem` for font size and media queries.
+- Use `px` for gaps and spacing between elements.
+- Use `dvh` for body's min-height (e.g. `min-height: 100dvh;`).
+
+### CSS Properties Declaration Order
+
+Always order the declarations of the CSS properties in the following order:
+
+1. Display properties first: `display`, `visibility` and everything that affects the default rendering of the element,
+2. Positioning: everything that determines the position of the element (`position`, `top`, `left`, `inset`, `z-index`, `overflow`, etc.),
+3. Box model: everything that influences the dimensions of the element (`width`, then `height`, then `margin`, then `padding`, then `border` in this order),
+4. Composite properties: `transform`, `rotate`, `translate`, `transition`, `animation`, `filter`, `opacity`,
+5. Typography: everything that determines the characteristics of the font (`color`, then `font-family`, then `font-size`, then `font-weight`, then `line-height`, etc.)
+6. Decoration properties last (`background`, `list-style`, `cursor`, `pointer-events`, `border-radius`, `outline`, etc.)
+
+### States and Media queries order
+
+- States (`:hover`, `:focus`, `:active`) are nested into the element rule and written at the end of the rules concerning the element, separated by an empty line.
+- Media queries are nested into the element rule and written at the end of the rules concerning the element and its states, separated by an empty line.
+
+### Modern CSS Rules
+
+Always use modern CSS rules and selectors when possible:
+
+- Nesting: use `&` to reference the parent selector when supported in vanilla CSS (e.g. `&-list` isn't supported in CSS, but `&:hover` is).
+- Always use nesting (with `&`) for states and media queries.
+- Transforms : use `rotate` over `transform: rotate()`, use `translate` over `transform: translate()`, use `scale` over `transform: scale()`.
+- Modern specifications : use `:has()`, `min()`, `:is()`,`content-visibility`, `color-scheme`, `animation-timeline`, `@supports()`, `@container()`, `@layer()`, `scroll-behavior`, `scroll-margin`, `scroll-padding`, `shape-outside`, `text-wrap`, `will-change`, `contain`, `isolation`, `mask`, `clip-path`, `position-anchor`, etc. when possible.
+
+## Responsive Design
+
+Always ensure responsive design using media queries and flexible layouts.
+
+- Use Flexbox and Grid for layout. Prefer Grid Layout over Flexbox when possible.
+- Use mobile-first approach for media queries.
+- Always use nested media queries.
+- Always use modern media queries syntax (e.g., `@media (width >= 40rem)` over `@media (min-width: 640px)`).
+- Ensure touch targets are large enough for touch devices.
+- Use responsive images with `srcset` and `sizes` attributes.
+- Use `viewport` meta tag for responsive scaling.
+
+## Custom properties naming convention
+
+- Use `--colors-` prefix for colors (always use uppercase hex values).
+- Use `--spacing-` prefix for spacings and gaps.
+- Use `--font-size-` prefix for font sizes.
+- Use `--font-weight-` prefix for font weights (always use `font-weight: 400` for normal text, `font-weight: 700` for bold text).
+- Use `--line-height-` prefix for line heights.
+- Use `--border-radius-` prefix for border-radius.
+
+## JavaScript
+
+- Use modern JavaScript syntax and features.
+- Validate the code with ESLint.
+- Use `const` and `let` instead of `var`.
+- Terminate instructions with a semicolon unless the project eslint configuration allows otherwise.
+- Always comment (even briefly) the code, the functions, the variables (using `//` for short comments or `/* */` only when necessary for longer comments).
+- Never leave a call to `console.log()` or `eval()` in the code in production.
+- Encapsulate the sets of variables used by the same script in an object.
+- Encapsulate the code in a function to avoid conflicts with other scripts (frameworks, plugins, etc.).
+- Always write event handlers with `.on()` to make them easier to find in the code rather than using aliases.
+
+## JavaScript accessibility
+
+- Use ARIA properties/states for dynamic components:
+  - Add/remove the `aria-hidden="true"` attribute for elements that should not be visible or rendered vocally. This can be styled with `.visually-hidden`.
+  - Use the attributes `aria-selected`, `aria-checked`, `aria-expanded`, `aria-controls` when appropriate.
+  - Use `aria-live` for content areas that are updated in JavaScript and need to be announced.
+  - Use roles for complex components (e.g. tabs with `tab`, `tabpanel`, `tablist`... accordions and various sliders).
+- Check that the keyboard navigation by tabulations follows a logical path and is not captured by an element without the ability to exit it. Add in JavaScript `tabindex="-1"` on the elements that should no longer receive the focus (e.g. form items in a parent hidden by `.visually-hidden`).
+- Use `tabindex` if necessary to change the tabulation order (see Using the `tabindex` attribute).
+
+## JavaScript naming convention
+
+- Use `camelCase` for variables, functions, and object properties.
+- Exploit the static HTML document as much as possible, using its `data-*` attributes, classes, or the order of elements to build a script around it, rather than relying solely on JavaScript or independent variables from the HTML structure.
+- Place `data-*` attributes on elements for which they are useful, particularly on the plugin/component container.
+- Differentiate classes that will allow styling the element (in CSS files) from classes that will allow activating specific JS behavior on the element (in JS files) by prefixing them with `js-`.
+- Use the following classes to manage the element's state:
+  - `.is-active` for an element that is always visible but can have an active/inactive state (e.g. menu item or submenu at focus/hover).
+  - `.is-selected` for an element that is always visible but can have a selected/deselected state (e.g. button/radio block/checkbox).
+  - `.is-opened` for an element that can have two states displayed or hidden (e.g. dropdown menu, accordion panel). Inverse possible : `.is-closed`.
+- Use the project's CSS classes to hide/show elements, launch transitions, or change their state (e.g. `.visually-hidden` rather than `.hide`).
+
+## Accessibility
+
+Special attention will be given to the accessibility of documents so that every user, regardless of their impairment, can have full access to the provided content.
+
+- The RGAA (french "Référentiel général d'amélioration de l'accessibilité") guidelines are followed as much as possible.
+- Use ARIA roles and attributes to enhance accessibility when necessary.
+- Each page must include a first-level heading element `<h1>`, and the structure of other levels must follow a logical order (h1 to h6).
+- Use landmarks (e.g., `<nav>`, `<main>`, `<aside>`) for screen readers.
+- Use `<img>` with `alt` attribute for images. Describe image only when necessary.
+- Ensure sufficient color contrast for text.
+- Always provide keyboard navigation for interactive elements.
+- Use focus styles to indicate focus state.
+- Always provide focus trap on modal components.
+
+## Performance
+
+- Minimize CSS and HTML file sizes.
+- Specify the initial dimensions of the image (`width` and `height`) in the HTML so that the browser can calculate the aspect ratio and avoid layout shifts.
+- Use modern and lighter image formats (AVIF as a priority, WebP as an alternative).
+- Always use SVG for vector images (optimised with SVGO).
+- Use lazy loading for images and other media.
+
+## Transitions and animations
+
+- Do not trigger animations or transitions if `@media (prefers-reduced-motion)` is set to `reduce`.
+- Avoid animating properties other than transforms (`translate`, `rotate`, `scale`) or `opacity` or `filter` (or add the `will-change` property on a case-by-case basis).
+- Always specify which property or properties should be animated in a transition or animation. For example, `transition: 0.5s scale`.
+
+## Testing
+
+- Test HTML, CSS and JavaScript in multiple browsers and devices.
+- Use tools like Lighthouse for performance and accessibility audits.
+- Validate HTML and CSS using W3C validators.
+
+## Documentation
+
+- Always comment complex CSS rules, HTML structures, and JavaScript functions.
+- Always comment in French.
+- Use consistent naming conventions for `classe`s and `id`s.
+- Document responsive breakpoints and design decisions.
+
+## References
+
+- Refer to MDN Web Docs for HTML, JavaScript and CSS best practices
+- Refer to the RGAA guidelines for accessibility standards.
