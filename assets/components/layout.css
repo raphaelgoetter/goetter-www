@@ -76,41 +76,40 @@ body {
   flex-shrink: 0;
 }
 
-@supports (animation-timeline: scroll()) {
-  .reel {
-    --mask-width: 80px;
+/* Indicateur de scroll */
 
-    animation: fade-mask linear auto both;
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent,
-      #000 var(--mask-width),
-      #000 calc(100% - var(--mask-width)),
-      transparent
-    );
-    mask-image: linear-gradient(
-      to right,
-      transparent,
-      #000 var(--mask-width),
-      #000 calc(100% - var(--mask-width)),
-      transparent
-    );
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: calc(100% + var(--mask-width)) 100%;
-    mask-size: calc(100% + var(--mask-width)) 100%;
+[data-scroll-fade="true"] {
+  /* Largeur de l'estompage */
+  --scroll-fade-width: 150px;
+
+  /* Masque dégradé transparent-noir-transparent */
+  --mask-gradient: linear-gradient(
+    to right,
+    transparent,
+    #000 var(--scroll-fade-width),
+    #000 calc(100% - var(--scroll-fade-width)),
+    transparent
+  );
+
+  /* Application du masque au-dessus de l'élément */
+  mask-image: var(--mask-gradient);
+
+  /* Position de départ du masque */
+  mask-position: calc(-1 * var(--scroll-fade-width)) 0;
+
+  /* Le masque doit être plus large que son parent */
+  mask-size: calc(100% + var(--scroll-fade-width)) 100%;
+
+  /* Animation lors du scroll horizontal */
+  @supports (animation-timeline: scroll()) {
+    animation: fade-mask linear forwards;
     animation-timeline: scroll(self x);
-    -webkit-mask-position: -80px center;
-    mask-position: -80px center;
   }
 }
+
+/* Animation vers position finale du masque */
 @keyframes fade-mask {
-  from {
-    -webkit-mask-position: -80px center;
-    mask-position: -80px center;
-  }
   to {
-    -webkit-mask-position: 0 center;
-    mask-position: 0 center;
+    mask-position: 0;
   }
 }
