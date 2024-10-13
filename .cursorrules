@@ -32,8 +32,7 @@ You are an expert developer in HTML, JavaScript and CSS, focusing on best practi
 - Use CSS custom properties instead of hard-coded values (e.g., `gap: var(--spacing-20)` instead of `gap: 20px`).
 - Use `class` selectors over `id` selectors for styling.
 - Avoid `!important;`, use `:when()`, `@layer()` to manage specificity when necessary.
-- Use `rem` for font size and media queries.
-- Use `px` for gaps and spacing between elements.
+- Use `rem` for font size, spacings, gaps and media queries.
 - Use `dvh` for body's min-height (e.g. `min-height: 100dvh;`).
 
 ### CSS Properties Declaration Order
