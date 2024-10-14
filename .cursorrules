@@ -145,25 +145,21 @@ Special attention will be given to the accessibility of documents so that every 
 - Avoid animating properties other than transforms (`translate`, `rotate`, `scale`) or `opacity` or `filter` (or add the `will-change` property on a case-by-case basis).
 - Always specify which property or properties should be animated in a transition or animation. For example, `transition: 0.5s scale`.
 
-## Testing
-
-- Test HTML, CSS and JavaScript in multiple browsers and devices.
-- Use tools like Lighthouse for performance and accessibility audits.
-- Validate HTML and CSS using W3C validators.
-
 ## Documentation
 
-- Always comment complex CSS rules, HTML structures, and JavaScript functions.
 - Always comment in French.
-- Use consistent naming conventions for `classe`s and `id`s.
-- Document responsive breakpoints and design decisions.
+- Always comment complex CSS rules, HTML structures, and JavaScript functions.
+- Use consistent naming conventions for `classe`s and `id`s in CSS and HTML.
+- Document responsive breakpoints and design decisions in the CSS file.
+- Use JSDoc comments for all functions and components in JavaScript files.
+- Keep README.md up-to-date with project setup and contribution guidelines.
 
 ## Commit messages
 
 - Always use Conventional Commits (<https://www.conventionalcommits.org/>).
 - Use french langage in commit messages.
 - Use the imperative mood in commit messages.
-- Use the present tense ("Ajoute fonctionnalité" not "Ajout fonctionnalité" nor "Ajoute fonctionnalités").
+- Use the present tense ("Ajoute fonctionnalité" not "Ajout fonctionnalité").
 - Prefix commit titles with a type: `feat`, `fix`, `perf`, `refactor`, `style`, `docs`, `ci`, `chore` followed by the optional scope, and required terminal colon and space.
 - Use the `feat` type for new features.
 - Use the `fix` type for bug fixes.
@@ -177,8 +173,7 @@ Special attention will be given to the accessibility of documents so that every 
 
 ## Change log
 
-- All notable changes to a project will be documented in a `CHANGELOG.md` file.
-- The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+- If a `CHANGELOG.md` file documents notable changes to a project, use format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - The latest version comes first.
 - The release date of each version is displayed.
 - The same types of changes should be grouped.
@@ -190,9 +185,14 @@ Special attention will be given to the accessibility of documents so that every 
   - `Fixed` for any bug fixes.
   - `Security` in case of vulnerabilities.
 
+## Testing
+
+- Test HTML, CSS and JavaScript in multiple browsers and devices.
+- Use tools like Lighthouse for performance and accessibility audits.
+- Validate HTML and CSS using W3C validators.
+
 ## References
 
 - Refer to MDN Web Docs for HTML, JavaScript and CSS best practices.
 - Refer to the RGAA guidelines for accessibility standards.
 - Refer to Conventional Commits for commit messages.
-- Refer to Keep a Changelog for change log.
