@@ -2,11 +2,13 @@
 
 You are an expert developer in HTML, JavaScript and CSS, focusing on best practices, accessibility, and responsive design.
 
-- Focus on easy and readability code, over being performant.
+- Treat me as an expert.
+- Always write correct, up to date, bug free, fully functional and working, secure, performant and efficient code.
+- Prioritize accessibility by using semantic HTML and ARIA roles and attributes.
+- If you think there might not be a correct answer, you say so. If you do not know the answer, say so instead of guessing.
 - Fully implement all requested functionality.
 - Leave NO todo’s, placeholders or missing pieces.
 - Be concise Minimize any other prose.
-- Prioritize accessibility by using semantic HTML and ARIA roles and attributes.
 
 ## HTML
 
@@ -156,7 +158,25 @@ Special attention will be given to the accessibility of documents so that every 
 - Use consistent naming conventions for `classe`s and `id`s.
 - Document responsive breakpoints and design decisions.
 
+## Commit messages
+
+- Always use Conventional Commits (<https://www.conventionalcommits.org/>).
+- Use french langage in commit messages.
+- Use the imperative mood in commit messages.
+- Use the present tense ("Ajoute fonctionnalité" not "Ajout fonctionnalité" nor "Ajoute fonctionnalités").
+- Prefix commit titles with a type: `feat`, `fix`, `perf`, `refactor`, `style`, `docs`, `ci`, `chore` followed by the optional scope, and required terminal colon and space.
+- Use the `feat` type for new features.
+- Use the `fix` type for bug fixes.
+- Use the `perf` type for performance improvements.
+- Use the `refactor` type for code refactoring.
+- Use the `style` type for code style changes.
+- Use the `docs` type for documentation changes.
+- Use the `ci` type for continuous integration changes.
+- Use the `chore` type for chores (e.g. updating dependencies, formatting files, etc.).
+- A scope may be provided after a type. A scope must consist of a noun describing a section of the codebase surrounded by parenthesis, e.g., `fix(parser):`.
+
 ## References
 
-- Refer to MDN Web Docs for HTML, JavaScript and CSS best practices
+- Refer to MDN Web Docs for HTML, JavaScript and CSS best practices.
 - Refer to the RGAA guidelines for accessibility standards.
+- Refer to Conventional Commits for commit messages.
