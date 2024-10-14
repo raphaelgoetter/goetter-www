@@ -178,13 +178,11 @@ Special attention will be given to the accessibility of documents so that every 
 ## Change log
 
 - All notable changes to a project will be documented in a `CHANGELOG.md` file.
-- The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-- There should be an entry for every single version.
-- The same types of changes should be grouped.
-- Versions and sections should be linkable.
+- The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - The latest version comes first.
 - The release date of each version is displayed.
-- Use these Types of changes:
+- The same types of changes should be grouped.
+- Use these Types of changes (in english):
   - `Added` for new features.
   - `Changed` for changes in existing functionality.
   - `Deprecated` for soon-to-be removed features.
