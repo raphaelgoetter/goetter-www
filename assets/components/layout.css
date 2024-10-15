@@ -78,7 +78,7 @@ body {
 
 /* Indicateur de scroll */
 
-[data-scroll-fade="true"] {
+[data-scroll-fade] {
   /* Largeur de l'estompage */
   --scroll-fade-width: 150px;
 

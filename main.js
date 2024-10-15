@@ -48,3 +48,13 @@ import "virtual:uno.css"
   // Initialisation
   initTheme()
 })()
+
+// Fonction pour décoder l'adresse e-mail
+export function decodeEmail(encodedEmail) {
+  return encodedEmail.replace(/[a-zA-Z]/g, function (c) {
+    if (c === "Q") return "." // Traitement spécial pour le point
+    return String.fromCharCode(
+      (c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26,
+    )
+  })
+}
