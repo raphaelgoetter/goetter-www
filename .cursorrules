@@ -99,7 +99,7 @@ Always ensure responsive design using media queries and flexible layouts.
 
 - Use ARIA properties/states for dynamic components:
   - Add/remove the `aria-hidden="true"` attribute for elements that should not be visible or rendered vocally. This can be styled with `.visually-hidden`.
-  - Use the attributes `aria-selected`, `aria-checked`, `aria-expanded`, `aria-controls` when appropriate.
+  - Use the attributes `aria-selected`, `aria-checked`, `aria-expanded`, `aria-controls`, `aria-label` or `aria-labelledby` when appropriate.
   - Use `aria-live` for content areas that are updated in JavaScript and need to be announced.
   - Use roles for complex components (e.g. tabs with `tab`, `tabpanel`, `tablist`... accordions and various sliders).
 - Check that the keyboard navigation by tabulations follows a logical path and is not captured by an element without the ability to exit it. Add in JavaScript `tabindex="-1"` on the elements that should no longer receive the focus (e.g. form items in a parent hidden by `.visually-hidden`).
@@ -115,16 +115,16 @@ Always ensure responsive design using media queries and flexible layouts.
   - `.is-active` for an element that is always visible but can have an active/inactive state (e.g. menu item or submenu at focus/hover).
   - `.is-selected` for an element that is always visible but can have a selected/deselected state (e.g. button/radio block/checkbox).
   - `.is-opened` for an element that can have two states displayed or hidden (e.g. dropdown menu, accordion panel). Inverse possible : `.is-closed`.
-- Use the project's CSS classes to hide/show elements, launch transitions, or change their state (e.g. `.visually-hidden` rather than `.hide`).
+- Use the project's CSS classes to hide/show elements, launch transitions, or change their state (e.g. `.visually-hidden` rather than `.hide` or `.sr-only`).
 
 ## Accessibility
 
 Special attention will be given to the accessibility of documents so that every user, regardless of their impairment, can have full access to the provided content.
 
-- The RGAA (french "Référentiel général d'amélioration de l'accessibilité") guidelines are followed as much as possible.
+- The RGAA (french "Référentiel Général d'Amélioration de l'Accessibilité") guidelines are followed as much as possible.
 - Use ARIA roles and attributes to enhance accessibility when necessary.
 - Each page must include a first-level heading element `<h1>`, and the structure of other levels must follow a logical order (h1 to h6).
-- Use landmarks (e.g., `<nav>`, `<main>`, `<aside>`) for screen readers.
+- Use landmarks (e.g., `<header>`, `<footer>`, `<nav>`, `<main>`, `<aside>`, `<section>`) for screen readers.
 - Use `<img>` with `alt` attribute for images. Describe image only when necessary.
 - Ensure sufficient color contrast for text.
 - Always provide keyboard navigation for interactive elements.
@@ -134,16 +134,16 @@ Special attention will be given to the accessibility of documents so that every 
 ## Performance
 
 - Minimize CSS and HTML file sizes.
-- Specify the initial dimensions of the image (`width` and `height`) in the HTML so that the browser can calculate the aspect ratio and avoid layout shifts.
+- Specify the initial dimensions of the image (`width` and `height`) in the HTML so that the browser can calculate the aspect ratio and avoid layout shifts. If you don't know the dimensions, just say so.
 - Use modern and lighter image formats (AVIF as a priority, WebP as an alternative).
 - Always use SVG for vector images (optimised with SVGO).
 - Use lazy loading for images and other media.
 
 ## Transitions and animations
 
-- Do not trigger animations or transitions if `@media (prefers-reduced-motion)` is set to `reduce`.
+- Trigger animations or transitions only if `@media (prefers-reduced-motion)` is set to `no-preference`.
 - Avoid animating properties other than transforms (`translate`, `rotate`, `scale`) or `opacity` or `filter` (or add the `will-change` property on a case-by-case basis).
-- Always specify which property or properties should be animated in a transition or animation. For example, `transition: 0.5s scale`.
+- Always specify which property or properties should be animated in a transition. For example, `transition: 0.5s scale`.
 
 ## Documentation
 
@@ -157,10 +157,10 @@ Special attention will be given to the accessibility of documents so that every 
 ## Commit messages
 
 - Always use Conventional Commits (<https://www.conventionalcommits.org/>).
-- Use french langage in commit messages.
+- Use French language in commit messages.
 - Use the imperative mood in commit messages.
 - Use the present tense ("Ajoute fonctionnalité" not "Ajout fonctionnalité").
-- Prefix commit titles with a type: `feat`, `fix`, `perf`, `refactor`, `style`, `docs`, `ci`, `chore` followed by the optional scope, and required terminal colon and space.
+- Always prefix commit titles with a type (in English): `feat`, `fix`, `perf`, `refactor`, `style`, `docs`, `ci`, `chore` followed by the optional scope, and required terminal colon and space.
 - Use the `feat` type for new features.
 - Use the `fix` type for bug fixes.
 - Use the `perf` type for performance improvements.
@@ -177,7 +177,7 @@ Special attention will be given to the accessibility of documents so that every 
 - The latest version comes first.
 - The release date of each version is displayed.
 - The same types of changes should be grouped.
-- Use these Types of changes (in english):
+- Always use one of these Types keywords (in English):
   - `Added` for new features.
   - `Changed` for changes in existing functionality.
   - `Deprecated` for soon-to-be removed features.
