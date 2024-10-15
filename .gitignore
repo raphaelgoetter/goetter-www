@@ -81,3 +81,6 @@ sw.*
 aws-credentials.json
 upload-s3.js
 vars.css
+
+# Archives
+archives/
