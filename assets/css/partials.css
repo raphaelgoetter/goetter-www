@@ -295,6 +295,7 @@
 }
 
 .book-item img {
+  width: auto;
   height: 150px;
 
   @media (width >= 64rem) {
@@ -303,6 +304,7 @@
 }
 
 .conf-item img {
+  width: auto;
   height: 150px;
 
   @media (width >= 64rem) {
