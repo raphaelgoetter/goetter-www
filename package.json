@@ -10,16 +10,16 @@
     "s3": "node upload-s3.js"
   },
   "devDependencies": {
-    "@types/node": "^20.11.5",
-    "@unocss/preset-mini": "^0.58.5",
+    "@types/node": "^20.17.14",
+    "@unocss/preset-mini": "^0.58.9",
     "s3-folder-upload": "^2.3.5",
-    "unocss": "^0.58.3",
-    "unocss-custom-properties": "^0.1.4",
-    "vite": "^4.5.2"
+    "unocss": "^0.58.9",
+    "unocss-custom-properties": "^0.1.5",
+    "vite": "^4.5.9"
   },
   "dependencies": {
-    "prettier": "^3.2.4",
-    "prettier-plugin-css-order": "^2.0.1",
+    "prettier": "^3.4.2",
+    "prettier-plugin-css-order": "^2.1.2",
     "vite-plugin-handlebars": "^2.0.0"
   }
 }
