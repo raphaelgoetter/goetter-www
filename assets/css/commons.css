@@ -91,14 +91,14 @@ h1 {
 
 h2 {
   margin-top: 0;
-  margin-bottom: var(--spacing-24);
+  margin-bottom: var(--spacing-medium);
   font-size: var(--text-h2-level);
 }
 
 h3 {
   width: fit-content;
   margin-top: 0;
-  margin-bottom: var(--spacing-20);
+  margin-bottom: var(--spacing-medium);
   font-size: var(--text-h3-level);
 }
 
