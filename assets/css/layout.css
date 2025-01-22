@@ -45,7 +45,7 @@ body {
     gap: var(--spacing-24);
   }
 
-  @media (width >= 87.5rem) {
+  @media (width >= 80rem) {
     padding: var(--spacing-48) var(--spacing-36);
     gap: var(--spacing-48);
   }

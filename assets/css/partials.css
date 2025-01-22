@@ -10,7 +10,7 @@
     max-width: 12rem;
   }
 
-  @media (width >= 87.5rem) {
+  @media (width >= 80rem) {
     left: var(--spacing-36);
   }
 }
@@ -101,7 +101,7 @@
     position: fixed;
     right: var(--spacing-24);
     gap: var(--spacing-12);
-    @media (width >= 87.5rem) {
+    @media (width >= 80rem) {
       right: var(--spacing-36);
     }
   }
