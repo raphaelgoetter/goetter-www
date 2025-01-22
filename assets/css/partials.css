@@ -334,11 +334,8 @@
  * ----------------------------------
  */
 
-.biopic {
-  margin-inline: auto;
-}
-
 .biopic-img {
+  margin-inline: auto;
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
 
