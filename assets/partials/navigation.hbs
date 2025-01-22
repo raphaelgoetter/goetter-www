@@ -1,0 +1,35 @@
+<nav id="navigation" class="nav-main">
+  <a href="#a-propos" class="nav-link">À propos</a>
+  <a href="#livres" class="nav-link">Livres</a>
+  <a href="#conferences" class="nav-link">Conférences</a>
+  <a href="#formations" class="nav-link">Formations</a>
+  <a href="#mon-univers" class="nav-link">Mon petit univers</a>
+  <a href="#contact" class="nav-link">Contact</a>
+</nav>
+<style>
+  /* Navigation principale */ .nav-main { display: none; } @media (width >=
+  62rem) { .nav-main { display: block; display: grid; position: fixed; right:
+  var(--spacing-24); gap: var(--spacing-12); @media (width >= 87.5rem) { right:
+  var(--spacing-36); } } } /* Animations navigation au scroll */ /*
+  timeline-scope permet à :root d'être le référent */ :root { timeline-scope:
+  --section-1, --section-2, --section-3, --section-4, --section-5, --section-6;
+  } /* view-timeline désigne l'élément qui parcours la fenêtre */
+  .section:nth-of-type(1) { view-timeline: --section-1; }
+  .section:nth-of-type(2) { view-timeline: --section-2; }
+  .section:nth-of-type(3) { view-timeline: --section-3; }
+  .section:nth-of-type(4) { view-timeline: --section-4; }
+  .section:nth-of-type(5) { view-timeline: --section-5; }
+  .section:nth-of-type(6) { view-timeline: --section-6; } .nav-link {
+  animation-name: reveal, exit; animation-range: entry 0% entry 100%, exit 0%
+  exit 100%; padding: var(--spacing-4) var(--spacing-12); border-right: 8px
+  solid rgba(0, 0, 0, 0.2); text-align: end; text-decoration: none;
+  animation-duration: auto; animation-timing-function: linear;
+  animation-fill-mode: both; } .nav-link:nth-of-type(1) { animation-timeline:
+  --section-1; } .nav-link:nth-of-type(2) { animation-timeline: --section-2; }
+  .nav-link:nth-of-type(3) { animation-timeline: --section-3; }
+  .nav-link:nth-of-type(4) { animation-timeline: --section-4; }
+  .nav-link:nth-of-type(5) { animation-timeline: --section-5; }
+  .nav-link:nth-of-type(6) { animation-timeline: --section-6; } @keyframes
+  reveal { to { border-right: var(--spacing-8) solid; } } @keyframes exit { to {
+  border-right: var(--spacing-8) solid rgba(0, 0, 0, 0.2); } }
+</style>

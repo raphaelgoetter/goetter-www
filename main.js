@@ -1,4 +1,4 @@
-import "./assets/styles.css"
+import "./assets/css/styles.css"
 import "virtual:uno.css"
 
 // Encapsulation du code dans une fonction immédiatement invoquée

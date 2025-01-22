@@ -19,7 +19,7 @@ export default defineConfig({
   plugins: [
     UnoCSS(),
     handlebars({
-      partialDirectory: resolve(__dirname, "./assets/components/"),
+      partialDirectory: resolve(__dirname, "./assets/partials/"),
       context(pagePath) {
         return pageData[pagePath]
       },
