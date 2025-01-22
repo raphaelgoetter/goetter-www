@@ -12,7 +12,39 @@
 }
 
 /* ----------------------------------
- * Base (couleurs, polices)
+ * Light/Dark mode
+ * ----------------------------------
+ */
+
+:root {
+  color-scheme: light dark;
+
+  --color-body: light-dark(var(--color-gray-95), var(--color-gray-10));
+  --color-link: light-dark(var(--color-green-60), var(--color-orange-20));
+  --color-link-hover: light-dark(var(--color-green-60), var(--color-orange-30));
+  --color-link-invert: light-dark(var(--color-gray-95), var(--color-gray-10));
+  --color-title: light-dark(var(--color-orange-60), var(--color-orange-30));
+  --color-subtitle: light-dark(var(--color-gray-90), var(--color-gray-50));
+  --bg-body: light-dark(var(--color-white), var(--color-gray-900));
+  --bg-selection: light-dark(var(--color-orange-20), var(--color-orange-60));
+  --bg-footer: light-dark(var(--color-pink-10), var(--color-pink-60));
+}
+
+:root[data-theme-preference="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme-preference="dark"] {
+  color-scheme: dark;
+}
+
+/* Couleur de sélection */
+*::selection {
+  background: var(--bg-selection);
+}
+
+/* ----------------------------------
+ * Base
  * ----------------------------------
  */
 
@@ -20,36 +52,23 @@
   scroll-margin-block: 3rem;
 }
 
-/* Couleur de sélection */
-*::selection {
-  background: var(--color-orange-20);
-}
-[data-theme-preference="dark"] *::selection {
-  background: var(--color-orange-60);
-}
-
 html {
   background-image: url(/images/bg-light.webp);
-  background-color: var(--color-white);
   scroll-behavior: smooth;
 
   &[data-theme-preference="dark"] {
     background-image: url(/images/bg-dark.webp);
-    background-color: var(--color-black);
   }
 }
 
 body {
-  color: var(--color-gray-95);
+  background: var(--bg-body);
+  color: var(--color-body);
   font-weight: var(--font-weight-light);
   font-size: var(--text-body);
 
   @media (width >= 40rem) {
     font-weight: var(--font-weight-extralight);
-  }
-
-  [data-theme-preference="dark"] & {
-    color: var(--color-gray-10);
   }
 }
 
@@ -108,11 +127,11 @@ p {
 }
 
 a {
-  color: var(--color-green-50);
+  color: var(--color-link);
 
   &:hover,
   &:focus {
-    color: var(--color-green-60);
+    color: var(--color-link-hover);
     text-decoration: none;
   }
 
@@ -121,15 +140,6 @@ a {
     outline: dashed var(--spacing-2) currentColor;
     outline-offset: var(--spacing-2);
     box-shadow: none;
-  }
-
-  [data-theme-preference="dark"] & {
-    color: var(--color-orange-20);
-
-    &:hover,
-    &:focus {
-      color: var(--color-orange-30);
-    }
   }
 }
 
