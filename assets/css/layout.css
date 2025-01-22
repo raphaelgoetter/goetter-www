@@ -19,7 +19,7 @@
     );
   }
 
-  @media (width >= 62rem) {
+  @media (width >= 64rem) {
     position: fixed;
   }
 }
@@ -34,7 +34,7 @@ body {
   padding: var(--spacing-24) var(--spacing-10);
   gap: var(--spacing-16);
 
-  @media (width >= 62rem) {
+  @media (width >= 64rem) {
     grid-template-columns: 12rem 1fr 10rem;
     grid-template-areas:
       "header     main   ."

@@ -4,7 +4,7 @@
  */
 
 .header {
-  @media (width >= 62rem) {
+  @media (width >= 64rem) {
     position: fixed;
     left: var(--spacing-24);
     max-width: 12rem;
@@ -24,7 +24,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  @media (width >= 62rem) {
+  @media (width >= 64rem) {
     justify-content: flex-end;
   }
 }
@@ -94,7 +94,7 @@
   display: none;
 }
 @media (width >=
- 62rem) {
+ 64rem) {
   .nav-main {
     display: block;
     display: grid;
@@ -177,13 +177,9 @@
  */
 
 .title-main {
-  width: fit-content;
-  margin: 0;
   color: var(--color-orange-60);
   font-weight: var(--font-weight-light);
-  font-size: var(--text-30);
-  @media (width >= 36rem) {
-    font-size: var(--text-48);
+  @media (width >= 40rem) {
     text-align: end;
   }
   [data-theme-preference="dark"] & {
@@ -221,14 +217,13 @@
   margin-block: var(--spacing-10);
   color: var(--color-gray-90);
   font-weight: var(--font-weight-light);
-  font-size: var(--text-20);
+  font-size: var(--text-h3-level);
   font-family: var(--font-calendas);
   font-feature-settings: "swsh", "liga", "dlig";
   [data-theme-preference="dark"] & {
     color: var(--color-gray-50);
   }
-  @media (width >= 62rem) {
-    font-size: var(--text-24);
+  @media (width >= 64rem) {
     text-align: end;
   }
 }
@@ -243,14 +238,14 @@
   flex-wrap: wrap;
   padding-left: 0;
   gap: var(--spacing-8);
-  @media (width >= 62rem) {
+  @media (width >= 64rem) {
     justify-content: end;
   }
 }
 .social-link {
   display: inline-block;
   padding: var(--spacing-10);
-  @media (width >= 62rem) {
+  @media (width >= 64rem) {
     padding: var(--spacing-4);
   }
 }
@@ -285,7 +280,7 @@
 .book-item img {
   height: 150px;
 
-  @media (width >= 62rem) {
+  @media (width >= 64rem) {
     height: 200px;
   }
 }
@@ -293,7 +288,7 @@
 .conf-item img {
   height: 150px;
 
-  @media (width >= 62rem) {
+  @media (width >= 64rem) {
     height: 250px;
   }
 }
@@ -377,7 +372,7 @@
 /* Scroll to top */
 a.to-top {
   display: none;
-  @media (width < 62rem) {
+  @media (width < 64rem) {
     display: inline-grid;
     z-index: 100;
     position: fixed;

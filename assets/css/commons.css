@@ -41,8 +41,12 @@ html {
 
 body {
   color: var(--color-gray-95);
-  font-weight: var(--font-weight-extralight);
-  font-size: var(--text-18);
+  font-weight: var(--font-weight-light);
+  font-size: var(--text-body);
+
+  @media (width >= 40rem) {
+    font-weight: var(--font-weight-extralight);
+  }
 
   [data-theme-preference="dark"] & {
     color: var(--color-gray-10);
@@ -61,31 +65,29 @@ h3 {
   font-feature-settings: "swsh", "liga", "dlig";
 }
 
+h1 {
+  width: fit-content;
+  margin: 0;
+  font-size: var(--text-h1-level);
+}
+
 h2 {
   margin-top: 0;
   margin-bottom: var(--spacing-24);
-  font-size: var(--text-24);
-
-  @media (width >= 36rem) {
-    font-size: var(--text-36);
-  }
+  font-size: var(--text-h2-level);
 }
 
 h3 {
   width: fit-content;
   margin-top: 0;
   margin-bottom: var(--spacing-20);
-  font-size: var(--text-20);
-
-  @media (width >= 36rem) {
-    font-size: var(--text-30);
-  }
+  font-size: var(--text-h3-level);
 }
 
 ul {
   padding-left: var(--spacing-12);
 
-  @media (width >= 62rem) {
+  @media (width >= 64rem) {
     padding-left: var(--spacing-16);
   }
 }
@@ -167,7 +169,7 @@ h2::after {
   padding: var(--spacing-16);
   border-radius: var(--radius-md);
 
-  @media (width >= 62rem) {
+  @media (width >= 64rem) {
     margin-bottom: var(--spacing-36);
     padding: var(--spacing-36);
   }
