@@ -5,7 +5,7 @@
 - **pnpm** : gestionnaire de paquets
 - **Vite** : gestion du build, compilation
 - **Handlebars** : templates HTML
-- <del>UnoCSS</del> **Tailwind 4** : gestion des styles CSS (CSS vanilla, mais classes utilitaires disponibles au cas où)
+- CSS vanilla
 
 Annexes :
 
@@ -33,9 +33,6 @@ Site hébergé, compilé et déployé sous [Github Pages](https://pages.github.c
 
 ## Styles CSS
 
-**[UnoCSS](https://unocss.dev/)** est notre générateur principal de classes utilitaires et de custom properties CSS.
-
 - **CSS Vanilla :** Nous écrivons les règles CSS dans les feuilles de styles et nous n'utilisons pas de classes utilitaires, sauf exceptions.
-- **Base et Reset :** Le fichier `uno-bretzel.ts` contient le Reset CSS Alsacréations ainsi que diverses classes "layouts" spécifiques à nos projets (`visually-hidden`, `liquid/splash`, `l-autogrid`, `l-repel`, `l-media`, etc.)
-- **Variables CSS :** Le plugin `unocss-custom-properties` transforme toutes les valeurs de thème du fichier `uno.config.ts` en custom properties (ex. `font-weight: var(--font-weight-400)`) et génère un fichier `vars.css` qui les contient.
+- **Base et Reset :** Les fichier `bretzel-*.css` contiennent le Reset CSS Alsacréations ainsi que diverses classes "layouts" spécifiques à nos projets (`visually-hidden`, `liquid/splash`, `autogrid`, `repel`, `switcher`, etc.)
 - **Qualité du code :** Prettier formatte le CSS, `prettier-plugin-css-order` réordonner les propriétés CSS.
