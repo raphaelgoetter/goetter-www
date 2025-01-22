@@ -2,7 +2,8 @@
   "recommendations": [
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
-    "phoenisx.cssvar",
-    "antfu.unocss"
+    "bradlc.vscode-tailwindcss",
+    "DavidAnson.vscode-markdownlint",
+    "phoenisx.cssvar"
   ]
 }

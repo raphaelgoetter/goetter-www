@@ -8,23 +8,3 @@
 <p class="title-subtitle" lang="en" title="accro aux css">
   CSS addict
 </p>
-<style>
-  .title-main { width: fit-content; margin: 0; color: var(--colors-orange-60);
-  font-weight: var(--font-weight-light); font-size: var(--font-size-30); @media
-  (width >= 36rem) { font-size: var(--font-size-48); text-align: end; }
-  [data-theme-preference="dark"] & { color: var(--colors-orange-30); } }
-  @supports (-webkit-background-clip: text) or (background-clip: text) {
-  .title-link { display: inline-block; -webkit-background-clip: text;
-  background-clip: text; text-decoration: none; -webkit-text-fill-color:
-  transparent; text-fill-color: transparent; background-image: linear-gradient(
-  to right, var(--colors-orange-50), var(--colors-hotpink) ); transition:
-  background 1s; [data-theme-preference="dark"] & { background-image:
-  linear-gradient( to right, var(--colors-orange-30), var(--colors-hotpink) ); }
-  &:hover, &:focus { background-position: 12rem center; } } } .title-subtitle {
-  margin-block: var(--spacing-10); color: var(--colors-gray-90); font-weight:
-  var(--font-weight-light); font-size: var(--font-size-20); font-family:
-  var(--font-family-calendas); font-feature-settings: "swsh", "liga", "dlig";
-  [data-theme-preference="dark"] & { color: var(--colors-gray-50); } @media
-  (width >= 62rem) { font-size: var(--font-size-24); text-align: end; } }
-
-</style>

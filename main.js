@@ -1,5 +1,4 @@
-import "./assets/css/styles.css"
-import "virtual:uno.css"
+import "/assets/css/styles.css"
 
 // Encapsulation du code dans une fonction immédiatement invoquée
 ;(function () {

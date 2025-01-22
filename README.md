@@ -5,7 +5,7 @@
 - **pnpm** : gestionnaire de paquets
 - **Vite** : gestion du build, compilation
 - **Handlebars** : templates HTML
-- **UnoCSS** : gestion des styles CSS
+- <del>UnoCSS</del> **Tailwind 4** : gestion des styles CSS (CSS vanilla, mais classes utilitaires disponibles au cas où)
 
 Annexes :
 

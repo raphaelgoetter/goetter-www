@@ -6,16 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "s3": "node upload-s3.js"
+    "preview": "vite preview"
   },
   "devDependencies": {
     "@types/node": "^20.17.14",
-    "@unocss/preset-mini": "^0.58.9",
-    "s3-folder-upload": "^2.3.5",
-    "unocss": "^0.58.9",
-    "unocss-custom-properties": "^0.1.5",
-    "vite": "^4.5.9"
+    "vite": "^6.0.11"
   },
   "dependencies": {
     "prettier": "^3.4.2",

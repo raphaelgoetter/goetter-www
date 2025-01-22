@@ -7,15 +7,15 @@
   height: 6px;
   background-image: linear-gradient(
     to right,
-    var(--colors-orange-50),
-    var(--colors-hotpink)
+    var(--color-orange-50),
+    var(--color-hotpink)
   );
 
   [data-theme-preference="dark"] & {
     background-image: linear-gradient(
       to right,
-      var(--colors-orange-30),
-      var(--colors-hotpink)
+      var(--color-orange-30),
+      var(--color-hotpink)
     );
   }
 

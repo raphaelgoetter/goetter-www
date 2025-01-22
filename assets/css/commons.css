@@ -1,3 +1,8 @@
+/* ----------------------------------
+ * Polices
+ * ----------------------------------
+ */
+
 @font-face {
   font-style: normal;
   font-weight: normal;
@@ -6,54 +11,63 @@
   font-display: swap;
 }
 
+/* ----------------------------------
+ * Base (couleurs, polices)
+ * ----------------------------------
+ */
+
 :target {
   scroll-margin-block: 3rem;
 }
 
-.offscreen {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 500px;
+/* Couleur de sélection */
+*::selection {
+  background: var(--color-orange-20);
 }
-
-.d-block {
-  display: block;
+[data-theme-preference="dark"] *::selection {
+  background: var(--color-orange-60);
 }
 
 html {
   background-image: url(/images/bg-light.webp);
-  background-color: var(--colors-white);
+  background-color: var(--color-white);
   scroll-behavior: smooth;
 
   &[data-theme-preference="dark"] {
     background-image: url(/images/bg-dark.webp);
-    background-color: var(--colors-black);
+    background-color: var(--color-black);
   }
 }
 
 body {
-  color: var(--colors-gray-95);
+  color: var(--color-gray-95);
   font-weight: var(--font-weight-extralight);
-  font-size: var(--font-size-18);
+  font-size: var(--text-18);
 
   [data-theme-preference="dark"] & {
-    color: var(--colors-gray-10);
+    color: var(--color-gray-10);
   }
 }
+
+/* ----------------------------------
+ * Typographie, listes et titres
+ * ----------------------------------
+ */
 
 h1,
 h2,
 h3 {
-  font-family: var(--font-family-calendas);
+  font-family: var(--font-calendas);
   font-feature-settings: "swsh", "liga", "dlig";
 }
 
 h2 {
   margin-top: 0;
   margin-bottom: var(--spacing-24);
-  font-size: var(--font-size-24);
+  font-size: var(--text-24);
 
   @media (width >= 36rem) {
-    font-size: var(--font-size-36);
+    font-size: var(--text-36);
   }
 }
 
@@ -61,10 +75,10 @@ h3 {
   width: fit-content;
   margin-top: 0;
   margin-bottom: var(--spacing-20);
-  font-size: var(--font-size-20);
+  font-size: var(--text-20);
 
   @media (width >= 36rem) {
-    font-size: var(--font-size-30);
+    font-size: var(--text-30);
   }
 }
 
@@ -93,11 +107,11 @@ p {
 }
 
 a {
-  color: var(--colors-green-50);
+  color: var(--color-green-50);
 
   &:hover,
   &:focus {
-    color: var(--colors-green-60);
+    color: var(--color-green-60);
     text-decoration: none;
   }
 
@@ -109,11 +123,11 @@ a {
   }
 
   [data-theme-preference="dark"] & {
-    color: var(--colors-orange-20);
+    color: var(--color-orange-20);
 
     &:hover,
     &:focus {
-      color: var(--colors-orange-30);
+      color: var(--color-orange-30);
     }
   }
 }
@@ -125,19 +139,33 @@ h2::after {
   translate: 0 var(--spacing-12);
   background-image: linear-gradient(
     to right,
-    var(--colors-orange-50),
-    var(--colors-hotpink)
+    var(--color-orange-50),
+    var(--color-hotpink)
   );
   background-position: left bottom;
   background-repeat: no-repeat;
   content: "";
 }
 
+/* ----------------------------------
+ * Layouts (surcharge)
+ * ----------------------------------
+ */
+
+.reel {
+  --item-size: auto;
+}
+
+/* ----------------------------------
+ * Section
+ * ----------------------------------
+ */
+
 .section {
   margin-bottom: var(--spacing-16);
 
   padding: var(--spacing-16);
-  border-radius: var(--border-radius-md);
+  border-radius: var(--radius-md);
 
   @media (width >= 62rem) {
     margin-bottom: var(--spacing-36);

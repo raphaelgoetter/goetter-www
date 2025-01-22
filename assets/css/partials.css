@@ -16,6 +16,253 @@
 }
 
 /* ----------------------------------
+ * Theme
+ * ----------------------------------
+ */
+
+.theme-switcher-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  @media (width >= 62rem) {
+    justify-content: flex-end;
+  }
+}
+.theme-switcher {
+  --theme-switcher-radius: 40px;
+  --theme-switcher-border: var(--color-gray-95);
+  --theme-switcher-border-size: 3px;
+  --theme-switcher-background: var(--color-gray-95);
+  --theme-switcher-icon-size: 18px;
+  --theme-switcher-icon-color: var(--color-white);
+  --theme-switcher-icon-background: #777777;
+  display: inline-grid;
+  justify-content: start;
+  width: calc(
+    var(--theme-switcher-icon-size) * 2 + var(--theme-switcher-border-size) * 2
+  );
+  padding: var(--theme-switcher-border-size);
+  border: 0;
+  border-radius: var(--theme-switcher-radius);
+  outline-color: currentColor;
+  outline-offset: 0.5em;
+  background-color: var(--theme-switcher-background);
+  line-height: 0;
+  cursor: pointer;
+  & * {
+    pointer-events: none;
+  }
+  & > .theme-icon {
+    padding: var(--theme-switcher-border-size);
+    border-radius: var(--radius-full);
+    background-color: var(--theme-switcher-icon-background);
+    color: var(--theme-switcher-icon-color);
+    transition: 0.3s translate;
+  }
+  & [class^="theme-icon-"] {
+    width: var(--theme-switcher-icon-size);
+    height: var(--theme-switcher-icon-size);
+  }
+  &[aria-pressed="true"] {
+    --theme-switcher-border: #777777;
+    --theme-switcher-background: #777777;
+    --theme-switcher-icon-background: var(--color-gray-95);
+    & .theme-icon-light {
+      display: none;
+    }
+    & > .theme-icon {
+      translate: calc(
+        var(--theme-switcher-icon-size) -
+          (var(--theme-switcher-border-size) * 2)
+      );
+    }
+  }
+  &[aria-pressed="false"] {
+    & .theme-icon-dark {
+      display: none;
+    }
+  }
+}
+
+/* ----------------------------------
+ * Navigation
+ * ----------------------------------
+ */
+
+/* Navigation principale */
+.nav-main {
+  display: none;
+}
+@media (width >=
+ 62rem) {
+  .nav-main {
+    display: block;
+    display: grid;
+    position: fixed;
+    right: var(--spacing-24);
+    gap: var(--spacing-12);
+    @media (width >= 87.5rem) {
+      right: var(--spacing-36);
+    }
+  }
+} /* Animations navigation au scroll */ /*
+    timeline-scope permet à :root d'être le référent */
+:root {
+  timeline-scope: --section-1, --section-2, --section-3, --section-4,
+    --section-5, --section-6;
+} /* view-timeline désigne l'élément qui parcours la fenêtre */
+.section:nth-of-type(1) {
+  view-timeline: --section-1;
+}
+.section:nth-of-type(2) {
+  view-timeline: --section-2;
+}
+.section:nth-of-type(3) {
+  view-timeline: --section-3;
+}
+.section:nth-of-type(4) {
+  view-timeline: --section-4;
+}
+.section:nth-of-type(5) {
+  view-timeline: --section-5;
+}
+.section:nth-of-type(6) {
+  view-timeline: --section-6;
+}
+.nav-link {
+  animation-name: reveal, exit;
+  animation-range:
+    entry 0% entry 100%,
+    exit 0% exit 100%;
+  padding: var(--spacing-4) var(--spacing-12);
+  border-right: 8px solid rgba(0, 0, 0, 0.2);
+  text-align: end;
+  text-decoration: none;
+  animation-duration: auto;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+.nav-link:nth-of-type(1) {
+  animation-timeline: --section-1;
+}
+.nav-link:nth-of-type(2) {
+  animation-timeline: --section-2;
+}
+.nav-link:nth-of-type(3) {
+  animation-timeline: --section-3;
+}
+.nav-link:nth-of-type(4) {
+  animation-timeline: --section-4;
+}
+.nav-link:nth-of-type(5) {
+  animation-timeline: --section-5;
+}
+.nav-link:nth-of-type(6) {
+  animation-timeline: --section-6;
+}
+@keyframes reveal {
+  to {
+    border-right: var(--spacing-8) solid;
+  }
+}
+@keyframes exit {
+  to {
+    border-right: var(--spacing-8) solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* ----------------------------------
+ * Title
+ * ----------------------------------
+ */
+
+.title-main {
+  width: fit-content;
+  margin: 0;
+  color: var(--color-orange-60);
+  font-weight: var(--font-weight-light);
+  font-size: var(--text-30);
+  @media (width >= 36rem) {
+    font-size: var(--text-48);
+    text-align: end;
+  }
+  [data-theme-preference="dark"] & {
+    color: var(--color-orange-30);
+  }
+}
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .title-link {
+    display: inline-block;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-decoration: none;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-image: linear-gradient(
+      to right,
+      var(--color-orange-50),
+      var(--color-hotpink)
+    );
+    transition: background 1s;
+    [data-theme-preference="dark"] & {
+      background-image: linear-gradient(
+        to right,
+        var(--color-orange-30),
+        var(--color-hotpink)
+      );
+    }
+    &:hover,
+    &:focus {
+      background-position: 12rem center;
+    }
+  }
+}
+.title-subtitle {
+  margin-block: var(--spacing-10);
+  color: var(--color-gray-90);
+  font-weight: var(--font-weight-light);
+  font-size: var(--text-20);
+  font-family: var(--font-calendas);
+  font-feature-settings: "swsh", "liga", "dlig";
+  [data-theme-preference="dark"] & {
+    color: var(--color-gray-50);
+  }
+  @media (width >= 62rem) {
+    font-size: var(--text-24);
+    text-align: end;
+  }
+}
+
+/* ----------------------------------
+ * Socials
+ * ----------------------------------
+ */
+
+.social-group {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  gap: var(--spacing-8);
+  @media (width >= 62rem) {
+    justify-content: end;
+  }
+}
+.social-link {
+  display: inline-block;
+  padding: var(--spacing-10);
+  @media (width >= 62rem) {
+    padding: var(--spacing-4);
+  }
+}
+.social-link svg {
+  transition: 0.25s scale;
+}
+.social-link:hover svg,
+.social-link:focus svg {
+  scale: 1.2;
+}
+
+/* ----------------------------------
  * Formations
  * ----------------------------------
  */
@@ -25,13 +272,13 @@
   padding-inline: 0;
 
   & img {
-    border-radius: var(--border-radius-md);
+    border-radius: var(--radius-md);
   }
 
   & figcaption {
     margin-top: var(--spacing-4);
     font-style: italic;
-    font-size: var(--font-size-14);
+    font-size: var(--text-14);
   }
 }
 
@@ -58,7 +305,7 @@
 
 .logo-item {
   padding: var(--spacing-16);
-  border-radius: var(--border-radius-md);
+  border-radius: var(--radius-md);
   background-color: rgba(255, 255, 255, 0.8);
 }
 .logo-item img {
@@ -73,4 +320,95 @@
 .codepen-box-link {
   margin-inline: 0;
   padding-inline: 0;
+}
+
+/* ----------------------------------
+ * Biopic
+ * ----------------------------------
+ */
+
+.biopic-img {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+
+  animation: blob auto linear both;
+  animation-timeline: scroll(root);
+}
+
+@keyframes blob {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+/* ----------------------------------
+ * Footer
+ * ----------------------------------
+ */
+
+.footer {
+  padding: var(--spacing-16);
+  border-radius: var(--radius-md);
+  background-color: var(--color-pink-10);
+  [data-theme-preference="dark"] & {
+    background-color: var(--color-pink-60);
+  }
+  & a {
+    color: var(--color-gray-95);
+  }
+  [data-theme-preference="dark"] & {
+    & a {
+      color: var(--color-white);
+    }
+  }
+}
+
+/* ----------------------------------
+ * To top
+ * ----------------------------------
+ */
+
+/* Scroll to top */
+a.to-top {
+  display: none;
+  @media (width < 62rem) {
+    display: inline-grid;
+    z-index: 100;
+    position: fixed;
+    right: var(--spacing-24);
+    bottom: var(--spacing-20);
+    place-content: center;
+    width: var(--spacing-36);
+    height: var(--spacing-36);
+    border-radius: 50%;
+    background: var(--color-orange-50);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    color: var(--color-white);
+    font-weight: var(--font-weight-extrabold);
+    line-height: 1;
+    text-decoration: none;
+    animation: scroll-top auto linear forwards;
+    animation-timeline: scroll(root);
+    animation-range: 0 150dvh;
+  }
+  &:focus,
+  &:focus-visible {
+    background: var(--color-orange-50);
+    color: var(--color-white);
+  }
+}
+@keyframes scroll-top {
+  from,
+  90% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
