@@ -44,6 +44,11 @@
   --spacing-36: 2.25rem;
   --spacing-48: 3rem;
   --spacing-max: 1440px;
+  --spacing-medium: clamp(
+    var(--spacing-16),
+    0.5109rem + 2.1739vw,
+    var(--spacing-36)
+  );
   --font-calendas: calendas, georgia, serif;
   --font-weight-thin: 100;
   --font-weight-extralight: 200;

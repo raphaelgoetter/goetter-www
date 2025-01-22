@@ -163,16 +163,10 @@ h2::after {
  */
 
 .section {
-  margin-bottom: var(--spacing-16);
+  margin-bottom: var(--spacing-medium);
 
-  padding: var(--spacing-16);
+  padding: var(--spacing-medium);
   border-radius: var(--radius-md);
-
-  @media (width >= 64rem) {
-    margin-bottom: var(--spacing-36);
-    padding: var(--spacing-36);
-  }
-
   background-color: rgba(0, 0, 0, 0.05);
 
   [data-theme-preference="dark"] & {
