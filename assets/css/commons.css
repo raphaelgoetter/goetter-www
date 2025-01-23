@@ -28,14 +28,14 @@
   --bg-body: light-dark(var(--color-white), var(--color-gray-900));
   --bg-selection: light-dark(var(--color-orange-20), var(--color-orange-60));
   --bg-footer: light-dark(var(--color-pink-10), var(--color-pink-60));
-}
 
-:root[data-theme-preference="light"] {
-  color-scheme: light;
-}
+  &[data-theme-preference="light"] {
+    color-scheme: light;
+  }
 
-:root[data-theme-preference="dark"] {
-  color-scheme: dark;
+  &[data-theme-preference="dark"] {
+    color-scheme: dark;
+  }
 }
 
 /* Couleur de sélection */
