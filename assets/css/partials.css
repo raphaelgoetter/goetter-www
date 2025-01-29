@@ -42,9 +42,9 @@
 }
 .theme-switcher {
   --theme-switcher-radius: 40px;
-  --theme-switcher-border: var(--color-gray-95);
+  --theme-switcher-border: var(--color-gray-90);
   --theme-switcher-border-size: 3px;
-  --theme-switcher-background: var(--color-gray-95);
+  --theme-switcher-background: var(--color-gray-90);
   --theme-switcher-icon-size: 18px;
   --theme-switcher-icon-color: var(--color-white);
   --theme-switcher-icon-background: #777777;
@@ -82,7 +82,7 @@
   &[aria-pressed="true"] {
     --theme-switcher-border: #777777;
     --theme-switcher-background: #777777;
-    --theme-switcher-icon-background: var(--color-gray-95);
+    --theme-switcher-icon-background: var(--color-gray-80);
     & .theme-icon-light {
       display: none;
     }

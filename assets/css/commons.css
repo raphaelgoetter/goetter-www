@@ -19,15 +19,15 @@
 :root {
   color-scheme: light dark;
 
-  --color-body: light-dark(var(--color-gray-95), var(--color-gray-10));
-  --color-link: light-dark(var(--color-green-60), var(--color-orange-20));
+  --color-page: light-dark(var(--color-gray-90), var(--color-gray-10));
+  --color-link: light-dark(var(--color-green-60), var(--color-orange-30));
   --color-link-hover: light-dark(var(--color-green-60), var(--color-orange-30));
-  --color-link-invert: light-dark(var(--color-gray-95), var(--color-gray-10));
+  --color-link-invert: light-dark(var(--color-gray-90), var(--color-gray-10));
   --color-title: light-dark(var(--color-orange-60), var(--color-orange-30));
-  --color-subtitle: light-dark(var(--color-gray-90), var(--color-gray-50));
-  --bg-body: light-dark(var(--color-white), var(--color-gray-900));
-  --bg-selection: light-dark(var(--color-orange-20), var(--color-orange-60));
-  --bg-footer: light-dark(var(--color-pink-10), var(--color-pink-60));
+  --color-subtitle: light-dark(var(--color-gray-70), var(--color-gray-40));
+  --bg-body: light-dark(var(--color-white), var(--color-gray-70));
+  --bg-selection: light-dark(var(--color-orange-30), var(--color-orange-60));
+  --bg-footer: light-dark(var(--color-pink-20), var(--color-pink-60));
 
   &[data-theme-preference="light"] {
     color-scheme: light;
@@ -54,6 +54,7 @@
 
 html {
   background-image: url(/images/bg-light.webp);
+  background-color: var(--bg-page);
   scroll-behavior: smooth;
 
   &[data-theme-preference="dark"] {
@@ -62,7 +63,6 @@ html {
 }
 
 body {
-  background: var(--bg-body);
   color: var(--color-body);
   font-weight: var(--font-weight-light);
   font-size: var(--text-body);
