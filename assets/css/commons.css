@@ -19,28 +19,35 @@
 :root {
   color-scheme: light dark;
 
-  --color-page: light-dark(var(--color-gray-90), var(--color-gray-10));
+  --surface: light-dark(var(--color-gray-05), var(--color-gray-80));
+  --surface-dim: light-dark(
+    rgb(from var(--color-black) r g b / 0.05),
+    rgb(from var(--color-black) r g b / 0.15)
+  );
+  --layer: light-dark(var(--color-pink-20), var(--color-pink-60));
+
+  --on-surface: light-dark(var(--color-gray-90), var(--color-gray-10));
   --color-link: light-dark(var(--color-green-60), var(--color-orange-30));
   --color-link-hover: light-dark(var(--color-green-60), var(--color-orange-30));
   --color-link-invert: light-dark(var(--color-gray-90), var(--color-gray-10));
+
   --color-title: light-dark(var(--color-orange-60), var(--color-orange-30));
   --color-subtitle: light-dark(var(--color-gray-70), var(--color-gray-40));
-  --bg-body: light-dark(var(--color-white), var(--color-gray-70));
-  --bg-selection: light-dark(var(--color-orange-30), var(--color-orange-60));
-  --bg-footer: light-dark(var(--color-pink-20), var(--color-pink-60));
 
-  &[data-theme-preference="light"] {
+  --selection: light-dark(var(--color-orange-30), var(--color-orange-60));
+
+  &[data-theme="light"] {
     color-scheme: light;
   }
 
-  &[data-theme-preference="dark"] {
+  &[data-theme="dark"] {
     color-scheme: dark;
   }
 }
 
 /* Couleur de sélection */
 *::selection {
-  background: var(--bg-selection);
+  background: var(--selection);
 }
 
 /* ----------------------------------
@@ -54,16 +61,16 @@
 
 html {
   background-image: url(/images/bg-light.webp);
-  background-color: var(--bg-page);
+  background-color: var(--surface);
   scroll-behavior: smooth;
 
-  &[data-theme-preference="dark"] {
+  &[data-theme="dark"] {
     background-image: url(/images/bg-dark.webp);
   }
 }
 
 body {
-  color: var(--color-body);
+  color: var(--on-surface);
   font-weight: var(--font-weight-light);
   font-size: var(--text-body);
 
@@ -177,11 +184,7 @@ h2::after {
 
   padding: var(--spacing-medium);
   border-radius: var(--radius-md);
-  background-color: rgba(0, 0, 0, 0.05);
-
-  [data-theme-preference="dark"] & {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
+  background-color: var(--surface-dim);
 
   &:nth-of-type(1),
   & p:nth-of-type(1) {

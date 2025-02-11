@@ -24,7 +24,7 @@ import "/assets/css/styles.css"
   // Gestion du clic sur le bouton
   themeSwitcher.button.addEventListener("click", function () {
     themeSwitcher.currentTheme =
-      document.documentElement.getAttribute("data-theme-preference") === "dark"
+      document.documentElement.getAttribute("data-theme") === "dark"
         ? "light"
         : "dark"
     setTheme(themeSwitcher.currentTheme)
@@ -39,7 +39,7 @@ import "/assets/css/styles.css"
   // Fonction pour définir le thème
   function setTheme(theme) {
     const pressed = theme === "dark" ? "true" : "false"
-    document.documentElement.setAttribute("data-theme-preference", theme)
+    document.documentElement.setAttribute("data-theme", theme)
     localStorage.setItem("theme-preference", theme)
     themeSwitcher.button.setAttribute("aria-pressed", pressed)
   }

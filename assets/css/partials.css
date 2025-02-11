@@ -215,7 +215,7 @@
       var(--color-hotpink)
     );
     transition: background 1s;
-    [data-theme-preference="dark"] & {
+    [data-theme="dark"] & {
       background-image: linear-gradient(
         to right,
         var(--color-orange-30),
@@ -371,7 +371,7 @@
 .footer {
   padding: var(--spacing-16);
   border-radius: var(--radius-md);
-  background-color: var(--bg-footer);
+  background-color: var(--layer);
 
   & a {
     color: var(--color-link-invert);

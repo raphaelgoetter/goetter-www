@@ -7,17 +7,9 @@
   height: 6px;
   background-image: linear-gradient(
     to right,
-    var(--color-orange-50),
+    var(--color-orange-30),
     var(--color-hotpink)
   );
-
-  [data-theme-preference="dark"] & {
-    background-image: linear-gradient(
-      to right,
-      var(--color-orange-30),
-      var(--color-hotpink)
-    );
-  }
 
   @media (width >= 64rem) {
     position: fixed;
