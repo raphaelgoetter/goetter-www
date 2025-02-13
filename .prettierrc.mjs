@@ -9,7 +9,6 @@ export default {
   singleAttributePerLine: true,
   printWidth: 80,
   jsxSingleQuote: true,
-  cssDeclarationSorterOrder: "smacss",
   overrides: [
     {
       files: "*.stories.{ts,js,tsx,jsx}",

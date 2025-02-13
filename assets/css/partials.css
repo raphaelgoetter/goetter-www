@@ -172,7 +172,7 @@
   animation-name: reveal, exit;
   animation-duration: auto;
   animation-timing-function: linear;
-  border-right: 8px solid rgb(0 0 0 / 20%);
+  border-right: 8px solid oklch(0% 0 0 / 20%);
   text-align: end;
   text-decoration: none;
   animation-range:
@@ -213,7 +213,7 @@
 
 @keyframes exit {
   to {
-    border-right: var(--spacing-8) solid rgb(0 0 0 / 20%);
+    border-right: var(--spacing-8) solid oklch(0% 0 0 / 20%);
   }
 }
 
@@ -359,7 +359,7 @@
 .logo-item {
   padding: var(--spacing-16);
   border-radius: var(--radius-md);
-  background-color: rgb(255 255 255 / 80%);
+  background-color: oklch(100% 0 0 / 80%);
 
   & img {
     width: auto;
@@ -389,7 +389,7 @@
   margin-inline: auto;
   animation: blob auto linear both;
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  box-shadow: 3px 3px 7px rgb(0 0 0 / 30%);
+  box-shadow: 3px 3px 7px oklch(0% 0 0 / 30%);
   animation-timeline: scroll(root);
 }
 
@@ -442,7 +442,7 @@ a.to-top {
     animation: scroll-top auto linear forwards;
     border-radius: 50%;
     background: var(--color-orange-50);
-    box-shadow: 0 0 4px rgb(0 0 0 / 30%);
+    box-shadow: 0 0 4px oklch(0% 0 0 / 30%);
     color: var(--color-white);
     font-weight: var(--font-weight-extrabold);
     line-height: 1;
@@ -462,10 +462,10 @@ a.to-top {
 @keyframes scroll-top {
   0%,
   90% {
-    opacity: 0;
+    opacity: 0%;
   }
 
   100% {
-    opacity: 1;
+    opacity: 100%;
   }
 }
