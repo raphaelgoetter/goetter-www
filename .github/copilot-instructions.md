@@ -21,7 +21,6 @@ You are an expert developer in HTML, CSS, JavaScript, Vite and Handlebars, focus
 ## CSS
 
 - Use vanilla CSS with custom properties (no frameworks such as Tailwind, SCSS or Bootstrap).
-- Name main style file `styles.css`.
 - Always use CSS custom properties instead of raw values (e.g., `gap: var(--spacing-16)` instead of `gap: 1rem`).
 - Use `class` selectors over `id` selectors for styling.
 - Avoid `!important;` (use `:when()`, `@layer()` to manage specificity when necessary).
