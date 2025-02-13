@@ -44,7 +44,10 @@ export default {
     // Couleurs
     "color-hex-length": "long", // on force la notation longue pour les couleurs hexadécimales
     "color-named": "never", // on refuse les couleurs nommées
+    "color-function-notation": "modern", // on force la notation moderne pour les fonctions de couleurs
+    "function-disallowed-list": ["rgb", "rgba", "hsl", "hsla"], // on n'accepte que hex et oklch
     "lightness-notation": "percentage", // on force la notation en pourcentage pour la luminosité
+    "alpha-value-notation": "percentage", // on force la notation en pourcentage pour l'alpha
     "hue-degree-notation": "number",
   },
 }
