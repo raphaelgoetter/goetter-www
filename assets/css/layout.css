@@ -1,6 +1,6 @@
 .body-deco {
-  z-index: 1000;
   position: absolute;
+  z-index: 1000;
   top: 0;
   right: 0;
   left: 0;
@@ -27,11 +27,11 @@ body {
   gap: var(--spacing-16);
 
   @media (width >= 64rem) {
-    grid-template-columns: 12rem 1fr 10rem;
     grid-template-areas:
       "header     main   ."
       "navigation main   ."
       "footer     footer footer";
+    grid-template-columns: 12rem 1fr 10rem;
     margin-inline: auto;
     padding: var(--spacing-36);
     gap: var(--spacing-24);

@@ -72,13 +72,13 @@
 
   & > .theme-icon {
     padding: var(--theme-switcher-border-size);
-    translate: 0;
-    rotate: 0turn;
+    transition: 0.8s;
+    transition-property: rotate, translate;
     border-radius: var(--radius-full);
     background-color: var(--theme-switcher-icon-background);
     color: var(--theme-switcher-icon-color);
-    transition: 0.8s;
-    transition-property: rotate, translate;
+    translate: 0;
+    rotate: 0turn;
     will-change: rotate, translate;
   }
 
@@ -168,16 +168,16 @@
 }
 
 .nav-link {
-  animation-name: reveal, exit;
-  animation-range:
-    entry 0% entry 100%,
-    exit 0% exit 100%;
   padding: var(--spacing-4) var(--spacing-12);
+  animation-name: reveal, exit;
+  animation-duration: auto;
+  animation-timing-function: linear;
   border-right: 8px solid rgb(0 0 0 / 20%);
   text-align: end;
   text-decoration: none;
-  animation-duration: auto;
-  animation-timing-function: linear;
+  animation-range:
+    entry 0% entry 100%,
+    exit 0% exit 100%;
   animation-fill-mode: both;
 
   &:nth-of-type(1) {
@@ -235,15 +235,15 @@
 @supports (-webkit-background-clip: text) or (background-clip: text) {
   .title-link {
     display: inline-block;
+    transition: background 1s;
     background-clip: text;
-    text-decoration: none;
-    -webkit-text-fill-color: transparent;
     background-image: linear-gradient(
       to right,
       var(--color-orange-50),
       var(--color-hotpink)
     );
-    transition: background 1s;
+    text-decoration: none;
+    -webkit-text-fill-color: transparent;
 
     [data-theme="dark"] & {
       background-image: linear-gradient(
@@ -263,11 +263,11 @@
 .title-subtitle {
   margin-block: var(--spacing-10);
   color: var(--color-subtitle);
-  font-weight: var(--font-weight-light);
-  font-size: var(--text-h3-level);
   font-family: var(--font-calendas);
-  font-feature-settings: "swsh", "liga", "dlig";
+  font-size: var(--text-h3-level);
+  font-weight: var(--font-weight-light);
   text-align: center;
+  font-feature-settings: "swsh", "liga", "dlig";
 
   @media (width >= 64rem) {
     text-align: end;
@@ -328,8 +328,8 @@
 
   & figcaption {
     margin-top: var(--spacing-4);
-    font-style: italic;
     font-size: var(--text-14);
+    font-style: italic;
   }
 }
 
@@ -387,9 +387,9 @@
 
 .biopic-img {
   margin-inline: auto;
+  animation: blob auto linear both;
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   box-shadow: 3px 3px 7px rgb(0 0 0 / 30%);
-  animation: blob auto linear both;
   animation-timeline: scroll(root);
 }
 
@@ -433,13 +433,13 @@ a.to-top {
 
   @media (width < 64rem) {
     display: inline-grid;
-    z-index: 100;
     position: fixed;
+    z-index: 100;
     right: var(--spacing-24);
     bottom: var(--spacing-20);
-    place-content: center;
     width: var(--spacing-36);
     height: var(--spacing-36);
+    animation: scroll-top auto linear forwards;
     border-radius: 50%;
     background: var(--color-orange-50);
     box-shadow: 0 0 4px rgb(0 0 0 / 30%);
@@ -447,7 +447,7 @@ a.to-top {
     font-weight: var(--font-weight-extrabold);
     line-height: 1;
     text-decoration: none;
-    animation: scroll-top auto linear forwards;
+    place-content: center;
     animation-timeline: scroll(root);
     animation-range: 0 150dvh;
   }

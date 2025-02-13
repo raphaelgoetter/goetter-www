@@ -4,10 +4,10 @@
  */
 
 @font-face {
+  font-family: calendas;
   font-style: normal;
   font-weight: 400;
   src: url("/fonts/calendas.woff2") format("woff2");
-  font-family: calendas;
   font-display: swap;
 }
 
@@ -57,8 +57,8 @@
 }
 
 html {
-  background-image: url("/images/bg-light.webp");
   background-color: var(--surface);
+  background-image: url("/images/bg-light.webp");
   scroll-behavior: smooth;
 
   &[data-theme="dark"] {
@@ -68,8 +68,8 @@ html {
 
 body {
   color: var(--on-surface);
-  font-weight: var(--font-weight-light);
   font-size: var(--text-body);
+  font-weight: var(--font-weight-light);
 
   @media (width >= 40rem) {
     font-weight: var(--font-weight-extralight);
@@ -149,18 +149,18 @@ a {
 }
 
 h2::after {
+  content: "";
   display: block;
   width: 66%;
   height: 2px;
-  translate: 0 var(--spacing-12);
   background-image: linear-gradient(
     to right,
     var(--color-orange-50),
     var(--color-hotpink)
   );
-  background-position: left bottom;
   background-repeat: no-repeat;
-  content: "";
+  background-position: left bottom;
+  translate: 0 var(--spacing-12);
 }
 
 /* ----------------------------------
