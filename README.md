@@ -9,6 +9,7 @@
 
 Annexes :
 
+- **Stylelint** : bonnes pratiques CSS
 - **Prettier** : formatage du code
 - `prettier-plugin-css-order` : pour réordonner les propriétés CSS
 
@@ -21,6 +22,39 @@ Annexes :
 
 1. Suivre pas à pas les étapes de la [Routine d'initialisation de projet](https://github.com/alsacreations/kiwipedia/blob/main/starters/project-init.md) d'Alsacréations.
 2. Installer [vite-plugin-handlebars](https://www.npmjs.com/package/vite-plugin-handlebars)
+
+## Note : Ajout et configuration de Stylelint
+
+`pnpm install --save-dev stylelint stylelint-config-standard stylelint-config-html stylelint-order stylelint-config-property-sort-order-smacss`
+
+Dans `stylelint.config.js` :
+
+```js
+/** @type {import('stylelint').Config} */
+export default {
+  extends: [
+    "stylelint-config-standard",
+    "stylelint-config-html",
+    "stylelint-config-property-sort-order-smacss",
+  ],
+  plugins: ["stylelint-order"],
+}
+```
+
+Dans VS Code : installer l'extension [stylelint.vscode-stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) et modifier les settings :
+
+```json
+{
+  "stylelint.validate": [
+      ...,
+      // ↓ Add "html" language.
+      "html",
+      // ↓ Add "vue" language.
+      "vue"
+  ]
+```
+
+**Redémarrer VS Code.**
 
 ## Github Pages
 

@@ -124,10 +124,12 @@
     white-space: nowrap !important;
     clip-path: inset(50%) !important;
   }
+
   .offscreen {
     contain-intrinsic-size: auto 500px;
     content-visibility: auto;
   }
+
   .d-block {
     display: block;
   }
