@@ -28,6 +28,11 @@ export default {
       { ignoreProperties: { animation: "auto", "animation-duration": "auto" } },
     ],
 
+    // Unités
+    "declaration-property-unit-allowed-list": {
+      "/^font|^font-size/": ["rem", "vw", "dvw"], // on autorise uniquement les unités relatives pour les tailles de police
+    },
+
     // Imports
     "import-notation": "string", // pas de "url()" pour les imports
 
