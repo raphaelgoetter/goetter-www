@@ -30,7 +30,7 @@ export default {
 
     // Unités
     "declaration-property-unit-allowed-list": {
-      "/^font|^font-size/": ["rem", "vw", "dvw"], // on autorise uniquement les unités relatives pour les tailles de police
+      "/^font|^font-size/": ["rem", "vw", "%", "dvw"], // on autorise uniquement les unités relatives pour les tailles de police
     },
 
     // Imports
