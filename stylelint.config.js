@@ -28,6 +28,26 @@ export default {
       { ignoreProperties: { animation: "auto", "animation-duration": "auto" } },
     ],
 
+    // Prefixes
+    "property-no-vendor-prefix": [
+      true, // on refuse les préfixes vendeurs
+      {
+        ignoreProperties: [
+          "mask",
+          "mask-size",
+          "mask-position",
+          "line-clamp",
+          "backdrop-filter",
+          "user-select",
+          "initial-letter",
+          "box-decoration-break",
+          "text-fill-color",
+          "text-stroke",
+          "box-orient",
+        ],
+      },
+    ],
+
     // Unités
     "declaration-property-unit-allowed-list": {
       "/^font|^font-size/": ["rem", "vw", "%", "dvw"], // on autorise uniquement les unités relatives pour les tailles de police
