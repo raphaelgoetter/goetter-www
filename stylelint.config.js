@@ -48,6 +48,12 @@ export default {
       },
     ],
 
+    // Raccourcis
+    "declaration-block-no-redundant-longhand-properties": [
+      true,
+      { ignoreShorthands: ["grid-template"] },
+    ],
+
     // Unités
     "declaration-property-unit-allowed-list": {
       "/^font|^font-size/": ["rem", "vw", "%", "dvw"], // on autorise uniquement les unités relatives pour les tailles de police
