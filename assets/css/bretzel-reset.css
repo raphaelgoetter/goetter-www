@@ -25,16 +25,16 @@
 /* On évite les débordements de page et les zooms non désirés en landscape */
 html {
   overflow-wrap: break-word;
-  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 /* On donne à body toute la hauteur + styles divers */
 body {
   min-height: 100dvh;
   margin: 0;
-  line-height: 1.5;
   font-family: system-ui, sans-serif;
-  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  text-rendering: optimizespeed;
 }
 
 /* On supprime les styles des listes ayant une class (version accessible) */
@@ -82,6 +82,7 @@ h5,
 h6 {
   text-wrap: balance;
 }
+
 p,
 li,
 figcaption {
@@ -122,34 +123,40 @@ select {
   margin: 0;
   background-color: transparent;
   color: inherit;
-  font-size: inherit;
-  line-height: inherit;
   font-family: inherit;
+  font-size: inherit;
   letter-spacing: inherit;
+  line-height: inherit;
   vertical-align: middle;
 }
+
 form,
 fieldset {
   border: none;
 }
+
 fieldset {
   margin: 0;
   padding: 1em;
 }
+
 legend {
   max-width: 100%;
   border: 0;
   color: inherit;
   white-space: normal;
 }
+
 label {
   display: inline-block;
   cursor: pointer;
 }
+
 button {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
+
 textarea {
   overflow: auto;
   vertical-align: top;
@@ -162,9 +169,10 @@ pre,
 code,
 kbd,
 samp {
-  font-size: 1em;
   font-family: monospace, monospace;
+  font-size: 1em;
 }
+
 pre {
   overflow: auto;
   line-height: normal;
@@ -174,14 +182,17 @@ pre {
 
 /* On stylise les SVG */
 svg:not([fill]) {
-  fill: currentColor;
+  fill: currentcolor;
 }
+
 svg {
   overflow: visible;
 }
+
 svg * {
   transform-box: fill-box;
 }
+
 svg:has(symbol) {
   display: none;
 }
@@ -190,19 +201,23 @@ svg:has(symbol) {
 [aria-busy="true"] {
   cursor: progress;
 }
+
 [aria-controls] {
   cursor: pointer;
 }
+
 [aria-disabled="true"],
 [disabled] {
   cursor: not-allowed;
 }
+
 [aria-hidden="false"][hidden] {
   display: revert;
 }
+
 [aria-hidden="false"][hidden]:not(:focus) {
-  clip: rect(0, 0, 0, 0);
   position: absolute;
+  clip: rect(0, 0, 0, 0);
 }
 
 /* On désactive les animations selon les préférences utilisateur */
@@ -210,12 +225,12 @@ svg:has(symbol) {
   *,
   ::before,
   ::after {
-    background-attachment: initial !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
     animation-duration: 1ms !important;
     animation-delay: -1ms !important;
     animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
     scroll-behavior: auto !important;
-    transition-delay: 0s !important;
-    transition-duration: 0s !important;
   }
 }
