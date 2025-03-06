@@ -46,9 +46,9 @@
 .theme-switcher {
   --theme-switcher-radius: 40px;
   --theme-switcher-padding: 2px;
-  --theme-switcher-border-color: light-dark(#777777, #bbbbbb);
+  --theme-switcher-border-color: transparent;
   --theme-switcher-border-size: 1px;
-  --theme-switcher-background: light-dark(#333333, #777777);
+  --theme-switcher-background: light-dark(#cccccc, #777777);
   --theme-switcher-icon-size: 14px;
   --theme-switcher-icon-color: #ffffff;
   --theme-switcher-icon-background: light-dark(#777777, #333333);
