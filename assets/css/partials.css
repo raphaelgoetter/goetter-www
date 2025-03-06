@@ -45,41 +45,45 @@
 
 .theme-switcher {
   --theme-switcher-radius: 40px;
-  --theme-switcher-border: var(--color-gray-90);
-  --theme-switcher-border-size: 3px;
-  --theme-switcher-background: var(--color-gray-90);
-  --theme-switcher-icon-size: 18px;
-  --theme-switcher-icon-color: var(--color-white);
-  --theme-switcher-icon-background: #777777;
+  --theme-switcher-padding: 2px;
+  --theme-switcher-border-color: light-dark(#777777, #bbbbbb);
+  --theme-switcher-border-size: 1px;
+  --theme-switcher-background: light-dark(#333333, #777777);
+  --theme-switcher-icon-size: 14px;
+  --theme-switcher-icon-color: #ffffff;
+  --theme-switcher-icon-background: light-dark(#777777, #333333);
+  --theme-switcher-transition: 0.25s;
 
-  display: inline-grid;
+  display: inline-flex;
   justify-content: start;
-  width: calc(
-    var(--theme-switcher-icon-size) * 2 + var(--theme-switcher-border-size) * 2
-  );
-  padding: var(--theme-switcher-border-size);
+  width: calc((var(--theme-switcher-icon-size)) * 2.3);
+  padding: var(--theme-switcher-padding);
   border: 0;
   border-radius: var(--theme-switcher-radius);
-  outline-color: currentcolor;
-  outline-offset: 0.5em;
+  outline: var(--theme-switcher-border-size) solid
+    var(--theme-switcher-border-color);
   background-color: var(--theme-switcher-background);
   line-height: 0;
   cursor: pointer;
+
+  &::before {
+    content: "";
+    flex: 0 0 0;
+    transition: var(--theme-switcher-transition) flex-grow;
+    will-change: flex-grow;
+  }
 
   & * {
     pointer-events: none;
   }
 
   & > .theme-icon {
-    padding: var(--theme-switcher-border-size);
-    transition: 0.8s;
-    transition-property: rotate, translate;
-    border-radius: var(--radius-full);
+    padding: 2px;
+    transition: var(--theme-switcher-transition) rotate;
+    border-radius: 50%;
     background-color: var(--theme-switcher-icon-background);
     color: var(--theme-switcher-icon-color);
-    translate: 0;
-    rotate: 0turn;
-    will-change: rotate, translate;
+    rotate: 0deg;
   }
 
   & [class^="theme-icon-"] {
@@ -88,20 +92,16 @@
   }
 
   &[aria-pressed="true"] {
-    --theme-switcher-border: #777777;
-    --theme-switcher-background: #777777;
-    --theme-switcher-icon-background: var(--color-gray-80);
+    & > .theme-icon {
+      rotate: 240deg;
+    }
 
     & .theme-icon-light {
       display: none;
     }
 
-    & > .theme-icon {
-      translate: calc(
-        var(--theme-switcher-icon-size) -
-          (var(--theme-switcher-border-size) * 2)
-      );
-      rotate: 1turn;
+    &::before {
+      flex: 1 0 0;
     }
   }
 
