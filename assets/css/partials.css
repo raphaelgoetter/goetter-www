@@ -46,8 +46,8 @@
 .theme-switcher {
   --theme-switcher-radius: 40px;
   --theme-switcher-padding: 2px;
-  --theme-switcher-border-color: transparent;
-  --theme-switcher-border-size: 1px;
+  --theme-switcher-outline-color: transparent;
+  --theme-switcher-outline-size: 1px;
   --theme-switcher-background: light-dark(#cccccc, #777777);
   --theme-switcher-icon-size: 14px;
   --theme-switcher-icon-color: #ffffff;
@@ -60,8 +60,8 @@
   padding: var(--theme-switcher-padding);
   border: 0;
   border-radius: var(--theme-switcher-radius);
-  outline: var(--theme-switcher-border-size) solid
-    var(--theme-switcher-border-color);
+  outline: var(--theme-switcher-outline-size) solid
+    var(--theme-switcher-outline-color);
   background-color: var(--theme-switcher-background);
   line-height: 0;
   cursor: pointer;
@@ -91,23 +91,28 @@
     height: var(--theme-switcher-icon-size);
   }
 
-  &[aria-pressed="true"] {
-    & > .theme-icon {
-      rotate: 240deg;
-    }
-
-    & .theme-icon-light {
-      display: none;
-    }
-
-    &::before {
-      flex: 1 0 0;
-    }
+  &:focus-visible {
+    outline: dashed var(--spacing-2) var(--color-link);
+    outline-offset: var(--spacing-2);
   }
 
   &[aria-pressed="false"] {
     & .theme-icon-dark {
       display: none;
+    }
+  }
+
+  &[aria-pressed="true"] {
+    & .theme-icon-light {
+      display: none;
+    }
+
+    & > .theme-icon {
+      rotate: 240deg;
+    }
+
+    &::before {
+      flex: 1 0 0;
     }
   }
 }
