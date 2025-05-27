@@ -2,7 +2,7 @@
 import { resolve } from "path" // resolve n'est plus strictement nécessaire pour cette config spécifique mais peut rester pour d'autres usages.
 import { defineConfig } from "vite"
 import handlebars from "vite-plugin-handlebars"
-import { ViteImageOptimizer } from "vite-plugin-image-optimizer"
+import vsharp from "vite-plugin-vsharp"
 
 // https://www.npmjs.com/package/vite-plugin-handlebars
 const pageData = {
@@ -25,12 +25,15 @@ export default defineConfig({
       },
       partialDirectory: resolve(__dirname, "assets/partials"),
     }),
-    ViteImageOptimizer({
+    vsharp({
       // Fichiers dans public/images/
-      // include: ["public/images/**/*"],
+      includePublic: ["public/images/*"],
+      // Mais pas dans public/archives/
+      // excludePublic: ["public/archives/*"],
       png: {
         // https://sharp.pixelplumbing.com/api-output#png
         quality: 85,
+        palette: true,
       },
       jpeg: {
         // https://sharp.pixelplumbing.com/api-output#jpeg
