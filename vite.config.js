@@ -1,5 +1,5 @@
 // vite.config.js
-import { resolve } from "path"
+import { resolve } from "path" // resolve n'est plus strictement nécessaire pour cette config spécifique mais peut rester pour d'autres usages.
 import { defineConfig } from "vite"
 import handlebars from "vite-plugin-handlebars"
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer"
@@ -26,6 +26,8 @@ export default defineConfig({
       partialDirectory: resolve(__dirname, "assets/partials"),
     }),
     ViteImageOptimizer({
+      // Fichiers dans public/images/
+      // include: ["public/images/**/*"],
       png: {
         // https://sharp.pixelplumbing.com/api-output#png
         quality: 85,
