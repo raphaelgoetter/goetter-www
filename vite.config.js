@@ -26,10 +26,6 @@ export default defineConfig({
       partialDirectory: resolve(__dirname, "assets/partials"),
     }),
     vsharp({
-      // Fichiers dans public/images/
-      includePublic: ["public/images/*"],
-      // Mais pas dans public/archives/
-      // excludePublic: ["public/archives/*"],
       png: {
         // https://sharp.pixelplumbing.com/api-output#png
         quality: 85,
