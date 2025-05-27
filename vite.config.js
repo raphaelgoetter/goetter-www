@@ -26,21 +26,29 @@ export default defineConfig({
       partialDirectory: resolve(__dirname, "assets/partials"),
     }),
     ViteImageOptimizer({
+      png: {
+        // https://sharp.pixelplumbing.com/api-output#png
+        quality: 85,
+      },
       jpeg: {
         // https://sharp.pixelplumbing.com/api-output#jpeg
-        quality: 90,
+        quality: 85,
+        mozjpeg: true,
       },
       jpg: {
         // https://sharp.pixelplumbing.com/api-output#jpeg
-        quality: 90,
+        quality: 85,
+        mozjpeg: true,
       },
       webp: {
         // https://sharp.pixelplumbing.com/api-output#webp
-        lossless: true,
+        quality: 80,
+        lossless: false,
       },
       avif: {
         // https://sharp.pixelplumbing.com/api-output#avif
-        lossless: true,
+        quality: 70,
+        lossless: false,
       },
     }),
   ],
