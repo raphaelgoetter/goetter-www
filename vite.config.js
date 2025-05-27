@@ -10,7 +10,7 @@ const pageData = {
     isHome: true,
     title: "Raphaël Goetter, CSS addict",
   },
-  "/error.html": {
+  "/404.html": {
     isError: true,
     title: "Erreur 404, fichier non trouvé",
   },
