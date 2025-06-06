@@ -1,5 +1,5 @@
 // vite.config.js
-import { resolve } from "path" // resolve n'est plus strictement nécessaire pour cette config spécifique mais peut rester pour d'autres usages.
+import { resolve } from "path"
 import { defineConfig } from "vite"
 import handlebars from "vite-plugin-handlebars"
 import vsharp from "vite-plugin-vsharp"
@@ -26,6 +26,8 @@ export default defineConfig({
       partialDirectory: resolve(__dirname, "assets/partials"),
     }),
     vsharp({
+      // excludePublic: ["public/*"],
+      // includePublic: ["public/images/*"],
       png: {
         // https://sharp.pixelplumbing.com/api-output#png
         quality: 85,
