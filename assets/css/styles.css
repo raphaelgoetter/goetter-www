@@ -185,6 +185,11 @@ h2::after {
   }
 }
 
+/* ----------------------------------
+ * Layout
+ * ----------------------------------
+ */
+
 .body-deco {
   position: absolute;
   z-index: 1000;
@@ -203,6 +208,7 @@ h2::after {
   }
 }
 
+/* stylelint-disable-next-line */
 body {
   display: grid;
   grid-template-areas:
