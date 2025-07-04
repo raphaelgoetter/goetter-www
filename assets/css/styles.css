@@ -264,40 +264,54 @@ body {
   }
 }
 
-/* Indicateur de scroll */
+/* Indicateurs de scroll */
+@property --left-fade {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --right-fade {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
 
 [data-scroll-fade] {
-  /* Largeur de l'estompage */
-  --scroll-fade-width: 150px;
-
-  /* Masque dégradé transparent-noir-transparent */
-  --mask-gradient: linear-gradient(
+  overflow-x: scroll;
+  mask: linear-gradient(
     to right,
-    transparent,
-    #000000 var(--scroll-fade-width),
-    #000000 calc(100% - var(--scroll-fade-width)),
-    transparent
+    #00000000,
+    #ffffffff var(--left-fade) calc(100% - var(--right-fade)),
+    #00000000
   );
-
-  /* Application du masque au-dessus de l'élément */
-  mask-image: var(--mask-gradient);
-
-  /* Position de départ du masque */
-  mask-position: calc(-1 * var(--scroll-fade-width)) 0;
-
-  /* Le masque doit être plus large que son parent */
-  mask-size: calc(100% + var(--scroll-fade-width)) 100%;
 
   /* Animation lors du scroll horizontal */
   @supports (animation-timeline: scroll()) {
-    animation: fade-mask linear forwards;
+    animation: scrollfade linear forwards;
     animation-timeline: scroll(self x);
   }
 }
 
-/* Animation vers position finale du masque */
-@keyframes fade-mask {
-  to {
-    mask-position: 0;
+/* Animation du masque */
+/* stylelint-disable */
+@keyframes scrollfade {
+  0% {
+    --left-fade: 0;
+  }
+
+  20%,
+  100% {
+    --left-fade: 150px;
+  }
+
+  0%,
+  80% {
+    --right-fade: 150px;
+  }
+
+  100% {
+    --right-fade: 0;
   }
 }
+/* stylelint-enable */
