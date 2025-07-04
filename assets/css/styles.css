@@ -71,7 +71,7 @@ body {
   font-size: var(--text-body);
   font-weight: var(--font-weight-light);
 
-  @media (width >= 40rem) {
+  @media (--sm) {
     font-weight: var(--font-weight-extralight);
   }
 }
@@ -109,7 +109,7 @@ h3 {
 ul {
   padding-left: var(--spacing-12);
 
-  @media (width >= 64rem) {
+  @media (--lg) {
     padding-left: var(--spacing-16);
   }
 
