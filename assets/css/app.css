@@ -1,10 +1,13 @@
-@layer reset, theme, components, utilities;
+@layer config, base, components, utilities;
 
-@import "/assets/css/bretzel-reset.css" layer(reset);
-@import "/assets/css/bretzel-print.css" layer(reset);
-@import "/assets/css/bretzel-layouts.css" layer(reset);
-@import "/assets/css/styles.css" layer(components);
-@import "/assets/css/layout.css" layer(components);
+/* Config (reset, layouts, polices, themes) */
+@import "/assets/css/reset.css" layer(config);
+@import "/assets/css/layouts.css" layer(config);
+
+/* Base */
+@import "/assets/css/styles.css" layer(base);
+
+/* Components */
 @import "/assets/css/partials.css" layer(components);
 
 /* ----------------------------------
