@@ -289,6 +289,7 @@
   margin: 0;
   padding-left: 0;
   gap: var(--spacing-8);
+  list-style: none;
 
   @media (--lg) {
     justify-content: end;
