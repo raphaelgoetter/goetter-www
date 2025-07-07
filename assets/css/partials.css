@@ -268,7 +268,7 @@
   margin-block: var(--spacing-10);
   color: var(--color-subtitle);
   font-family: var(--font-calendas);
-  font-size: var(--text-h3-level);
+  font-size: var(--text-l);
   font-weight: var(--font-weight-light);
   text-align: center;
   font-feature-settings: "swsh", "liga", "dlig";

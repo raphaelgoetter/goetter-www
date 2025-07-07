@@ -68,7 +68,7 @@ html {
 
 body {
   color: var(--on-surface);
-  font-size: var(--text-body);
+  font-size: var(--text-m);
   font-weight: var(--font-weight-light);
 
   @media (--sm) {
@@ -90,20 +90,20 @@ h3 {
 
 h1 {
   margin: 0;
-  font-size: var(--text-h1-level);
+  font-size: var(--text-xxl);
 }
 
 h2 {
   margin-top: 0;
-  margin-bottom: var(--spacing-medium);
-  font-size: var(--text-h2-level);
+  margin-bottom: var(--spacing-m);
+  font-size: var(--text-xl);
 }
 
 h3 {
   width: fit-content;
   margin-top: 0;
-  margin-bottom: var(--spacing-medium);
-  font-size: var(--text-h3-level);
+  margin-bottom: var(--spacing-m);
+  font-size: var(--text-l);
 }
 
 ul {
@@ -169,8 +169,8 @@ h2::after {
  */
 
 .section {
-  margin-bottom: var(--spacing-medium);
-  padding: var(--spacing-medium);
+  margin-bottom: var(--spacing-m);
+  padding: var(--spacing-m);
   border-radius: var(--radius-md);
   background-color: var(--surface-dim);
 
@@ -258,7 +258,7 @@ body {
   --item-size: auto;
 
   display: flex;
-  margin-block: var(--spacing-medium);
+  margin-block: var(--spacing-m);
   padding: 0;
   overflow-x: auto;
   list-style: none;

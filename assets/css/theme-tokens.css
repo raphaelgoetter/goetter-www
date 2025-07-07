@@ -1,0 +1,38 @@
+:root {
+  --spacing-max: 1440px;
+  --spacing-m: clamp(
+    var(--spacing-16),
+    0.5109rem + 2.1739vw,
+    var(--spacing-36)
+  );
+  --text-m: clamp(var(--text-18), 1.0761rem + 0.2174vw, var(--text-20));
+  --text-l: clamp(var(--text-20), 1.0054rem + 1.087vw, var(--text-30));
+  --text-xl: clamp(var(--text-24), 1.2065rem + 1.3043vw, var(--text-36));
+  --text-xxl: clamp(var(--text-30), 1.4348rem + 1.9565vw, var(--text-48));
+}
+
+/* ----------------------------------
+ * Classes utilitaires
+ * ----------------------------------
+ */
+
+@layer utilities {
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    clip-path: inset(50%) !important;
+  }
+
+  .offscreen {
+    contain-intrinsic-size: auto 500px;
+    content-visibility: auto;
+  }
+
+  .d-block {
+    display: block;
+  }
+}
