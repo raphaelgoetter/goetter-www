@@ -32,7 +32,7 @@ This is a **static site** built with:
 ### CSS Architecture (Critical)
 
 - **CSS Layers**: `@layer config, base, components, utilities` - respect this order
-- **Modern CSS**: Use nesting, `light-dark()`, `:has()`, modern custom media queries `@media (--sm)`
+- **Modern CSS**: Use nesting, `light-dark()`, `:has()`, modern custom media queries `@media (--sm)` (tokens declared in `assets/css/theme.css` via `@custom-media`)
 - **Custom Properties**: Follow strict naming: `--color-*`, `--spacing-*`, `--text-*`, `--font-*`
 - **Theme System**: Dynamic light/dark mode via `--surface`, `--on-surface` custom props + `data-theme` attribute
 
@@ -79,7 +79,7 @@ You carefully provide accurate, factual, thoughtful answers, and excel at reason
 - Use `class` selectors over `id` selectors for styling.
 - Avoid `!important;` (use `:where()`, `@layer()` to manage specificity when necessary).
 - Use `rem` for font sizes, spacings, gaps and media queries. Important: font sizes should never be defined in `px` units.
-- Use `px` for elements dimensions (e.g. `width` and `height`).
+- Use `px` for element dimensions (e.g. `width` and `height`).
 - Use `dvh` for body's min-height (e.g. `min-height: 100dvh;`).
 
 ### CSS Nesting
@@ -87,7 +87,7 @@ You carefully provide accurate, factual, thoughtful answers, and excel at reason
 - Use vanilla CSS nesting (with `&`) to reference the parent selector.
 - Always use nesting for states (e.g. `&:hover, &:focus, &:active {/*rules*/}`)
 - Always use nesting for media queries (e.g. `@media (width >= 48rem) {/*rules*/}`).
-- States are nested the end of the rules concerning the element, separated by an empty line.
+- States are nested at the end of the rules concerning the element, separated by an empty line.
 - Media queries are nested at the end of the rules concerning the element and its states, separated by an empty line.
 
 ### Modern CSS Rules
@@ -96,14 +96,50 @@ Always use modern CSS rules and selectors when possible:
 
 - Always use modern media queries range syntax (e.g., `@media (width >= 48rem)` over `@media (min-width: 48rem)`).
 - Always use modern CSS properties when possible.
-- Use modern selectors when it is usefull, such as `:has()`, `:is()`, `:where()`,.
+- Use modern selectors when it is useful, such as `:has()`, `:is()`, `:where()`.
+
+#### Examples
+
+- CSS Layers (see `assets/css/app.css`):
+
+```css
+@layer config, base, components, utilities;
+
+/* Config */
+@import "/assets/css/reset.css" layer(config);
+@import "/assets/css/theme.css" layer(config);
+@import "/assets/css/theme-tokens.css" layer(config);
+@import "/assets/css/layouts.css" layer(config);
+
+/* Base */
+@import "/assets/css/styles.css" layer(base);
+
+/* Components */
+@import "/assets/css/partials.css" layer(components);
+```
+
+- Custom media usage (tokens declared in `assets/css/theme.css`):
+
+```css
+/* theme.css */
+@custom-media --sm (width >= 40rem);
+
+/* usage */
+.card {
+  gap: var(--spacing-16);
+
+  @media (--sm) {
+    gap: var(--spacing-24);
+  }
+}
+```
 
 ## Responsive Design
 
 Always ensure responsive design using media queries and flexible layouts.
 
 - Use Grid Layout and Flexbox for layout.
-- Chose Grid Layout over Flexbox when possible.
+- Choose Grid Layout over Flexbox when possible.
 - Use mobile-first approach for media queries.
 
 ## Custom properties naming convention
@@ -132,7 +168,7 @@ Always use these prefixes for CSS custom properties:
 
 - Use modern JavaScript syntax and features.
 - Use `const` and `let` instead of `var`.
-- Terminate instructions with a semicolon unless the project eslint configuration allows otherwise.
+- Terminate statements with a semicolon unless the project eslint configuration allows otherwise.
 - Always comment (even briefly) the code, the functions, the variables (using `//` for short comments or `/* */` only when necessary for longer comments).
 - Encapsulate the sets of variables used by the same script in an object.
 - Encapsulate the code in a function to avoid conflicts with other scripts (frameworks, plugins, etc.).
