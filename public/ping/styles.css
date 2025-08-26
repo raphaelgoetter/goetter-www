@@ -163,6 +163,7 @@ th {
   display: grid;
   gap: var(--spacing-s);
   grid-template-columns: repeat(2, 1fr);
+  margin-bottom: var(--spacing-m);
 
   @media (width >= 48rem) {
     grid-template-columns: repeat(4, 1fr);
