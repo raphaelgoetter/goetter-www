@@ -173,3 +173,10 @@ th {
     grid-template-columns: 1fr;
   }
 }
+
+.filter-misc li {
+  margin-bottom: var(--spacing-4);
+  padding: var(--spacing-s);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+}
