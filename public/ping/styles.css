@@ -4,7 +4,7 @@ body {
   font-size: var(--text-m);
 
   @media (width >= 64rem) {
-    padding-left: 22rem;
+    padding-left: 20rem;
   }
 }
 
@@ -19,9 +19,9 @@ a {
 
   @media (width >= 64rem) {
     position: fixed;
-    top: var(--spacing-s);
+    top: var(--spacing-m);
     left: var(--spacing-s);
-    width: 18rem;
+    width: 16rem;
   }
 }
 
@@ -64,6 +64,7 @@ details {
 }
 
 table {
+  border-bottom: 2px solid var(--color-gray-300);
   border-radius: var(--radius-md);
 }
 
@@ -90,4 +91,78 @@ th:nth-child(5) {
 th:nth-child(6) {
   width: 16rem;
   min-width: 16rem;
+}
+
+/* Couleur de surbrillance de la prochaine journée (accessibilité visuelle) */
+:root {
+  /* Couleur fournie par le besoin (oklch) */
+  --color-highlight-next: oklch(97% 0.08 49.95);
+}
+
+/* Lignes de la prochaine journée */
+tbody tr.is-next {
+  background-color: var(--color-highlight-next);
+}
+
+/* Lignes des rencontres passées */
+tbody tr.is-past {
+  opacity: 50%;
+}
+
+/* Filtrage par équipe */
+.is-filtering tbody tr {
+  display: none;
+}
+
+.is-filtering tbody tr.show {
+  display: table-row;
+}
+
+.is-filtering tbody th[scope="rowgroup"] {
+  display: table-cell;
+}
+
+.is-filtering tbody tr.group-header {
+  display: table-row;
+}
+
+/* En mode filtrage, si la ligne d'entête (group-header) ne matche pas, n'afficher que la colonne J */
+.is-filtering tbody tr.group-header:not(.show) td {
+  display: none;
+}
+
+/* Bordures */
+thead :is(td, th) {
+  border-top: 1px solid var(--color-gray-300);
+
+  /* border-bottom: 1px solid var(--color-gray-300); */
+}
+
+td,
+th {
+  border-top: 1px solid var(--color-gray-100);
+  border-bottom: 0;
+}
+
+:not(.is-filtering) tr:has(th[id]) :is(th, td) {
+  border-top: 1px solid var(--color-gray-300);
+}
+
+.is-filtering tr:has(th[id]) :is(th, td) {
+  border-top: 1px solid var(--color-gray-100);
+  border-bottom: 0;
+}
+
+.filter-list {
+  display: grid;
+  gap: var(--spacing-s);
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (width >= 48rem) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (width >= 64rem) {
+    grid-template-columns: 1fr;
+  }
 }
