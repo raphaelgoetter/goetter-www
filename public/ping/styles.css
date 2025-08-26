@@ -25,6 +25,12 @@ a {
   }
 }
 
+.page-header .toc {
+  @media (width < 64rem) {
+    display: none;
+  }
+}
+
 .page-title {
   font-size: var(--text-3xl);
 }
