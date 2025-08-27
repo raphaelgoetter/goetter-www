@@ -85,7 +85,6 @@
             </button>
           </li>
         </ul>
-        <p><strong>Divers</strong></p>
         <ul
           class="filter-misc"
           role="list">
@@ -892,6 +891,33 @@
 
       const scopeEl = document.getElementById("calendar-scope")
 
+      // Récupération de la liste des coordonnées à filtrer
+      const contactsList = document.querySelector(".section-contacts ul")
+      const contactItems = contactsList
+        ? [...contactsList.querySelectorAll("li")].map((li) => {
+            const strong = li.querySelector("strong")
+            // Clé = libellé avant les deux-points (ex: "Dorlisheim")
+            const key = (strong?.textContent || "").replace(/:\s*$/, "").trim()
+            return { li, key }
+          })
+        : []
+
+      const showAllContacts = () => {
+        contactItems.forEach(({ li }) => {
+          li.style.display = ""
+        })
+      }
+
+      const filterContactsByMatches = (encounteredTexts) => {
+        if (!contactItems.length) return
+        const texts = encounteredTexts.map((s) => s.toLowerCase())
+        contactItems.forEach(({ li, key }) => {
+          const k = key.toLowerCase()
+          const visible = texts.some((t) => t.includes(k))
+          li.style.display = visible ? "" : "none"
+        })
+      }
+
       const setPressed = (target) => {
         buttons.forEach((btn) =>
           btn.setAttribute("aria-pressed", String(btn === target)),
@@ -907,6 +933,8 @@
         groups.forEach((g) => {
           if (g && g.th) g.th.rowSpan = g.originalRowspan
         })
+        // Affiche toutes les coordonnées
+        showAllContacts()
       }
 
       const applyFilter = (team) => {
@@ -934,6 +962,7 @@
         const reTeam = makeTeamRegex(team)
 
         // Pour chaque groupe, affiche l'entête et les lignes correspondantes s'il existe au moins une rencontre du club
+        const encounteredTexts = []
         groups.forEach((group) => {
           const headerRow = group.rows[0]
           const headerText = getRencontreText(headerRow)
@@ -953,11 +982,20 @@
             otherMatches.forEach((tr) => tr.classList.add("show"))
             // Ajuste le rowspan au nombre de lignes visibles dans le groupe
             group.th.rowSpan = 1 + otherMatches.length
+
+            // Empile les textes de rencontres rencontrées par l'équipe
+            if (headerMatches) encounteredTexts.push(headerText)
+            otherMatches.forEach((tr) =>
+              encounteredTexts.push(getRencontreText(tr)),
+            )
           }
         })
 
         // Libellé dynamique du scope
         if (scopeEl) scopeEl.textContent = team
+
+        // Filtre la liste des coordonnées en fonction des adversaires rencontrés
+        filterContactsByMatches(encounteredTexts)
       }
 
       // Met à jour l'URL sans recharger la page
