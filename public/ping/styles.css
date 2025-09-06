@@ -79,27 +79,39 @@ table {
 }
 
 th:first-child {
-  width: 3rem;
+  width: 2rem;
 }
 
 th:nth-child(2) {
-  width: 11rem;
+  width: 8rem;
+
+  @media (width < 80rem) {
+    width: 10rem;
+  }
 }
 
 th:nth-child(3) {
-  width: 6rem;
+  width: 4rem;
+
+  @media (width < 80rem) {
+    width: 6rem;
+  }
 }
 
 th:nth-child(4) {
-  width: 24rem;
+  width: 16rem;
 }
 
 th:nth-child(5) {
-  width: 6rem;
+  width: 4rem;
+
+  @media (width < 80rem) {
+    width: 5rem;
+  }
 }
 
 th:nth-child(6) {
-  width: 20rem;
+  width: 24rem;
 }
 
 /* Couleur de surbrillance de la prochaine journée (accessibilité visuelle) */
