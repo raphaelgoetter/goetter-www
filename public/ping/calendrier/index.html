@@ -313,9 +313,9 @@
                   rowspan="6">
                   5
                 </th>
-                <td>Mar 18-11-2025</td>
+                <td></td>
                 <td>D2</td>
-                <td><strong>Marlenheim 6</strong> - Russ St Etienne 4</td>
+                <td><strong>Marlenheim 6</strong> — Relâche</td>
                 <td></td>
               </tr>
               <tr>
@@ -623,9 +623,9 @@
                 <td></td>
               </tr>
               <tr>
-                <td>Jeu 02-04-2026</td>
+                <td></td>
                 <td>D2</td>
-                <td>Russ St Etienne 4 - <strong>Marlenheim 6</strong></td>
+                <td><strong>Marlenheim 6</strong> — Relâche</td>
                 <td></td>
               </tr>
               <tr>
@@ -898,6 +898,42 @@
       }
 
       const scopeEl = document.getElementById("calendar-scope")
+
+      // Forcer l'affichage des "Relâche" en fin de journée
+      groups.forEach((group, idx) => {
+        const nextGroupFirst = groups[idx + 1]?.rows?.[0] || null
+        const header = group.rows[0]
+        const rest = group.rows.slice(1)
+        const isRelache = (tr) => /Relâche/i.test(getRencontreText(tr))
+
+        // Cas particulier: si la première ligne du groupe (porteuse du th) est une "Relâche",
+        // on échange ses cellules TD avec la première ligne non-relâche du groupe afin que le th reste en tête
+        // tout en positionnant "Relâche" sur une ligne ordinaire qui pourra être déplacée à la fin.
+        if (isRelache(header)) {
+          const firstNonRelache = rest.find((tr) => !isRelache(tr))
+          if (firstNonRelache) {
+            const headerTds = header.querySelectorAll("td")
+            const otherTds = firstNonRelache.querySelectorAll("td")
+            headerTds.forEach((td, i) => {
+              const tmp = td.innerHTML
+              td.innerHTML = otherTds[i].innerHTML
+              otherTds[i].innerHTML = tmp
+            })
+          }
+        }
+
+        // Après éventuel échange, déplacer toutes les lignes "Relâche" (hors entête) en fin de groupe
+        const relacheRows = rest.filter(isRelache)
+        if (relacheRows.length === 0) return
+        const nonRelacheRows = rest.filter((tr) => !isRelache(tr))
+
+        // Déplace dans le DOM toutes les lignes Relâche juste avant le début du prochain groupe (ou fin du tbody)
+        relacheRows.forEach((tr) => {
+          tbody.insertBefore(tr, nextGroupFirst)
+        })
+        // Met à jour l'ordre interne du groupe
+        group.rows = [header, ...nonRelacheRows, ...relacheRows]
+      })
 
       // Récupération de la liste des coordonnées à filtrer
       const contactsList = document.querySelector(".section-contacts ul")
