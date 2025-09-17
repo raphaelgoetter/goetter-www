@@ -433,44 +433,50 @@
  */
 
 /* Scroll to top */
-a.to-top {
-  display: none;
+html:has(.scroll-to-top) {
+  container-type: scroll-state;
+}
 
-  @media (width < 64rem) {
-    display: inline-grid;
-    position: fixed;
-    z-index: 100;
-    right: var(--spacing-24);
-    bottom: var(--spacing-20);
-    width: var(--spacing-36);
-    height: var(--spacing-36);
-    animation: scroll-top auto linear forwards;
-    border-radius: 50%;
-    background: var(--color-orange-50);
-    box-shadow: 0 0 4px oklch(0% 0 0 / 30%);
-    color: var(--color-white);
-    font-weight: var(--font-weight-extrabold);
-    line-height: 1;
-    text-decoration: none;
-    place-content: center;
-    animation-timeline: scroll(root);
-    animation-range: 0 150dvh;
+.scroll-to-top {
+  --to-top-size: 2rem;
+  --to-top-bottom: var(--spacing-20);
+  --to-top-right: var(--spacing-24);
+  --to-top-radius: 50%;
+  --to-top-bg: var(--color-orange-60);
+  --to-top-color: var(--color-white);
+
+  display: inline-grid;
+  position: fixed;
+  right: var(--to-top-right);
+  bottom: var(--to-top-bottom);
+  padding: 0.5rem;
+  transition: 0.25s 0.25s;
+  transition-property: translate;
+  border-radius: var(--to-top-radius);
+  background: var(--to-top-bg);
+  box-shadow: 0 0 4px oklch(0% 0 0 / 30%);
+  color: var(--to-top-color);
+  text-decoration: none;
+  place-content: center;
+  aspect-ratio: 1;
+
+  &:hover,
+  &:focus {
+    background: oklch(from var(--to-top-bg) calc(l * 0.9) c h);
   }
 
-  &:focus,
-  &:focus-visible {
-    background: var(--color-orange-50);
-    color: var(--color-white);
+  &:active {
+    background: oklch(from var(--to-top-bg) calc(l * 0.8) c h);
+  }
+
+  & svg {
+    width: var(--to-top-size);
+    height: var(--to-top-size);
   }
 }
 
-@keyframes scroll-top {
-  0%,
-  90% {
-    opacity: 0%;
-  }
-
-  100% {
-    opacity: 100%;
+@container not scroll-state(scrollable: top) {
+  .scroll-to-top {
+    translate: 0 150%;
   }
 }

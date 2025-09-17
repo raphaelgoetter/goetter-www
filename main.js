@@ -57,3 +57,15 @@ export function decodeEmail(encodedEmail) {
     )
   })
 }
+
+// Polyfill pour .scroll-to-top
+;(() => {
+  if (!CSS.supports || !CSS.supports("container-type", "scroll-state")) {
+    const b = () => document.querySelector(".scroll-to-top")
+    const u = () =>
+      (b().style.transform = scrollY > 10 ? "" : "translateY(150%)")
+    addEventListener("scroll", u, { passive: 1 })
+    addEventListener("DOMContentLoaded", u)
+    u()
+  }
+})()
