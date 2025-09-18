@@ -123,6 +123,10 @@ th:nth-child(6) {
 /* Lignes de la prochaine journée */
 tbody tr.is-next {
   background-color: var(--color-highlight-next);
+
+  & > th:first-child {
+    background-color: var(--color-white);
+  }
 }
 
 /* Lignes des rencontres passées */
