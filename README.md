@@ -191,3 +191,5 @@ Avantages:
   - que `theme.css` est bien importé dans `assets/css/app.css` via un `@import` en couche `config`;
   - que la chaîne `--sm` est correctement orthographiée côté usage et déclaration;
   - que PostCSS est exécuté (via Vite) et que vous n’éditez pas un CSS livré non transformé dans `public/`.
+
+.
