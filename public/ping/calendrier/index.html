@@ -894,6 +894,14 @@
         }
       })
 
+      // Détermine la cellule "Rencontre" pour une ligne donnée
+      const getRencontreText = (tr) => {
+        const hasTh = !!tr.querySelector('th[scope="rowgroup"]')
+        const idx = hasTh ? 3 : 2 // Rencontre: 3e td si th présent, sinon 2e td
+        const cell = tr.cells[idx]
+        return cell ? cell.textContent : ""
+      }
+
       // Trouve la première journée qui comporte au moins une date >= aujourd'hui
       const today = new Date()
       today.setHours(0, 0, 0, 0)
@@ -908,14 +916,6 @@
         return dates[0] >= today
       }
 
-      // Marquer toutes les lignes passées (avec date < aujourd'hui)
-      ;[...tbody.rows].forEach((tr) => {
-        const d = parseDateCell(getDateCell(tr))
-        if (d instanceof Date && d < today) {
-          tr.classList.add("is-past")
-        }
-      })
-
       // (La normalisation JS des dates en <time> a été supprimée: les dates sont statiques en HTML)
 
       // (remplacé) La logique .is-next par journée est supprimée au profit d'une détection par équipe
@@ -923,14 +923,6 @@
       // Filtrage par équipe via .toc
       const toc = document.querySelector(".toc")
       const buttons = toc ? toc.querySelectorAll(".js-filter") : []
-
-      // Détermine la cellule "Rencontre" pour une ligne donnée
-      const getRencontreText = (tr) => {
-        const hasTh = !!tr.querySelector('th[scope="rowgroup"]')
-        const idx = hasTh ? 3 : 2 // Rencontre: 3e td si th présent, sinon 2e td
-        const cell = tr.cells[idx]
-        return cell ? cell.textContent : ""
-      }
 
       const scopeEl = document.getElementById("calendar-scope")
 
@@ -968,6 +960,15 @@
         })
         // Met à jour l'ordre interne du groupe
         group.rows = [header, ...nonRelacheRows, ...relacheRows]
+      })
+
+      // Après réordonnancement, marquer toutes les lignes passées et considérer les "Relâche" comme jouées
+      ;[...tbody.rows].forEach((tr) => {
+        const d = parseDateCell(getDateCell(tr))
+        const isRelache = /Relâche/i.test(getRencontreText(tr))
+        if (isRelache || (d instanceof Date && d < today)) {
+          tr.classList.add("is-past")
+        }
       })
 
       // Marquer uniquement la prochaine rencontre pour chacune des équipes Marlenheim (après réordonnancement)
