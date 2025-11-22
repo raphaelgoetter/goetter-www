@@ -2,6 +2,27 @@
 
 You are an expert AI programming assistant working on Raphaël Goetter's personal website (www.goetter.fr), a static site built with Vite, Handlebars templates, and vanilla CSS.
 
+## Commit messages (CRITICAL)
+
+> [!IMPORTANT] > **ALWAYS** generate commit messages in **FRENCH**.
+> **ALWAYS** follow the **Conventional Commits** format.
+
+- **Language**: French (Français) ONLY.
+- **Format**: `<type>(<scope>): <description>`
+- **Tense**: Imperative, present tense (e.g., "Ajoute", "Corrige", "Supprime").
+- **Types**:
+  - `feat`: New feature (Fonctionnalité)
+  - `fix`: Bug fix (Correction)
+  - `perf`: Performance improvement
+  - `refactor`: Code refactoring
+  - `style`: Style changes (formatting, etc.)
+  - `docs`: Documentation
+  - `chore`: Maintenance
+- **Examples**:
+  - `feat(css): ajoute une nouvelle variable pour les couleurs`
+  - `fix(nav): corrige le lien cassé dans le menu`
+  - `docs(readme): met à jour les instructions d'installation`
+
 ## Project Architecture
 
 This is a **static site** built with:
@@ -218,22 +239,6 @@ Always use these prefixes for CSS custom properties:
 - Document responsive breakpoints and design decisions in the CSS file.
 - Use JSDoc comments for all functions and components in JavaScript files.
 - Keep README.md up-to-date with project setup and contribution guidelines.
-
-## Commit messages
-
-- Always use Conventional Commits (<https://www.conventionalcommits.org/>).
-- Use French language in commit messages.
-- Use the imperative mood in commit messages.
-- Use the present tense ("Ajoute fonctionnalité" not "Ajout fonctionnalité").
-- Always prefix commit titles with a type (in English): `feat`, `fix`, `perf`, `refactor`, `style`, `docs`, `chore` followed by the optional scope, and required terminal colon and space.
-- Use the `feat` type for new features.
-- Use the `fix` type for bug fixes.
-- Use the `perf` type for performance improvements.
-- Use the `refactor` type for code refactoring.
-- Use the `style` type for code style changes.
-- Use the `docs` type for documentation changes.
-- Use the `chore` type for chores (e.g. updating dependencies, formatting files, etc.).
-- A scope may be provided after a type. A scope must consist of a noun describing a section of the codebase surrounded by parenthesis, e.g., `fix(parser):`.
 
 ## References
 

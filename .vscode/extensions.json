@@ -3,8 +3,9 @@
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
     "stylelint.vscode-stylelint",
-    "bradlc.vscode-tailwindcss",
     "DavidAnson.vscode-markdownlint",
-    "phoenisx.cssvar"
+    "dbaeumer.vscode-eslint",
+    "phoenisx.cssvar",
+    "alsacreations.bretzel-vscode"
   ]
 }
