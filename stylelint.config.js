@@ -1,4 +1,8 @@
-/** @type {import('stylelint').Config} */
+/**
+ * @see https://stylelint.io/user-guide/configure/
+ * @type {import('stylelint').Config}
+ * Mise à jour : 2026-01-26
+ */
 export default {
   extends: [
     "stylelint-config-standard",
@@ -21,34 +25,34 @@ export default {
   ],
   plugins: ["stylelint-order"],
   rules: {
-    // Sélecteurs (règles générales)
+    // Sélecteurs
     "selector-max-id": 0, // on refuse les ID
     "selector-max-class": 3, // on limite le nombre de classes
     "selector-max-type": 3, // on limite le nombre de sélecteurs d'éléments
     "no-descending-specificity": null, // on désactive la règle de spécificité descendante
+    "selector-class-pattern": [
+      "^[a-z][a-z0-9]*(-[a-z0-9]+)*(--[a-z0-9]+(-[a-z0-9]+)*)?$",
+      {
+        message:
+          "Expected class selector to be kebab-case or BEM notation (block-name__element-name--modifier-name)",
+      },
+    ], // on accepte kebab-case et BEM
 
-    // Pseudo-classes inconnues
+    // Sélécteurs spécifiques
     "selector-pseudo-class-no-unknown": [
       true,
       { ignorePseudoClasses: ["deep", "global"] },
     ],
-
-    // Pseudo-éléments inconnus
     "selector-pseudo-element-no-unknown": [
       true,
       { ignorePseudoElements: ["v-deep"] },
     ],
-
-    // Règles @ inconnues
     "at-rule-no-unknown": [true, { ignoreAtRules: ["theme", "utility"] }],
-
-    // Valeurs inconnues
     "declaration-property-value-no-unknown": [
       true,
       {
         ignoreProperties: {
           "/^animation-/": "auto",
-          "/^container/": "/^scroll/",
           top: "/^anchor/",
           right: "/^anchor/",
           bottom: "/^anchor/",
@@ -57,9 +61,9 @@ export default {
       },
     ],
 
-    // Prefixes vendeurs
+    // Prefixes
     "property-no-vendor-prefix": [
-      true,
+      true, // on refuse les préfixes vendeurs
       {
         ignoreProperties: [
           "mask",
@@ -101,14 +105,15 @@ export default {
 
     // Polices
     "font-family-no-duplicate-names": null,
-    "font-weight-notation": "numeric", // notation numérique pour les poids de police
+    "font-weight-notation": "numeric", // on force la notation numérique pour les poids de police
+    "at-rule-descriptor-value-no-unknown": null, // on désactive la règle pour les descripteurs d'@font-face (Variable Fonts)
 
     // Couleurs
-    "color-hex-length": "long", // notation longue pour les couleurs hexadécimales
+    "color-hex-length": "long", // on force la notation longue pour les couleurs hexadécimales
     "color-named": "never", // on refuse les couleurs nommées
-    "color-function-notation": "modern", // notation moderne pour les fonctions de couleurs
-    "lightness-notation": "percentage", // notation en pourcentage pour la luminosité
-    "alpha-value-notation": "percentage", // notation en pourcentage pour l'alpha
+    "color-function-notation": "modern", // on force la notation moderne pour les fonctions de couleurs
+    "alpha-value-notation": "percentage", // on force la notation en pourcentage pour l'alpha
     "hue-degree-notation": "number",
+    "lightness-notation": null, // on autorise la notation décimale (0-1) pour la lightness
   },
 }
