@@ -2,8 +2,22 @@
 export default {
   extends: [
     "stylelint-config-standard",
-    "stylelint-config-html",
     "stylelint-config-property-sort-order-smacss",
+  ],
+  overrides: [
+    {
+      // On cible HTML, Handlebars, PHP ET Vue
+      files: [
+        "*.html",
+        "**/*.html",
+        "*.hbs",
+        "**/*.hbs",
+        "*.php",
+        "*.vue",
+        "**/*.vue",
+      ],
+      extends: ["stylelint-config-html"],
+    },
   ],
   plugins: ["stylelint-order"],
   rules: {

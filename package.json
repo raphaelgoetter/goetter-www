@@ -10,20 +10,20 @@
     "lint:css": "stylelint \"assets/css/**/*.css\""
   },
   "devDependencies": {
-    "@types/node": "^20.17.14",
+    "@types/node": "^25.0.10",
     "postcss-custom-media": "^11.0.6",
-    "sharp": "^0.34.2",
-    "stylelint": "^16.14.1",
+    "sharp": "^0.34.5",
+    "stylelint": "^17.0.0",
     "stylelint-config-html": "^1.1.0",
-    "stylelint-config-property-sort-order-smacss": "^10.0.0",
-    "stylelint-config-standard": "^37.0.0",
-    "stylelint-order": "^6.0.4",
-    "stylelint-use-nesting": "^6.0.0",
-    "vite": "^6.0.11",
+    "stylelint-config-property-sort-order-smacss": "^11.0.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-order": "^7.0.1",
+    "stylelint-use-nesting": "^6.0.1",
+    "vite": "^7.3.1",
     "vite-plugin-vsharp": "^1.9.1"
   },
   "dependencies": {
-    "prettier": "^3.4.2",
+    "prettier": "^3.8.1",
     "vite-plugin-handlebars": "^2.0.0"
   }
 }
