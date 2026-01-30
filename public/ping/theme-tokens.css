@@ -8,15 +8,6 @@
 :root {
   /* Color Tokens */
   color-scheme: light dark;
-  color-scheme: light;
-
-  &[data-theme="light"] {
-    color-scheme: light;
-  }
-
-  &[data-theme="dark"] {
-    color-scheme: dark;
-  }
 
   --primary: var(--color-blue-500);
   --on-primary: var(--color-white);
@@ -87,4 +78,12 @@
   --focus-ring-color: AccentColor;
   --focus-ring-width: 2px;
   --focus-ring-offset: 2px;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
 }

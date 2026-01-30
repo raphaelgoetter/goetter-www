@@ -127,16 +127,16 @@ Always use modern CSS rules and selectors when possible:
 @layer config, base, components, utilities;
 
 /* Config */
-@import "/assets/css/reset.css" layer(config);
-@import "/assets/css/theme.css" layer(config);
-@import "/assets/css/theme-tokens.css" layer(config);
-@import "/assets/css/layouts.css" layer(config);
+@import "./reset.css" layer(config);
+@import "./theme.css" layer(config);
+@import "./theme-tokens.css" layer(config);
+@import "./layouts.css" layer(config);
 
 /* Base */
-@import "/assets/css/styles.css" layer(base);
+@import "./styles.css" layer(base);
 
 /* Components */
-@import "/assets/css/partials.css" layer(components);
+@import "./partials.css" layer(components);
 ```
 
 - Custom media usage (tokens declared in `assets/css/theme.css`):

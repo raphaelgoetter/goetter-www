@@ -1,4 +1,4 @@
-import "/assets/css/app.css"
+import "./assets/css/app.css"
 
 // Encapsulation du code dans une fonction immédiatement invoquée
 ;(function () {

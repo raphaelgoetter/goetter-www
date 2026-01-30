@@ -32,14 +32,14 @@
   --color-title: light-dark(var(--color-orange-60), var(--color-orange-30));
   --color-subtitle: light-dark(var(--color-gray-70), var(--color-gray-40));
   --selection: light-dark(var(--color-orange-30), var(--color-orange-60));
+}
 
-  &[data-theme="light"] {
-    color-scheme: light;
-  }
+:root[data-theme="light"] {
+  color-scheme: light;
+}
 
-  &[data-theme="dark"] {
-    color-scheme: dark;
-  }
+:root[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 /* Couleur de sélection */
