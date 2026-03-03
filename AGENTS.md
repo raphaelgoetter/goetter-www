@@ -18,13 +18,16 @@ Site personnel et portfolio de Raphaël Goetter (goetter.fr), vitrine technique 
 - `pnpm build` : Générer le site statique dans le dossier `dist/`.
 - `pnpm lint:css` : Vérifier et valider le formatage du CSS.
 
-## Conventions critiques
+## Conventions critiques spécifiques au projet
 
-- **Style CSS** : Utilisation stricte de CSS natif (pas de Tailwind/Bootstrap) ; custom properties référencées dans le fichier `assets/css/theme.css`
-- **Responsive** : Approche **mobile-first** obligatoire pour tout nouveau style.
-- **Breakpoints** : Utiliser exclusivement les Custom Media de `theme.css` (`--sm`, `--lg`, `--xl`).
-- **Syntaxe Media Queries** : Utiliser les opérateurs modernes (ex: `@media (--sm)` ou `width >= 40rem`).
 - **Organisation** : Les composants réutilisables résident dans `assets/partials/`.
 - **Déploiement** : Automatisé via GitHub Actions lors d'un `git push`.
+
+## Conventions critiques générales
+
+- **CSS** : pas de styles inline (bloqués par CSP). Utilisation stricte de CSS natif (pas de Tailwind/Bootstrap) ; custom properties référencées dans le fichier `assets/css/theme.css`. Breakpoints via `@media (--md)` (custom media queries)
+- **Layouts** : Système **Bretzel** via attributs `data-layout` (`duo`, `boxed`, `stack`, `cluster`, `stack`, `autogrid`, etc.). Préférer ces attributs aux classes utilitaires.
+- **Syntaxe Media Queries** : Utiliser exclusivement les Custom Media de `theme.css` (ex: `@media (--sm)`, `@media (--lg)`, etc.).
+- **Tokens** : Utiliser les variables CSS sémantiques (`tokens`) plutôt que les primitives.
 - **Commits** : Conventional Commits, type en anglais, description en français — ex. : `feat(contact): ajoute captcha`
 - **Commentaires** : en français
