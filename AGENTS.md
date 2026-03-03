@@ -25,9 +25,9 @@ Site personnel et portfolio de Raphaël Goetter (goetter.fr), vitrine technique 
 
 ## Conventions critiques générales
 
-- **CSS** : pas de styles inline (bloqués par CSP). Utilisation stricte de CSS natif (pas de Tailwind/Bootstrap) ; custom properties référencées dans le fichier `assets/css/theme.css`. Breakpoints via `@media (--md)` (custom media queries)
-- **Layouts** : Système **Bretzel** via attributs `data-layout` (`duo`, `boxed`, `stack`, `cluster`, `stack`, `autogrid`, etc.). Préférer ces attributs aux classes utilitaires.
-- **Syntaxe Media Queries** : Utiliser exclusivement les Custom Media de `theme.css` (ex: `@media (--sm)`, `@media (--lg)`, etc.).
-- **Tokens** : Utiliser les variables CSS sémantiques (`tokens`) plutôt que les primitives.
+- **CSS** : Jamais de styles inline (bloqués par CSP). Utiliser uniquement du CSS natif (pas de Tailwind/Bootstrap).
+- **Custom Properties** : Utiliser les custom properties définies dans le fichier `assets/css/theme.css`. Préférer les variables CSS sémantiques (`tokens`) plutôt que les primitives.
+- **Layouts** : Système **Bretzel** via attributs `data-layout` (`duo`, `boxed`, `stack`, `cluster`, `stack`, `autogrid`, etc.). Préférer ces attributs aux classes utilitaires et aux styles custom (ex: `flex`, `grid`, etc.)
+- **Syntaxe Media Queries** : Utiliser exclusivement les Custom Media et les Breakpoints listés dans `assets/css/theme.css` (ex: `@media (--md)`, `@media (--lg)`, etc.).
 - **Commits** : Conventional Commits, type en anglais, description en français — ex. : `feat(contact): ajoute captcha`
 - **Commentaires** : en français
