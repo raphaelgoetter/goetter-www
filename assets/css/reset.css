@@ -1,12 +1,12 @@
 /* ==========================================
  * Reset CSS et print, made par Alsacréations
  * Consignes : à placer dans un layer inférieur aux autres layers
- * Mise à jour : 2025-11-22
+ * Mise à jour : 2026-02-19
  * ========================================== */
 
-/* ==========================================
+/* ----------------------------
  * Modèle de boîte
- * ========================================== */
+ * ---------------------------- */
 
 /* Modèle de boîte uniforme et prévention des débordements flex/grid */
 *,
@@ -16,11 +16,12 @@
   min-width: 0;
 }
 
-/* ==========================================
+/* ----------------------------
  * Document global
- * ========================================== */
+ * ---------------------------- */
 
 html {
+  overflow-x: hidden;
   interpolate-size: allow-keywords;
   overflow-wrap: break-word;
   /* stylelint-disable-next-line property-no-vendor-prefix */
@@ -32,26 +33,35 @@ html {
 body {
   min-height: 100dvh;
   margin: 0;
+  overflow-x: clip;
   font-family: system-ui, sans-serif;
   line-height: 1.5;
   text-rendering: optimizespeed;
 }
 
-/* ==========================================
- * Navigation et focus
- * ========================================== */
+/* ----------------------------
+ * États des éléments
+ * ---------------------------- */
+
+:focus {
+  outline: none;
+}
 
 /* Focus clavier */
 :focus-visible {
-  outline: 2px solid light-dark(#4285f4, #8ab4f8);
+  outline: 2px solid;
   outline-offset: 2px;
 }
 
-@supports (outline-color: AccentColor) {
-  :focus-visible {
-    outline-color: AccentColor;
-  }
+:disabled,
+:has(> :disabled) {
+  opacity: 70%;
+  cursor: not-allowed;
 }
+
+/* ----------------------------
+ * Liens et ancres
+ * ---------------------------- */
 
 /* Marge au-dessus des ancres ciblées */
 :target {
@@ -63,9 +73,9 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-/* ==========================================
+/* ----------------------------
  * Typographie
- * ========================================== */
+ * ---------------------------- */
 
 /* Hauteur de ligne réduite sur les éléments de titre */
 h1,
@@ -102,9 +112,9 @@ q {
   quotes: "«\00A0" "\00A0»";
 }
 
-/* ==========================================
+/* ----------------------------
  * Listes
- * ========================================== */
+ * ---------------------------- */
 
 ul,
 ol {
@@ -125,9 +135,9 @@ ol {
   }
 }
 
-/* ==========================================
+/* ----------------------------
  * Média et contenus
- * ========================================== */
+ * ---------------------------- */
 
 /* Prévention des débordements */
 img,
@@ -169,9 +179,9 @@ figure {
   margin: 0;
 }
 
-/* ==========================================
+/* ----------------------------
  * Formulaires
- * ========================================== */
+ * ---------------------------- */
 
 /* Normalisation des éléments de formulaire */
 input,
@@ -224,9 +234,9 @@ textarea {
   resize: vertical;
 }
 
-/* ==========================================
+/* ----------------------------
  * Éléments préformatés
- * ========================================== */
+ * ---------------------------- */
 
 pre,
 code,
@@ -246,13 +256,13 @@ pre {
 :where(:not(pre)) > code {
   padding: 2px 6px;
   border-radius: 6px;
-  background-color: oklch(50% 0 0 / 20%);
-  font-size: 0.9em;
+  background-color: buttonface;
+  font-size: 0.95em;
 }
 
-/* ==========================================
+/* ----------------------------
  * SVG
- * ========================================== */
+ * ---------------------------- */
 
 /* Couleur par défaut des SVG */
 svg:not([fill]) {
@@ -272,9 +282,9 @@ svg:has(symbol) {
   display: none;
 }
 
-/* ==========================================
+/* ----------------------------
  * Accessibilité (ARIA)
- * ========================================== */
+ * ---------------------------- */
 
 [aria-busy="true"] {
   cursor: progress;
@@ -289,19 +299,9 @@ svg:has(symbol) {
   cursor: not-allowed;
 }
 
-/* Gestion des éléments cachés mais accessibles */
-[aria-hidden="false"][hidden] {
-  display: revert;
-}
-
-[aria-hidden="false"][hidden]:not(:focus) {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-}
-
-/* ==========================================
+/* ----------------------------
  * Masquage visuel accessible
- * ========================================== */
+ * ---------------------------- */
 
 /* Masquage du contenu visuellement tout en le gardant accessible aux technologies d'assistance. */
 .visually-hidden {
@@ -314,9 +314,9 @@ svg:has(symbol) {
   clip-path: inset(50%) !important;
 }
 
-/* ==========================================
+/* ----------------------------
  * Préférences animations
- * ========================================== */
+ * ---------------------------- */
 
 /* Désactivation des animations pour les utilisateurs sensibles */
 @media (prefers-reduced-motion: reduce) {
@@ -333,9 +333,9 @@ svg:has(symbol) {
   }
 }
 
-/* ==========================================
+/* ----------------------------
  * Reset print
- * ========================================== */
+ * ---------------------------- */
 
 @media print {
   /* Dimension et marges de page */
@@ -346,9 +346,7 @@ svg:has(symbol) {
 
   /* Reset général */
   * {
-    display: revert;
     box-sizing: border-box;
-    all: unset;
   }
 
   img {
@@ -367,7 +365,6 @@ svg:has(symbol) {
     margin: 0;
     background-color: #ffffff !important;
     color: #000000 !important;
-    font-family: serif;
     font-family: Georgia, serif;
     font-size: 12pt;
     line-height: 1.5;
@@ -380,6 +377,7 @@ svg:has(symbol) {
   ul,
   ol {
     margin-block: 0 15pt;
+    color: #000000 !important;
   }
 
   p:last-child {
@@ -389,6 +387,7 @@ svg:has(symbol) {
   /* Titrages (24pt = 32px) */
   h1 {
     margin-block: 0 24pt;
+    color: #000000 !important;
     font-size: 18pt;
     font-weight: 700;
     line-height: 1.1;
@@ -396,6 +395,7 @@ svg:has(symbol) {
 
   h2 {
     margin-block: 0 18pt;
+    color: #000000 !important;
     font-size: 16pt;
     font-weight: 700;
     line-height: 1.1;
@@ -403,12 +403,14 @@ svg:has(symbol) {
 
   h3 {
     margin-block: 0 15pt;
+    color: #000000 !important;
     font-size: 14pt;
     font-weight: 700;
   }
 
   h4 {
     margin-block: 0 12pt;
+    color: #000000 !important;
     font-size: 12pt;
     font-weight: 700;
   }
@@ -430,13 +432,12 @@ svg:has(symbol) {
   }
 
   /* Pas de saut de page au sein de ces éléments */
-  blockquote,
   ul,
+  blockquote,
   ol,
   figure,
   table {
     break-inside: avoid;
-    page-break-inside: avoid;
   }
 
   /* Pas de saut de page après ces éléments */
@@ -446,7 +447,6 @@ svg:has(symbol) {
   h4,
   caption {
     break-after: avoid;
-    page-break-after: avoid;
   }
 
   /* Styles des liens */
@@ -454,16 +454,17 @@ svg:has(symbol) {
   a:link,
   a:visited {
     background: transparent !important;
-    color: unset;
+    color: #000000 !important;
     font-weight: 700;
     text-decoration: underline !important;
   }
 
   /* On affiche l'URL des liens externes */
-  a[href^="http"]::after,
+
+  /* a[href^="http"]::after,
   a[href^="https"]::after {
     content: " (" attr(href) ")";
-  }
+  } */
 
   /* On masque les vidéos */
   video,
@@ -476,6 +477,6 @@ svg:has(symbol) {
   }
 }
 
-/* ==========================================
+/* ----------------------------
  * Fin du reset CSS
- * ========================================== */
+ * ---------------------------- */

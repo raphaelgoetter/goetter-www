@@ -9,6 +9,18 @@
 @custom-media --xl (width >= 80rem); /* 1280px */
 
 :root {
+  /* Thème de couleurs */
+  color-scheme: light dark;
+
+  &[data-theme="light"] {
+    color-scheme: light;
+  }
+
+  &[data-theme="dark"] {
+    color-scheme: dark;
+  }
+
+  /* Espacements */
   --spacing-2: 0.125rem;
   --spacing-4: 0.25rem;
   --spacing-8: 0.5rem;
@@ -19,7 +31,19 @@
   --spacing-24: 1.5rem;
   --spacing-36: 2.25rem;
   --spacing-48: 3rem;
+
+  /* Espacements (tokens) */
+  --spacing-max: 1440px;
+  --spacing-m: clamp(
+    var(--spacing-16),
+    0.5109rem + 2.1739vw,
+    var(--spacing-36)
+  );
+
+  /* Familles de police */
   --font-calendas: calendas, georgia, serif;
+
+  /* Graisses de police */
   --font-weight-thin: 100;
   --font-weight-extralight: 200;
   --font-weight-light: 300;
@@ -29,6 +53,8 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
   --font-weight-black: 900;
+
+  /* Tailles de police */
   --text-10: 0.625rem;
   --text-11: 0.6875rem;
   --text-12: 0.75rem;
@@ -41,8 +67,18 @@
   --text-36: 2.25rem;
   --text-40: 2.5rem;
   --text-48: 3rem;
+
+  /* Tailles de polices (tokens) */
+  --text-m: clamp(var(--text-18), 1.0761rem + 0.2174vw, var(--text-20));
+  --text-l: clamp(var(--text-20), 1.0054rem + 1.087vw, var(--text-30));
+  --text-xl: clamp(var(--text-24), 1.2065rem + 1.3043vw, var(--text-36));
+  --text-xxl: clamp(var(--text-30), 1.4348rem + 1.9565vw, var(--text-48));
+
+  /* Border-radius */
   --radius-md: 0.5rem;
   --radius-full: 9999px;
+
+  /* Couleurs (globales) */
   --color-green-05: oklch(100% 0.1 144);
   --color-green-10: oklch(100% 0.11 144);
   --color-green-20: oklch(91% 0.11 144);
@@ -88,4 +124,24 @@
   --color-gray-90: oklch(10% 0 0);
   --color-white: oklch(100% 0 0);
   --color-black: oklch(0% 0 0);
+
+  /* Couleurs (tokens) */
+  --surface: light-dark(var(--color-gray-05), var(--color-gray-80));
+  --surface-dim: light-dark(
+    rgb(from var(--color-black) r g b / 5%),
+    rgb(from var(--color-black) r g b / 15%)
+  );
+  --layer: light-dark(var(--color-pink-20), var(--color-pink-60));
+  --on-surface: light-dark(var(--color-gray-90), var(--color-gray-10));
+  --color-link: light-dark(var(--color-green-60), var(--color-orange-30));
+  --color-link-hover: light-dark(var(--color-green-60), var(--color-orange-30));
+  --color-link-invert: light-dark(var(--color-gray-90), var(--color-gray-10));
+  --color-title: light-dark(var(--color-orange-60), var(--color-orange-30));
+  --color-subtitle: light-dark(var(--color-gray-70), var(--color-gray-40));
+  --selection: light-dark(var(--color-orange-30), var(--color-orange-60));
+}
+
+/* Couleur de sélection */
+*::selection {
+  background: var(--selection);
 }
