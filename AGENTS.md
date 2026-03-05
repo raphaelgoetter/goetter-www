@@ -31,3 +31,8 @@ Site personnel et portfolio de Raphaël Goetter (goetter.fr), vitrine technique 
 - **Syntaxe Media Queries** : Utiliser exclusivement les Custom Media et les Breakpoints listés dans `assets/css/theme.css` (ex: `@media (--md)`, `@media (--lg)`, etc.).
 - **Commits** : Conventional Commits, type en anglais, description en français — ex. : `feat(contact): ajoute captcha`
 - **Commentaires** : en français
+
+## Subagents
+
+- Utiliser l'outil **Task** pour toute exploration, recherche ou analyse verbeuse.
+- Déléguer par défaut : investigation du code, revue technique et résumés d'analyse.
