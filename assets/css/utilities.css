@@ -1,25 +1,24 @@
 /* ----------------------------------
  * Classes Utilitaires minimales
  * Consignes : à placer dans un layer `utilities`
- * Mise à jour : 2026-02-19
+ * Mise à jour : 2026-03-18
  * ----------------------------------
  */
 
+/* Offscreen (ignore le rendu des éléments hors-écran) */
 .offscreen {
   contain-intrinsic-size: auto 500px;
   content-visibility: auto;
 }
 
-.d-block {
-  display: block;
-}
-
 /* Thème forcé */
-[data-theme="light"] {
+[data-theme="light"],
+.theme-light {
   color-scheme: light;
 }
 
-[data-theme="dark"] {
+[data-theme="dark"],
+.theme-dark {
   color-scheme: dark;
 }
 
@@ -36,8 +35,7 @@
   text-align: start;
 }
 
-.text-center,
-.justify-center {
+.text-center {
   text-align: center;
 }
 
@@ -45,13 +43,25 @@
   text-align: end;
 }
 
-/* Float */
-.fl {
-  float: inline-start;
+/* Display */
+.flex {
+  display: flex;
 }
 
-.fr {
-  float: inline-end;
+.grid {
+  display: grid;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
 }
 
 /* Radius */
@@ -69,6 +79,117 @@
 
 .radius-full {
   border-radius: var(--radius-full, 9999px);
+}
+
+/* Typographie */
+.font-base {
+  font-family: var(--font-base, system-ui);
+}
+
+.text-14 {
+  font-size: var(--text-14, 0.875rem);
+}
+
+.text-16 {
+  font-size: var(--text-16, 1rem);
+}
+
+.text-18 {
+  font-size: var(--text-18, 1.125rem);
+}
+
+.text-20 {
+  font-size: var(--text-20, 1.25rem);
+}
+
+.text-24 {
+  font-size: var(--text-24, 1.5rem);
+}
+
+.text-30 {
+  font-size: var(--text-30, 1.875rem);
+}
+
+.text-48 {
+  font-size: var(--text-48, 3rem);
+}
+
+/* Couleurs */
+.text-on-surface {
+  color: var(--on-surface, canvastext);
+}
+
+.text-black {
+  color: var(--color-black, oklch(0 0 0));
+}
+
+.text-white {
+  color: var(--color-white, oklch(1 0 0));
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-on-primary {
+  color: var(--on-primary);
+}
+
+/* Couleurs de fond */
+.bg-surface {
+  background-color: var(--surface, canvas);
+}
+
+.bg-black {
+  background-color: var(--color-black, oklch(0 0 0));
+}
+
+.bg-white {
+  background-color: var(--color-white, oklch(1 0 0));
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-gray-50 {
+  background-color: var(--color-gray-50, oklch(0.97 0 0));
+}
+
+.bg-gray-100 {
+  background-color: var(--color-gray-100, oklch(0.922 0 0));
+}
+
+.bg-gray-200 {
+  background-color: var(--color-gray-200, oklch(0.87 0 0));
+}
+
+.bg-gray-300 {
+  background-color: var(--color-gray-300, oklch(0.708 0 0));
+}
+
+.bg-gray-400 {
+  background-color: var(--color-gray-400, oklch(0.556 0 0));
+}
+
+.bg-gray-500 {
+  background-color: var(--color-gray-500, oklch(0.439 0 0));
+}
+
+.bg-gray-600 {
+  background-color: var(--color-gray-600, oklch(0.371 0 0));
+}
+
+.bg-gray-700 {
+  background-color: var(--color-gray-700, oklch(0.269 0 0));
+}
+
+.bg-gray-800 {
+  background-color: var(--color-gray-800, oklch(0.205 0 0));
+}
+
+.bg-gray-900 {
+  background-color: var(--color-gray-900, oklch(0.145 0 0));
 }
 
 /* Marges utilitaires */
