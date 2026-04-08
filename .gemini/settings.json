@@ -1,0 +1,3 @@
+{
+  "commitMessageInstructions": "Génère un message de commit au format Conventional Commits. Le type et le scope doivent être en anglais (feat, fix, chore, refactor, style, docs, etc.). La description doit être en français, en minuscule, sans point final. Exemple : 'feat(contact): ajoute captcha' ou 'fix(calendar): corrige la date du match J14'."
+}
